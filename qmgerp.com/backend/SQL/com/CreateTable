@@ -1,0 +1,8 @@
+/******************************com_config*******************************/
+CREATE TABLE IF NOT EXISTS `com_config` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `key` VARCHAR(45) NOT NULL DEFAULT '',
+  `config` TEXT NOT NULL DEFAULT '',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;

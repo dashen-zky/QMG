@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "statistic_customers_and_projects.py", line 259, in <module>
+    time.sleep(86400)
+KeyboardInterrupt

@@ -1,0 +1,47 @@
+/*******************************fin_contract_template*********************/
+CREATE TABLE IF NOT EXISTS `fin_contract_template` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL COMMENT '合同模板名称',
+  `path` VARCHAR(155) NOT NULL DEFAULT '' COMMENT '模板路径',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+/*********************************************fin_contract**********************/
+CREATE TABLE IF NOT EXISTS `fin_contract` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `create_time` INT UNSIGNED NOT NULL,
+  `duty_uuid` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '合同负责人',
+  `money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '合同金额',
+  `status` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `start_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `end_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `sign_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '签约时间',
+  `remarks` TEXT NOT NULL DEFAULT '',
+  `part_a_duty` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '甲方负责人',
+  `part_a_phone` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '甲方联系人电话',
+  `part_a_fax` VARCHAR(45) NOT NULL DEFAULT '',
+  `part_a_address` VARCHAR(155) NOT NULL DEFAULT '',
+  `part_b_duty` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '乙方负责人',
+  `part_b_phone` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '乙方联系人电话',
+  `part_b_fax` VARCHAR(45) NOT NULL DEFAULT '',
+  `part_b_address` VARCHAR(155) NOT NULL DEFAULT '',
+  `path` VARCHAR(155) NOT NULL DEFAULT '' COMMENT '合同存放路径',
+  `type` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '合同类型\n供应商合同\n等等其他',
+  `template_uuid` VARCHAR(45) NOT NULL COMMENT '合同模板',
+  `code` int unsigned not null default 0,
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+
+**************************************************************************************************
+/*********************************fin_account***************************/
+CREATE TABLE IF NOT EXISTS `fin_account` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '收款人',
+  `type` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '账户类型，银行，支付宝……',
+  `bank_of_deposit` VARCHAR(155) NOT NULL DEFAULT '' COMMENT '开户行',
+  `account` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '账号',
+  `created_uuid` VARCHAR(45) NOT NULL default '',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;

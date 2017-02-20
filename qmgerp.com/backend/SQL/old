@@ -1,0 +1,300 @@
+CREATE TABLE IF NOT EXISTS `crm_project_brief` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `title` varchar(200),
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '1 待审核\n2 已审核',
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `done_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `background` TEXT NULL,
+  `mission_quantity` TEXT NULL COMMENT '绩效目标',
+  `predict` TEXT NULL COMMENT '预算',
+  `key_message` TEXT NULL,
+  `content` TEXT NULL,
+  `strategy` TEXT NULL,
+  `style` TEXT NULL COMMENT '调性',
+  `attention` TEXT NULL,
+  `remarks` TEXT NULL,
+  `target_feature` TEXT NULL COMMENT '受众人群属性',
+  `path` TEXT NULL,
+  `created_uuid` VARCHAR(45) NULL,
+  `proposal_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '提案时间',
+  `assess_uuid` varchar(45),
+  `refuse_reason` text,
+  key(`id`),PRIMARY KEY (`uuid`),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = '项目工单' charset utf8;
+
+CREATE TABLE IF NOT EXISTS `crm_project_media_brief` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `remarks` TEXT NULL,
+  `path` TEXT NULL,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `created_uuid` VARCHAR(45) NOT NULL,
+  `title` VARCHAR(200) NOT NULL,
+  `refuse_reason` text,
+  `assess_uuid` varchar(45),
+  `status` tinyint unsigned not null default 1,
+  `created_time` int unsigned not null default 0,
+  PRIMARY KEY (`uuid`),key(`id`),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = '项目媒介工单' charset utf8;
+
+///////////////////////////////////////////////////////////////////////////////
+CREATE TABLE IF NOT EXISTS `hr_apply_recruit` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `created_uuid` VARCHAR(45) NOT NULL,
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `position_uuid` VARCHAR(45) NOT NULL COMMENT '需要招聘的岗位',
+  `remarks` TEXT NULL,
+  `number_of_plan` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '计划需要招聘的人数',
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '1.申请中\n2.招聘中（申请审核通过）\n3.招聘结束',
+  `number_of_succeed` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '成功招到的人数',
+  `assess_uuid` VARCHAR(45) NULL COMMENT '审核人',
+  `refuse_reason` text,
+  `description` text,
+  `reason` bigint unsigned not null default 0,
+  `salary` varchar(45),
+  `entry_time` int unsigned not null default 0,
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8
+COMMENT = '申请招聘' ;
+
+CREATE TABLE IF NOT EXISTS `hr_candidate` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `location` TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '面试未通过的候选者去向\n1. 人才库\n2. 不录用\n3. 黑名单',
+  `phone` INT UNSIGNED NOT NULL DEFAULT 0,
+  `email` VARCHAR(45) NOT NULL,
+  `created_uuid` VARCHAR(45) not NULL,
+  `created_time` INT Not NULL Default 0,
+  `update_time` INT not null DEFAULT 0,
+  `position` varchar(45),
+  `remarks` TEXT,
+  `resume` Text,
+  PRIMARY KEY (`uuid`), key(id))
+ENGINE = InnoDB charset utf8
+COMMENT = '面试人';
+
+CREATE TABLE IF NOT EXISTS `hr_recruit_candidate_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `candidate_uuid` VARCHAR(45) NOT NULL,
+  `recruit_uuid` VARCHAR(45) NOT NULL,
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '1 已匹配\n2 待面试\n3 录用\n4 不录用',
+  `hr_comment` TEXT NULL,
+  `leader_comment` TEXT NULL,
+  `demand_comment` TEXT NULL,
+  `interview_time` int unsigned not null default 0 comment '面试时间',
+  `expect_salary` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `entry_time` int unsigned not null default 0,
+  PRIMARY KEY (`id`),
+  INDEX `candidate_uuid_idx` (`candidate_uuid` ASC),
+  INDEX `recruit_uuid_idx` (`recruit_uuid` ASC),
+  CONSTRAINT `candidate_uuid`
+    FOREIGN KEY (`candidate_uuid`)
+    REFERENCES `hr_candidate` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `recruit_uuid`
+    FOREIGN KEY (`recruit_uuid`)
+    REFERENCES `hr_apply_recruit` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+///////////////////////////////////////////////////////////////////////////////
+alter table hr_position add members_limit int unsigned not null default 5 comment '岗位编制';
+alter table hr_position add number_of_active int unsigned not null default 0 comment '在编人数';
+
+alter table hr_employee_basic_information add contract_term int unsigned not null default 3 comment '合同期限';
+alter table hr_employee_basic_information add lunar_birthday int unsigned not null default 0 comment '农历生日';
+alter table hr_employee_basic_information add birthday int unsigned not null default 0 comment '公历生日';
+alter table hr_employee_basic_information add salary decimal(10,2) unsigned not null default 0 comment '工资';
+alter table hr_employee_basic_information add stop_social_insurance_time int unsigned not null default 0 comment '停缴社保时间';
+alter table hr_employee_basic_information add intern_term int unsigned not null default 0 comment '试用期时间';
+
+alter table hr_employee_basic_attachment_information add salary_adjust_record text comment '调薪记录';
+alter table hr_employee_basic_attachment_information add bank_account text comment '银行账号';
+alter table hr_employee_basic_attachment_information add social_insurance_adjust_record text comment '社保调整记录';
+alter table hr_employee_basic_attachment_information add house_fund_adjust_record text comment '住房公积金调整记录';
+
+alter table crm_project_apply_stamp add type BIGINT UNSIGNED not null DEFAULT 0;
+alter table crm_project_apply_stamp add feature BIGINT UNSIGNED not null DEFAULT 0;
+alter table crm_project_apply_stamp add remarks text;
+////////////////////////////////////////////////////////////////////////////
+/***************请假申请表*******************************/
+CREATE TABLE IF NOT EXISTS `hr_ask_for_leave` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `created_uuid` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '请假人',
+  `start_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `end_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `type` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '请假类型',
+  `reason` VARCHAR(155) NOT NULL DEFAULT '' COMMENT '事由',
+  `assess_uuid` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '审批人',
+  `department` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '所在部门',
+  `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态',
+  `proxy` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '职务代理人',
+  `total_time` VARCHAR(20) NOT NULL DEFAULT '',
+  `created_time` int unsigned not null default 0,
+  PRIMARY KEY (`uuid`),KEY(id),
+  INDEX `_idx` (`created_uuid` ASC),
+  CONSTRAINT ``
+    FOREIGN KEY (`created_uuid`)
+    REFERENCES `hr_employee_basic_information` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = '请假申请表' charset utf8;
+===============================================1120===================================
+CREATE TABLE IF NOT EXISTS `crm_sales_customer_statistic` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `sales_uuid` VARCHAR(45) NOT NULL COMMENT '销售id',
+  `customer_total` INT UNSIGNED NOT NULL default 0,
+  `number_of_waiting_touch` INT UNSIGNED NOT NULL default 0 COMMENT '待跟进的客户',
+  `number_of_touching` INT UNSIGNED NOT NULL default 0 COMMENT '跟进中的客户',
+  `number_of_cooperating` INT UNSIGNED NOT NULL default 0 COMMENT '合作中的客户',
+  `number_of_ka` INT UNSIGNED NOT NULL default 0 COMMENT 'ka客户数',
+  `number_of_last_7_days_touch_records` INT UNSIGNED NOT NULL default 0 COMMENT '最近7天的跟进记录',
+  `number_of_done` INT UNSIGNED NOT NULL default 0 COMMENT '已结案的客户',
+  `number_of_important` INT UNSIGNED NOT NULL default 0 COMMENT '重点客户',
+  `number_of_general` INT UNSIGNED NOT NULL default 0 COMMENT '普通客户',
+  `number_of_potential` INT UNSIGNED NOT NULL default 0 COMMENT '潜在客户',
+  `number_of_last_30_days_touch_records` INT UNSIGNED NOT NULL default 0 COMMENT '最近30天跟进次数',
+  `sales_name` VARCHAR(45) NOT NULL default '' COMMENT '销售姓名',
+  PRIMARY KEY (`sales_uuid`), key(id))
+ENGINE = InnoDB
+COMMENT = '销售的客户统计表' charset utf8
+
+alter table crm_project change paied_money received_money DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0;
+/===========================================crm_sales_achievement_statistic==============/
+CREATE TABLE IF NOT EXISTS `crm_sales_anniversary_achievement_statistic` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `sales_uuid` VARCHAR(45) NOT NULL,
+  `uuid` VARCHAR(45) NOT NULL,
+  `anniversary_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m1_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m2_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m3_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m4_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `customer_total` INT UNSIGNED NOT NULL DEFAULT 0,
+  `achieved` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '完成的业绩金额',
+  `checked_stamp_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '已开票金额',
+  `received_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '已回款金额',
+  `year` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '当前年',
+  `m5_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m6_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m7_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m8_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m9_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m10_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m11_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m12_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (`uuid`), KEY(id))
+ENGINE = InnoDB
+COMMENT = '销售的业绩统计表' CHARSET utf8
+======================================crm_project_statistic======================/
+CREATE TABLE IF NOT EXISTS `crm_project_statistic` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `manager_uuid` VARCHAR(45) NOT NULL COMMENT '项目人员',
+  `projects_total` INT UNSIGNED NOT NULL COMMENT '项目总数',
+  `number_of_touching` INT UNSIGNED NOT NULL,
+  `number_of_executing` INT UNSIGNED NOT NULL COMMENT '执行中',
+  `number_of_done` INT UNSIGNED NOT NULL,
+  `number_of_failed` INT UNSIGNED NOT NULL COMMENT '失败的项目数',
+  `number_of_last_7_days_touch_records` INT UNSIGNED NOT NULL COMMENT '最近7天跟进数',
+  `number_of_last_30_days_touch_records` INT UNSIGNED NOT NULL COMMENT '最近30天跟进数',
+  PRIMARY KEY (`manager_uuid`), KEY(id))
+ENGINE = InnoDB
+COMMENT = '项目统计表' charset utf8
+======================================crm_project_anniversary_achievement_statistic==============
+CREATE TABLE IF NOT EXISTS `crm_project_anniversary_achievement_statistic` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `manager_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `year` INT UNSIGNED NOT NULL DEFAULT 0,
+  `anniversary_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m1_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m2_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m3_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m4_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m5_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m6_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m7_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m8_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m9_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m10_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m11_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `m12_target` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `achieved` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '已立项及结案的项目总金额',
+  `received_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '已收回的金额',
+  `checked_stamp_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '已开票金额',
+  `projects_total` INT UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (`uuid`), key(id))
+ENGINE = InnoDB charset utf8
++===============================================
+alter TABLE fin_account MODIFY NAME VARCHAR(45) not null default '';
+alter TABLE fin_account MODIFY bank_of_deposit VARCHAR(155) not null default '';
+alter TABLE fin_account MODIFY account VARCHAR(45) not null default '';
+alter TABLE fin_account MODIFY created_uuid VARCHAR(45) not null default '';
+alter TABLE crm_supplier MODIFY manager_uuid VARCHAR(45) not null default '';
+alter TABLE crm_supplier MODIFY path varchar(155) not null default '';
+alter TABLE crm_supplier MODIFY `code` VARCHAR(45) not null default '';
+alter TABLE crm_supplier MODIFY created_uuid VARCHAR(45) not null default '';
+==================================================daily_transaction========================
+CREATE TABLE IF NOT EXISTS `daily_transaction` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `title` VARCHAR(155) NULL,
+  `content` TEXT NULL,
+  `created_uuid` VARCHAR(45) NULL,
+  `execute_uuid` VARCHAR(45) NULL COMMENT '执行人',
+  `execute_name` text comment '执行人名字字符串',
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `expect_finish_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '预计完成时间',
+  `finished_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '状态',
+  `order` INT UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (`uuid`), key(id))
+ENGINE = InnoDB
+COMMENT = '事项管理'  CHARSET utf8;
+================================================daily_week_report===========
+CREATE TABLE IF NOT EXISTS  `daily_week_report` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `created_uuid` VARCHAR(45) NOT NULL,
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `title` VARCHAR(155) NOT NULL,
+  `content` TEXT NOT NULL,
+  PRIMARY KEY (`uuid`), key(id))
+ENGINE = InnoDB charset utf8;
+=============================================daily_work_report_transaction_map=============
+CREATE TABLE IF NOT EXISTS `daily_week_report_transaction_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `week_report_uuid` VARCHAR(45) NOT NULL,
+  `transaction_uuid` VARCHAR(45) NOT NULL,
+  `is_current_week_transaction` TINYINT NOT NULL DEFAULT 1 COMMENT '1 本周完成，2下周计划',
+  PRIMARY KEY (`id`),
+  INDEX `fk_daily_work_report_transaction_map_1_idx` (`transaction_uuid` ASC),
+  INDEX `fk_daily_work_report_transaction_map_2_idx` (`week_report_uuid` ASC),
+  CONSTRAINT `fk_daily_work_report_transaction_map_1`
+    FOREIGN KEY (`transaction_uuid`)
+    REFERENCES `daily_transaction` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_daily_work_report_transaction_map_2`
+    FOREIGN KEY (`week_report_uuid`)
+    REFERENCES `daily_week_report` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;

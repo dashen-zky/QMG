@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/backend/modules/system/models/payment_assess_config/ProjectPaymentAssessConfig.php" description="use backend\models\Config;" line="11" />
+    <bookmark url="file://$PROJECT_DIR$/backend/views/site/index.php" line="20" />
+    <bookmark url="file://$PROJECT_DIR$/vendor/yiisoft/yii2/base/Controller.php" line="138" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d7ff2c6a-d6a1-4564-9759-4c4ff913bea0" name="Default" comment="regulation&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/SQL/new" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/SQL/old" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/index.php" afterPath="$PROJECT_DIR$/backend/web/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/config/main-local.php" afterPath="$PROJECT_DIR$/common/config/main-local.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/di/Container.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/di/Container.php" />
+    </list>
+    <list id="14b79c4c-178d-4898-8d0a-aed96bfeb4a1" name="Failed commit: Default" comment="regulation&#10;" />
+    <ignored path="www.qmerp.com.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="www.qmerp.com" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/views/project-payment-assess/succeed.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/views/project-payment-assess/refused.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/views/daily-payment-assess/succeed.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/views/daily-payment-assess/refused.php" />
+        <option value="$PROJECT_DIR$/backend/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/models/PaymentAssess.php" />
+        <option value="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryBuilder.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/models/DailyPaymentAssess.php" />
+        <option value="$PROJECT_DIR$/backend/modules/system/views/project-payment-assess-config/index.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/models/supplier/record/SupplierPaymentMap.php" />
+        <option value="$PROJECT_DIR$/backend/modules/system/views/daily-payment-assess-config/index.php" />
+        <option value="$PROJECT_DIR$/backend/modules/system/controllers/PaymentAssessConfigController.php" />
+        <option value="$PROJECT_DIR$/backend/modules/system/models/payment_assess_config/ProjectPaymentAssessConfig.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/payment/models/PaymentConfig.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/models/ProjectPaymentAssess.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/models/project/record/ProjectPaymentMap.php" />
+        <option value="$PROJECT_DIR$/backend/modules/hr/models/EmployeeBasicInformation.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/payment/models/Payment.php" />
+        <option value="$PROJECT_DIR$/backend/modules/daily/views/apply-payment/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/daily/models/payment/ApplyPayment.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/project-apply-payment/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/supplier-apply-payment/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/views/daily-payment-assess/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/payment_assess/views/project-payment-assess/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/payment/views/payment/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/payment/views/payment/print.php" />
+        <option value="$PROJECT_DIR$/backend/modules/hr/views/ask-for-leave/hr-list.php" />
+        <option value="$PROJECT_DIR$/backend/modules/hr/views/ask-for-leave/assess-list.php" />
+        <option value="$PROJECT_DIR$/backend/modules/hr/views/ask-for-leave/list.php" />
+        <option value="$PROJECT_DIR$/backend/modules/hr/views/ask-for-leave/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/daily/views/week-report/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/daily/views/week-report/show.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/models/customer/record/CustomerTouchRecordMap.php" />
+        <option value="$PROJECT_DIR$/backend/modules/hr/recruitment/views/recommend-candidate/select-candidate-list.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/private-customer/drop.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/private-customer/private-customer-list.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/controllers/PrivateCustomerController.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/models/customer/record/PrivateCustomer.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/public-customer/customer-form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/private-customer/customer-form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/project/list.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/project/project-form.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/UpdateController.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/models/project/record/Project.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/views/project/failed.php" />
+        <option value="$PROJECT_DIR$/backend/modules/crm/controllers/ProjectController.php" />
+        <option value="$PROJECT_DIR$/backend/web/index.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/accountReceivable/controllers/ReceiveMoneyController.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/accountReceivable/models/AccountReceivable.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/receive-money/form.php" />
+        <option value="$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/receive-money/list.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1535" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.qmerp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.qmerp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qmg-erp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.qmerp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qmg-erp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.qmerp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qmg-erp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.qmerp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qmg-erp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.qmerp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qmg-erp" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///data/wwwroot/qmg-erp/backend/modules/wom_data/controllers/SupplierController.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/modules/crm/views/project-brief" />
+      <recent name="$PROJECT_DIR$/backend/modules/crm/views/project-done-assess" />
+      <recent name="$PROJECT_DIR$/backend/modules/crm/views/project-active-assess" />
+      <recent name="$PROJECT_DIR$/backend/modules/crm/views/project-active" />
+      <recent name="$PROJECT_DIR$/backend/modules/hr/recruitment/views/interview" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/web/css" />
+      <recent name="$PROJECT_DIR$/backend/web/js" />
+      <recent name="$PROJECT_DIR$/backend/modules/fin/views/calculate" />
+      <recent name="$PROJECT_DIR$/backend/modules/crm/views/project-brief" />
+      <recent name="$PROJECT_DIR$/backend/modules/crm/views/project" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7ff2c6a-d6a1-4564-9759-4c4ff913bea0" name="Default" comment="" />
+      <created>1473684746552</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1473684746552</updated>
+      <workItem from="1476156717218" duration="2155000" />
+      <workItem from="1476168163094" duration="12843000" />
+      <workItem from="1476185372370" duration="2332000" />
+      <workItem from="1476202160237" duration="5640000" />
+      <workItem from="1476236748446" duration="9040000" />
+      <workItem from="1476249002325" duration="818000" />
+      <workItem from="1476253516499" duration="19964000" />
+      <workItem from="1476322466755" duration="10270000" />
+      <workItem from="1476340643835" duration="12604000" />
+      <workItem from="1476359244056" duration="591000" />
+      <workItem from="1476362755977" duration="3426000" />
+      <workItem from="1476371229439" duration="7134000" />
+      <workItem from="1476409852204" duration="3676000" />
+      <workItem from="1476668935003" duration="8377000" />
+      <workItem from="1476770525774" duration="5463000" />
+      <workItem from="1476806506398" duration="3717000" />
+      <workItem from="1476842349272" duration="7873000" />
+      <workItem from="1476859655260" duration="14343000" />
+      <workItem from="1476880489861" duration="6000000" />
+      <workItem from="1476890784491" duration="5943000" />
+      <workItem from="1476928736580" duration="12801000" />
+      <workItem from="1476945155113" duration="2227000" />
+      <workItem from="1476950314633" duration="19314000" />
+      <workItem from="1476977603384" duration="600000" />
+      <workItem from="1477013793585" duration="9991000" />
+      <workItem from="1477031475864" duration="10453000" />
+      <workItem from="1477043742710" duration="1669000" />
+      <workItem from="1477050270259" duration="1426000" />
+      <workItem from="1477274883337" duration="8354000" />
+      <workItem from="1477319867226" duration="8255000" />
+      <workItem from="1477360166594" duration="11567000" />
+      <workItem from="1477373820528" duration="16756000" />
+      <workItem from="1477403618779" duration="6239000" />
+      <workItem from="1477448908784" duration="5010000" />
+      <workItem from="1477458517229" duration="733000" />
+      <workItem from="1477462704261" duration="14368000" />
+      <workItem from="1477481128141" duration="6406000" />
+      <workItem from="1477492340883" duration="6072000" />
+      <workItem from="1477532784369" duration="4911000" />
+      <workItem from="1477548812251" duration="20888000" />
+      <workItem from="1477579745571" duration="7273000" />
+      <workItem from="1477619732367" duration="12630000" />
+      <workItem from="1477636052984" duration="8706000" />
+      <workItem from="1477648111222" duration="455000" />
+      <workItem from="1477667842724" duration="3122000" />
+      <workItem from="1477722721974" duration="7288000" />
+      <workItem from="1477739351061" duration="3383000" />
+      <workItem from="1477742804888" duration="107000" />
+      <workItem from="1477791811413" duration="8534000" />
+      <workItem from="1477825179586" duration="14054000" />
+      <workItem from="1477878375440" duration="1262000" />
+      <workItem from="1477887048643" duration="311000" />
+      <workItem from="1477894736615" duration="8408000" />
+      <workItem from="1477913360202" duration="440000" />
+      <workItem from="1477915986396" duration="4755000" />
+      <workItem from="1477927716379" duration="4684000" />
+      <workItem from="1477964064437" duration="8995000" />
+      <workItem from="1477982853140" duration="13169000" />
+      <workItem from="1477999541476" duration="8329000" />
+      <workItem from="1478016120057" duration="3363000" />
+      <workItem from="1478051220010" duration="5529000" />
+      <workItem from="1478063995829" duration="192000" />
+      <workItem from="1478067395495" duration="6561000" />
+      <workItem from="1478084573123" duration="10265000" />
+      <workItem from="1478138175864" duration="607000" />
+      <workItem from="1478138980068" duration="5672000" />
+      <workItem from="1478156590548" duration="11195000" />
+      <workItem from="1478172221495" duration="8228000" />
+      <workItem from="1478180510662" duration="324000" />
+      <workItem from="1478186456749" duration="1194000" />
+      <workItem from="1478327537274" duration="2118000" />
+      <workItem from="1478484993430" duration="5392000" />
+      <workItem from="1478505937241" duration="6380000" />
+      <workItem from="1478552351052" duration="11257000" />
+      <workItem from="1478567587050" duration="20550000" />
+      <workItem from="1478638016666" duration="9394000" />
+      <workItem from="1478653911793" duration="23428000" />
+      <workItem from="1478724287852" duration="6055000" />
+      <workItem from="1478739752020" duration="12865000" />
+      <workItem from="1478758574210" duration="7806000" />
+      <workItem from="1478768394409" duration="318000" />
+      <workItem from="1479265278591" duration="5926000" />
+      <workItem from="1479278425872" duration="5802000" />
+      <workItem from="1479286063924" duration="5266000" />
+      <workItem from="1479349452941" duration="4000" />
+      <workItem from="1479351656859" duration="4986000" />
+      <workItem from="1479364473927" duration="25894000" />
+      <workItem from="1479436235946" duration="16859000" />
+      <workItem from="1479483681151" duration="772000" />
+      <workItem from="1479618821644" duration="4864000" />
+      <workItem from="1479663708236" duration="1131000" />
+      <workItem from="1479697054467" duration="30319000" />
+      <workItem from="1479741106000" duration="276000" />
+      <workItem from="1479779950205" duration="4635000" />
+      <workItem from="1479796870665" duration="13762000" />
+      <workItem from="1479868030963" duration="20942000" />
+      <workItem from="1479916074250" duration="3347000" />
+      <workItem from="1479954621259" duration="28477000" />
+      <workItem from="1480000601141" duration="3904000" />
+      <workItem from="1480039929345" duration="8794000" />
+      <workItem from="1480057240579" duration="417000" />
+      <workItem from="1480057731217" duration="121000" />
+      <workItem from="1480058052176" duration="1116000" />
+      <workItem from="1480059350947" duration="162000" />
+      <workItem from="1480059691585" duration="1987000" />
+      <workItem from="1480062113590" duration="15973000" />
+      <workItem from="1480137048911" duration="7760000" />
+      <workItem from="1480179948865" duration="86000" />
+      <workItem from="1480231341154" duration="420000" />
+      <workItem from="1480299255559" duration="22791000" />
+      <workItem from="1480385307964" duration="28210000" />
+      <workItem from="1480470005770" duration="21320000" />
+      <workItem from="1480510501965" duration="4654000" />
+      <workItem from="1480521124788" duration="1736000" />
+      <workItem from="1480557902671" duration="19237000" />
+      <workItem from="1480602110484" duration="8845000" />
+      <workItem from="1480644845829" duration="16500000" />
+      <workItem from="1480748881689" duration="1317000" />
+      <workItem from="1480826586126" duration="4177000" />
+      <workItem from="1480866711908" duration="5044000" />
+      <workItem from="1480904199941" duration="8327000" />
+      <workItem from="1480919414791" duration="20329000" />
+      <workItem from="1480953929956" duration="3244000" />
+      <workItem from="1480989341907" duration="8074000" />
+      <workItem from="1481075744291" duration="18904000" />
+      <workItem from="1481123411427" duration="2194000" />
+      <workItem from="1481163078096" duration="14203000" />
+      <workItem from="1481200477503" duration="15000" />
+      <workItem from="1481200505450" duration="634000" />
+      <workItem from="1481201151245" duration="5000" />
+      <workItem from="1481210736980" duration="3328000" />
+      <workItem from="1481249492543" duration="30113000" />
+      <workItem from="1481425918715" duration="21022000" />
+      <workItem from="1481457372198" duration="13340000" />
+      <workItem from="1481472000853" duration="2128000" />
+      <workItem from="1481508699929" duration="26893000" />
+      <workItem from="1481595282172" duration="26657000" />
+      <workItem from="1481643830026" duration="894000" />
+      <workItem from="1481681023516" duration="19906000" />
+      <workItem from="1481717476354" duration="2155000" />
+      <workItem from="1481729172015" duration="2953000" />
+      <workItem from="1481732389024" duration="2000" />
+      <workItem from="1481732865632" duration="674000" />
+      <workItem from="1481768298866" duration="29388000" />
+      <workItem from="1481817715572" duration="4387000" />
+      <workItem from="1481853829898" duration="13619000" />
+      <workItem from="1481901889946" duration="1170000" />
+      <workItem from="1482054287747" duration="2219000" />
+      <workItem from="1482070867151" duration="2310000" />
+      <workItem from="1482112816719" duration="6030000" />
+      <workItem from="1482143100544" duration="2980000" />
+      <workItem from="1482200537442" duration="21415000" />
+      <workItem from="1482246385274" duration="601000" />
+      <workItem from="1482286420923" duration="2876000" />
+      <workItem from="1482303530443" duration="682000" />
+      <workItem from="1482311584239" duration="4970000" />
+      <workItem from="1482322027182" duration="8564000" />
+      <workItem from="1482337532268" duration="3838000" />
+      <workItem from="1482375538373" duration="1377000" />
+      <workItem from="1482377388044" duration="112000" />
+      <workItem from="1482393583628" duration="1931000" />
+      <workItem from="1482456460703" duration="22000" />
+      <workItem from="1482463554881" duration="5444000" />
+      <workItem from="1482562489241" duration="619000" />
+      <workItem from="1482663963281" duration="4944000" />
+      <workItem from="1482719083863" duration="630000" />
+      <workItem from="1482733889391" duration="6777000" />
+      <workItem from="1482750910688" duration="4373000" />
+      <workItem from="1482805728272" duration="10197000" />
+      <workItem from="1482841225080" duration="360000" />
+      <workItem from="1482841598430" duration="1875000" />
+      <workItem from="1482845826884" duration="1485000" />
+      <workItem from="1482898103824" duration="4560000" />
+      <workItem from="1482996683494" duration="1662000" />
+      <workItem from="1482998895802" duration="1720000" />
+      <workItem from="1483021598897" duration="26000" />
+      <workItem from="1483021885903" duration="2940000" />
+      <workItem from="1483064360030" duration="35000" />
+      <workItem from="1483065185486" duration="1140000" />
+      <workItem from="1483084896963" duration="333000" />
+      <workItem from="1483348115622" duration="552000" />
+      <workItem from="1483348675323" duration="87000" />
+      <workItem from="1483413156115" duration="633000" />
+      <workItem from="1483502871403" duration="44000" />
+      <workItem from="1483511635740" duration="568000" />
+      <workItem from="1483519697028" duration="1964000" />
+      <workItem from="1483522296973" duration="31000" />
+      <workItem from="1483522536745" duration="391000" />
+      <workItem from="1483605116623" duration="1131000" />
+      <workItem from="1483618491543" duration="535000" />
+      <workItem from="1483628070279" duration="1084000" />
+      <workItem from="1483667688664" duration="8151000" />
+      <workItem from="1483683822375" duration="3864000" />
+      <workItem from="1483692874644" duration="711000" />
+      <workItem from="1483701151002" duration="308000" />
+      <workItem from="1483877212272" duration="5282000" />
+      <workItem from="1483885468595" duration="658000" />
+      <workItem from="1483895776967" duration="225000" />
+      <workItem from="1483896044546" duration="41000" />
+      <workItem from="1483931816962" duration="7964000" />
+      <workItem from="1483968555705" duration="96000" />
+      <workItem from="1484025907362" duration="612000" />
+      <workItem from="1484029546590" duration="156000" />
+      <workItem from="1484034995650" duration="1164000" />
+      <workItem from="1484044506281" duration="1274000" />
+      <workItem from="1484054831979" duration="141000" />
+      <workItem from="1484056282729" duration="608000" />
+      <workItem from="1484098984752" duration="33000" />
+      <workItem from="1484106018391" duration="6102000" />
+      <workItem from="1484149889344" duration="24000" />
+      <workItem from="1484209288718" duration="1536000" />
+      <workItem from="1484279451582" duration="657000" />
+      <workItem from="1484286878112" duration="1069000" />
+      <workItem from="1484290492528" duration="4070000" />
+      <workItem from="1484532609019" duration="17971000" />
+      <workItem from="1484569201922" duration="564000" />
+      <workItem from="1484619069109" duration="13019000" />
+      <workItem from="1484635531071" duration="176000" />
+      <workItem from="1484637119811" duration="833000" />
+      <workItem from="1484644583567" duration="1207000" />
+      <workItem from="1484705006999" duration="12247000" />
+      <workItem from="1484727650546" duration="6607000" />
+      <workItem from="1484743094115" duration="1560000" />
+      <workItem from="1484755530042" duration="1679000" />
+      <workItem from="1484757270350" duration="24000" />
+      <workItem from="1484757570082" duration="154000" />
+    </task>
+    <task id="LOCAL-00286" summary="regulation&#10;">
+      <created>1482741828059</created>
+      <option name="number" value="00286" />
+      <option name="presentableId" value="LOCAL-00286" />
+      <option name="project" value="LOCAL" />
+      <updated>1482741828059</updated>
+    </task>
+    <task id="LOCAL-00287" summary="regulation&#10;">
+      <created>1482751613905</created>
+      <option name="number" value="00287" />
+      <option name="presentableId" value="LOCAL-00287" />
+      <option name="project" value="LOCAL" />
+      <updated>1482751613905</updated>
+    </task>
+    <task id="LOCAL-00288" summary="regulation&#10;">
+      <created>1482754636539</created>
+      <option name="number" value="00288" />
+      <option name="presentableId" value="LOCAL-00288" />
+      <option name="project" value="LOCAL" />
+      <updated>1482754636539</updated>
+    </task>
+    <task id="LOCAL-00289" summary="regulation&#10;">
+      <created>1482755191702</created>
+      <option name="number" value="00289" />
+      <option name="presentableId" value="LOCAL-00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1482755191702</updated>
+    </task>
+    <task id="LOCAL-00290" summary="regulation&#10;">
+      <created>1482805791049</created>
+      <option name="number" value="00290" />
+      <option name="presentableId" value="LOCAL-00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1482805791050</updated>
+    </task>
+    <task id="LOCAL-00291" summary="regulation&#10;">
+      <created>1482832181829</created>
+      <option name="number" value="00291" />
+      <option name="presentableId" value="LOCAL-00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1482832181829</updated>
+    </task>
+    <task id="LOCAL-00292" summary="regulation&#10;">
+      <created>1482832196987</created>
+      <option name="number" value="00292" />
+      <option name="presentableId" value="LOCAL-00292" />
+      <option name="project" value="LOCAL" />
+      <updated>1482832196987</updated>
+    </task>
+    <task id="LOCAL-00293" summary="regulation&#10;">
+      <created>1482832226880</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1482832226880</updated>
+    </task>
+    <task id="LOCAL-00294" summary="regulation&#10;">
+      <created>1482832273187</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1482832273187</updated>
+    </task>
+    <task id="LOCAL-00295" summary="regulation&#10;">
+      <created>1482832298148</created>
+      <option name="number" value="00295" />
+      <option name="presentableId" value="LOCAL-00295" />
+      <option name="project" value="LOCAL" />
+      <updated>1482832298148</updated>
+    </task>
+    <task id="LOCAL-00296" summary="regulation&#10;">
+      <created>1482833455563</created>
+      <option name="number" value="00296" />
+      <option name="presentableId" value="LOCAL-00296" />
+      <option name="project" value="LOCAL" />
+      <updated>1482833455564</updated>
+    </task>
+    <task id="LOCAL-00297" summary="regulation&#10;">
+      <created>1482847658038</created>
+      <option name="number" value="00297" />
+      <option name="presentableId" value="LOCAL-00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1482847658040</updated>
+    </task>
+    <task id="LOCAL-00298" summary="regulation&#10;">
+      <created>1482903733050</created>
+      <option name="number" value="00298" />
+      <option name="presentableId" value="LOCAL-00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1482903733051</updated>
+    </task>
+    <task id="LOCAL-00299" summary="regulation&#10;">
+      <created>1482997702611</created>
+      <option name="number" value="00299" />
+      <option name="presentableId" value="LOCAL-00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1482997702612</updated>
+    </task>
+    <task id="LOCAL-00300" summary="regulation&#10;">
+      <created>1483521237959</created>
+      <option name="number" value="00300" />
+      <option name="presentableId" value="LOCAL-00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1483521237959</updated>
+    </task>
+    <task id="LOCAL-00301" summary="regulation&#10;">
+      <created>1483522663676</created>
+      <option name="number" value="00301" />
+      <option name="presentableId" value="LOCAL-00301" />
+      <option name="project" value="LOCAL" />
+      <updated>1483522663677</updated>
+    </task>
+    <task id="LOCAL-00302" summary="regulation&#10;">
+      <created>1483618617336</created>
+      <option name="number" value="00302" />
+      <option name="presentableId" value="LOCAL-00302" />
+      <option name="project" value="LOCAL" />
+      <updated>1483618617336</updated>
+    </task>
+    <task id="LOCAL-00303" summary="regulation&#10;">
+      <created>1483684705390</created>
+      <option name="number" value="00303" />
+      <option name="presentableId" value="LOCAL-00303" />
+      <option name="project" value="LOCAL" />
+      <updated>1483684705391</updated>
+    </task>
+    <task id="LOCAL-00304" summary="regulation&#10;">
+      <created>1483684743273</created>
+      <option name="number" value="00304" />
+      <option name="presentableId" value="LOCAL-00304" />
+      <option name="project" value="LOCAL" />
+      <updated>1483684743273</updated>
+    </task>
+    <task id="LOCAL-00305" summary="regulation&#10;">
+      <created>1483686844279</created>
+      <option name="number" value="00305" />
+      <option name="presentableId" value="LOCAL-00305" />
+      <option name="project" value="LOCAL" />
+      <updated>1483686844279</updated>
+    </task>
+    <task id="LOCAL-00306" summary="regulation&#10;">
+      <created>1483686859064</created>
+      <option name="number" value="00306" />
+      <option name="presentableId" value="LOCAL-00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1483686859064</updated>
+    </task>
+    <task id="LOCAL-00307" summary="regulation&#10;">
+      <created>1483686876527</created>
+      <option name="number" value="00307" />
+      <option name="presentableId" value="LOCAL-00307" />
+      <option name="project" value="LOCAL" />
+      <updated>1483686876528</updated>
+    </task>
+    <task id="LOCAL-00308" summary="regulation&#10;">
+      <created>1483692953734</created>
+      <option name="number" value="00308" />
+      <option name="presentableId" value="LOCAL-00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1483692953734</updated>
+    </task>
+    <task id="LOCAL-00309" summary="regulation&#10;">
+      <created>1483881424207</created>
+      <option name="number" value="00309" />
+      <option name="presentableId" value="LOCAL-00309" />
+      <option name="project" value="LOCAL" />
+      <updated>1483881424207</updated>
+    </task>
+    <task id="LOCAL-00310" summary="regulation&#10;">
+      <created>1483881473332</created>
+      <option name="number" value="00310" />
+      <option name="presentableId" value="LOCAL-00310" />
+      <option name="project" value="LOCAL" />
+      <updated>1483881473332</updated>
+    </task>
+    <task id="LOCAL-00311" summary="regulation&#10;">
+      <created>1484026378936</created>
+      <option name="number" value="00311" />
+      <option name="presentableId" value="LOCAL-00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1484026378936</updated>
+    </task>
+    <task id="LOCAL-00312" summary="regulation&#10;">
+      <created>1484026390425</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1484026390425</updated>
+    </task>
+    <task id="LOCAL-00313" summary="regulation&#10;">
+      <created>1484029595873</created>
+      <option name="number" value="00313" />
+      <option name="presentableId" value="LOCAL-00313" />
+      <option name="project" value="LOCAL" />
+      <updated>1484029595873</updated>
+    </task>
+    <task id="LOCAL-00314" summary="regulation&#10;">
+      <created>1484035247647</created>
+      <option name="number" value="00314" />
+      <option name="presentableId" value="LOCAL-00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1484035247647</updated>
+    </task>
+    <task id="LOCAL-00315" summary="regulation&#10;">
+      <created>1484035760214</created>
+      <option name="number" value="00315" />
+      <option name="presentableId" value="LOCAL-00315" />
+      <option name="project" value="LOCAL" />
+      <updated>1484035760214</updated>
+    </task>
+    <task id="LOCAL-00316" summary="regulation&#10;">
+      <created>1484118357955</created>
+      <option name="number" value="00316" />
+      <option name="presentableId" value="LOCAL-00316" />
+      <option name="project" value="LOCAL" />
+      <updated>1484118357956</updated>
+    </task>
+    <task id="LOCAL-00317" summary="regulation&#10;">
+      <created>1484209547055</created>
+      <option name="number" value="00317" />
+      <option name="presentableId" value="LOCAL-00317" />
+      <option name="project" value="LOCAL" />
+      <updated>1484209547056</updated>
+    </task>
+    <task id="LOCAL-00318" summary="regulation&#10;">
+      <created>1484632822761</created>
+      <option name="number" value="00318" />
+      <option name="presentableId" value="LOCAL-00318" />
+      <option name="project" value="LOCAL" />
+      <updated>1484632822762</updated>
+    </task>
+    <task id="LOCAL-00319" summary="regulation&#10;">
+      <created>1484632842317</created>
+      <option name="number" value="00319" />
+      <option name="presentableId" value="LOCAL-00319" />
+      <option name="project" value="LOCAL" />
+      <updated>1484632842317</updated>
+    </task>
+    <task id="LOCAL-00320" summary="regulation&#10;">
+      <created>1484634509909</created>
+      <option name="number" value="00320" />
+      <option name="presentableId" value="LOCAL-00320" />
+      <option name="project" value="LOCAL" />
+      <updated>1484634509909</updated>
+    </task>
+    <task id="LOCAL-00321" summary="regulation&#10;">
+      <created>1484635632475</created>
+      <option name="number" value="00321" />
+      <option name="presentableId" value="LOCAL-00321" />
+      <option name="project" value="LOCAL" />
+      <updated>1484635632475</updated>
+    </task>
+    <task id="LOCAL-00322" summary="regulation&#10;">
+      <created>1484637210279</created>
+      <option name="number" value="00322" />
+      <option name="presentableId" value="LOCAL-00322" />
+      <option name="project" value="LOCAL" />
+      <updated>1484637210279</updated>
+    </task>
+    <task id="LOCAL-00323" summary="regulation&#10;">
+      <created>1484644768425</created>
+      <option name="number" value="00323" />
+      <option name="presentableId" value="LOCAL-00323" />
+      <option name="project" value="LOCAL" />
+      <updated>1484644768425</updated>
+    </task>
+    <task id="LOCAL-00324" summary="regulation&#10;">
+      <created>1484644870550</created>
+      <option name="number" value="00324" />
+      <option name="presentableId" value="LOCAL-00324" />
+      <option name="project" value="LOCAL" />
+      <updated>1484644870550</updated>
+    </task>
+    <task id="LOCAL-00325" summary="regulation&#10;">
+      <created>1484645115553</created>
+      <option name="number" value="00325" />
+      <option name="presentableId" value="LOCAL-00325" />
+      <option name="project" value="LOCAL" />
+      <updated>1484645115553</updated>
+    </task>
+    <task id="LOCAL-00326" summary="regulation&#10;">
+      <created>1484706402500</created>
+      <option name="number" value="00326" />
+      <option name="presentableId" value="LOCAL-00326" />
+      <option name="project" value="LOCAL" />
+      <updated>1484706402501</updated>
+    </task>
+    <task id="LOCAL-00327" summary="regulation&#10;">
+      <created>1484706414810</created>
+      <option name="number" value="00327" />
+      <option name="presentableId" value="LOCAL-00327" />
+      <option name="project" value="LOCAL" />
+      <updated>1484706414810</updated>
+    </task>
+    <task id="LOCAL-00328" summary="regulation&#10;">
+      <created>1484707879366</created>
+      <option name="number" value="00328" />
+      <option name="presentableId" value="LOCAL-00328" />
+      <option name="project" value="LOCAL" />
+      <updated>1484707879366</updated>
+    </task>
+    <task id="LOCAL-00329" summary="regulation&#10;">
+      <created>1484725507708</created>
+      <option name="number" value="00329" />
+      <option name="presentableId" value="LOCAL-00329" />
+      <option name="project" value="LOCAL" />
+      <updated>1484725507708</updated>
+    </task>
+    <task id="LOCAL-00330" summary="regulation&#10;">
+      <created>1484725522098</created>
+      <option name="number" value="00330" />
+      <option name="presentableId" value="LOCAL-00330" />
+      <option name="project" value="LOCAL" />
+      <updated>1484725522098</updated>
+    </task>
+    <task id="LOCAL-00331" summary="regulation&#10;">
+      <created>1484733385900</created>
+      <option name="number" value="00331" />
+      <option name="presentableId" value="LOCAL-00331" />
+      <option name="project" value="LOCAL" />
+      <updated>1484733385901</updated>
+    </task>
+    <task id="LOCAL-00332" summary="regulation&#10;">
+      <created>1484735128160</created>
+      <option name="number" value="00332" />
+      <option name="presentableId" value="LOCAL-00332" />
+      <option name="project" value="LOCAL" />
+      <updated>1484735128160</updated>
+    </task>
+    <task id="LOCAL-00333" summary="regulation&#10;">
+      <created>1484735221165</created>
+      <option name="number" value="00333" />
+      <option name="presentableId" value="LOCAL-00333" />
+      <option name="project" value="LOCAL" />
+      <updated>1484735221165</updated>
+    </task>
+    <task id="LOCAL-00334" summary="regulation&#10;">
+      <created>1484757032210</created>
+      <option name="number" value="00334" />
+      <option name="presentableId" value="LOCAL-00334" />
+      <option name="project" value="LOCAL" />
+      <updated>1484757032210</updated>
+    </task>
+    <option name="localTasksCounter" value="335" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1424092000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22801302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266583" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.84230286" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916147" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68130744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test git" />
+    <MESSAGE value="rework&#10;" />
+    <MESSAGE value="delete customer&#10;" />
+    <MESSAGE value="financial upload&#10;" />
+    <MESSAGE value="disable update&#10;" />
+    <MESSAGE value="make sure project status&#10;&#10;" />
+    <MESSAGE value="checked project status&#10;&#10;" />
+    <MESSAGE value="fixed bug&#10;" />
+    <MESSAGE value="regulation&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="regulation&#10;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/hr/views/employee/employee-select-list-panel-advance.php</url>
+          <line>37</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/crm/views/supplier-apply-payment/list-panel.php</url>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/crm/models/customer/record/CustomerContactMap.php</url>
+          <line>95</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/hr/controllers/EmployeeController.php</url>
+          <line>76</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/crm/models/customer/record/PrivateCustomer.php</url>
+          <line>350</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/hr/controllers/EmployeeController.php</url>
+          <line>330</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/daily/views/transaction/index.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/crm/views/project-active-assess/index.php</url>
+          <line>1</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/candidate/list.php</url>
+          <line>1</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/modules/system/models/payment_assess_config/ProjectPaymentAssessConfig.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="72" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/backend/modules/daily/views/week-report/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/controllers/ApplyRecruitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/recommend-candidate/select-candidate-list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="112" column="36" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/recommend-candidate/select-candidate-panel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="52" column="43" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/recommend-candidate/recommend-candidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/recommend-candidate/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="80" column="59" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/js/calculate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="122" column="11" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/js/zUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/assets/AppAsset.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/apply-recruit/refuse-reason.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="32" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="40" column="14" selection-start-line="35" selection-start-column="12" selection-end-line="40" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/PrivateCustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="102" column="26" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/models/customer/record/PrivateCustomer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="158" column="45" selection-start-line="158" selection-start-column="45" selection-end-line="158" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/UpdateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/views/private-customer/private-customer-list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="39" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/views/private-customer/drop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="54" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/views/private-customer/customer-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="317" column="20" selection-start-line="317" selection-start-column="16" selection-end-line="317" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/views/project/failed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/models/project/record/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/views/project/project-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="341" column="24" selection-start-line="341" selection-start-column="24" selection-end-line="341" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/views/project/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="190" column="28" selection-start-line="190" selection-start-column="28" selection-end-line="190" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/views/public-customer/customer-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="266" column="34" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/candidate/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-557">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1481681661090" expanded="true" signature="2027:2129" ph="{...}" />
+            <marker date="1481681661090" expanded="true" signature="2085:2125" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/ProjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="49" column="14" selection-start-line="38" selection-start-column="12" selection-end-line="49" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/models/Candidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="254" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/receive-money/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/controllers/CandidateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/candidate/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/hr/recruitment/views/candidate/list-panel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="40" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/controllers/ReceiveMoneyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/models/AccountReceivable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/PrivateCustomerContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/PartTimeFinAccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/CustomerContractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-924">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/ProjectBriefController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/ProjectApplyStampController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/ProjectApplyPaymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/ProjectApplyCheckStampController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/CustomerConfigController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/CustomerStampController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/crm/controllers/CRMBaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/account-receivable/receive-record.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/account-receivable/list-filter-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/receive-money/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2046">
+          <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/receive-money/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/account-receivable/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/fin/accountReceivable/views/account-receivable/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/layouts/base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

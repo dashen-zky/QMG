@@ -1,0 +1,79 @@
+alter table crm_customer_basic modify type bigint unsigned not null default 1;
+alter table crm_customer_basic modify `from` bigint unsigned not null default 1;
+alter table crm_customer_basic modify industry bigint unsigned not null default 1;
+alter table crm_customer_basic modify intent_level bigint unsigned not null default 1;
+alter table crm_customer_basic modify fund_level bigint unsigned not null default 1;
+alter table crm_customer_basic modify status bigint unsigned not null default 1;
+alter table crm_touch_record modify type bigint unsigned not null default 1;
+alter table crm_touch_record modify result bigint unsigned not null default 1;
+alter table crm_customer_advance modify level bigint unsigned not null default 1;
+alter table crm_customer_business_map modify  business_id bigint unsigned not null default 1;
+/************************
+alter table crm_customer_business_map drop column type;
+/***************************add created uuid********************/
+从part_time表开始
+// account
+alter table fin_account add created_uuid varchar(45) not null default '';
+
+// part_time
+alter table crm_part_time add created_uuid varchar(45) not null default '';
+alter table crm_part_time_receive_account_map add created_uuid varchar(45) not null default '';
+
+// supplier
+alter table fin_contract add created_uuid varchar(45) not null default '';
+alter table crm_supplier_contact_map add created_uuid varchar(45) not null default '';
+alter table crm_supplier_contract_map add created_uuid varchar(45) not null default '';
+alter table crm_supplier_receive_account_map add created_uuid varchar(45) not null default '';
+alter table crm_supplier add created_uuid varchar(45) not null default '';
+
+// contact
+alter table crm_contact add  column created_uuid varchar(45) not null default '';
+
+// touch record
+alter table crm_touch_record add created_uuid varchar(45) not null default '';
+// project
+alter table crm_project add created_uuid varchar(45) not null default '';
+alter table crm_project_contract_map add created_uuid varchar(45) not null default '';
+alter table crm_project_contact_map add created_uuid varchar(45) not null default '';
+alter table crm_project_business_map add created_uuid varchar(45) not null default '';
+alter table crm_project_member_map add created_uuid varchar(45) not null default '';
+alter table crm_project_touch_record_map add created_uuid varchar(45) not null default '';
+alter table crm_customer_project_map add created_uuid varchar(45) not null default '';
+
+// customer
+alter table crm_customer_basic add created_uuid varchar(45) not null default '';
+alter table crm_customer_advance add created_uuid varchar(45) not null default '';
+alter table crm_customer_business_map add created_uuid varchar(45) not null default '';
+alter table crm_customer_touch_record_map add created_uuid varchar(45) not null default '';
+alter table crm_customer_contact_map add  column created_uuid varchar(45) not null default '';
+alter table crm_customer_contract_map add created_uuid varchar(45) not null default '';
+
+// department
+alter table hr_department add created_uuid varchar(45) not null default '';
+alter table hr_department_relation add created_uuid varchar(45) not null default '';
+// position
+alter table hr_position add created_uuid varchar(45) not null default '';
+// position employee map
+alter table hr_employee_position_map add created_uuid varchar(45) not null default '';
+//
+
+
+//update code
+alter table crm_customer_basic modify code varchar(45) not null default '';
+alter table crm_project modify code varchar(45) not null default '';
+alter table crm_supplier modify code varchar(45) not null default '';
+alter table fin_contract modify code varchar(45) not null default '';
+alter table crm_part_time modify code varchar(45) not null default '';
+
+// add enable filed for customer
+alter table crm_customer_basic add enable tinyint unsigned not null default 1;
+
+// add allocate for supplier and part time 有没有被分配
+alter table crm_supplier add allocate tinyint unsigned not null default 1;
+alter table crm_part_time add allocate tinyint unsigned not null default 1;
+
+// add enable filed for customer
+alter table crm_project add enable tinyint unsigned not null default 1;
+
+// 为了让合同支持多附件，将path字段的变成text
+alter table fin_contract modify path text not null default '' ;

@@ -1,0 +1,308 @@
+CREATE TABLE IF NOT EXISTS `daily_regulation` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `title` TEXT NOT NULL DEFAULT '' COMMENT '标题',
+  `content` MEDIUMTEXT NOT NULL DEFAULT '' COMMENT '内容',
+  `path` TEXT NOT NULL DEFAULT '' COMMENT '多附件，将附件地址使用serlize存放起来',
+  `created_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '上传时间',
+  `update_uuid` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '修改人',
+  `update_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '修改时间',
+  `abstract` text not null default '',
+  `code` varchar(100) not null default '',
+  `type` bigint unsigned not null default 0,
+  `public` tinyint unsigned not null default 1,
+  PRIMARY KEY (`uuid`), key(id))
+ENGINE = InnoDB charset utf8;
+CREATE TABLE IF NOT EXISTS `daily_regulation_employee_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `employee_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `regulation_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `created_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `employee_uuid_idx` (`employee_uuid` ASC),
+  INDEX `regulation_uuid_idx` (`regulation_uuid` ASC),
+    FOREIGN KEY (`employee_uuid`)
+    REFERENCES `hr_employee_basic_information` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`regulation_uuid`)
+    REFERENCES `daily_regulation` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+=============================================================================
+alter table hr_employee_basic_information add path text not null default '';
+================================================================================
+CREATE TABLE IF NOT EXISTS `hr_department_duty_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `department_uuid` VARCHAR(45) NOT NULL,
+  `duty_uuid` VARCHAR(45) NOT NULL,
+  `created_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `department_uuid_idx` (`department_uuid` ASC),
+  INDEX `duty_uuid_idx` (`duty_uuid` ASC),
+  CONSTRAINT `department_uuid`
+    FOREIGN KEY (`department_uuid`)
+    REFERENCES `hr_department` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `duty_uuid`
+    FOREIGN KEY (`duty_uuid`)
+    REFERENCES `hr_employee_basic_information` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `system_log` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `employee_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `object_uuid` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '被操作对象的全局id',
+  `operator` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '作的是什么操作',
+  `time` INT NOT NULL DEFAULT 0,
+  `description` VARCHAR(155) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `fin_payment` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `created_uuid` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '申请人',
+  `type` INT NOT NULL DEFAULT 0 COMMENT '付款类型',
+  `purpose` BIGINT NOT NULL DEFAULT 0 COMMENT '款项用途',
+  `description` TEXT NOT NULL DEFAULT '' COMMENT '摘要',
+  `budget_money` DECIMAL(10,2) NOT NULL DEFAULT 0 COMMENT '预算金额\n提交之后就不能改',
+  `actual_money` DECIMAL(10,2) NOT NULL DEFAULT 0 COMMENT '实际金额,可以为负数,负数情况下,是供应商退给我们的金额\n在被驳回之后可以修改',
+  `paied_money` DECIMAL(10,2) NOT NULL DEFAULT 0 COMMENT '已支付金额',
+  `receiver` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '接受者',
+  `receiver_contact_name` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '联系人名字',
+  `receiver_contact_phone` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '联系电话',
+  `receiver_account_type` BIGINT NOT NULL DEFAULT 0 COMMENT '收款账号类型',
+  `receiver_bank_of_deposit` VARCHAR(155) NOT NULL DEFAULT '' COMMENT '收款开户行',
+  `receiver_account` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '收款账号',
+  `remarks` TEXT NOT NULL DEFAULT '' COMMENT '备注',
+  `status` TINYINT NOT NULL default 0 COMMENT '保存\n等待一级审核\n一级审核未通过\n等待二级审核\n二级审核未通过\n等待三级审核\n三级审核未通过\n待付款\n部分付款\n已付款',
+  `with_stamp` TINYINT NOT NULL default 0 COMMENT '有无发票',
+  `expect_time` INT NOT NULL default 0 COMMENT '期望付款时间',
+  `payment_time` int not null default 0 comment '付款时间',
+  `code` bigint NOT NULL default 0,
+  `first_assess_uuid` VARCHAR(45) NOT NULL COMMENT '第一审核人',
+  `second_assess_uuid` VARCHAR(45) NOT NULL COMMENT '第二审核人',
+  `third_assess_uuid` VARCHAR(45) NOT NULL COMMENT '第三审核人',
+  `refuse_reason` text not null default '',
+  `evidence` text not null default '',
+  `paied_uuid` varchar(45) not null default '',
+  `paid_time` int unsigned not null default 0,
+  `stamp_status` tinyint unsigned not null default 0,
+  `remind_message` text not null default '',
+  `checked_stamp_money` decimal(10,2) unsigned not null default 0,
+  `checked_stamp_time` int unsigned not null default 0,
+  `checked_stamp_uuid` varchar(45) not null default '',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `crm_project_payment_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `payment_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+  INDEX `payment_uuid_idx` (`payment_uuid` ASC),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`payment_uuid`)
+    REFERENCES `fin_payment` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `crm_supplier_payment_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `payment_uuid` VARCHAR(45) NOT NULL,
+  `supplier_uuid` VARCHAR(45) NOT NULL,
+  `supplier_type` TINYINT UNSIGNED NOT NULL COMMENT '判断是供应商还是兼职',
+  `receiver_account_uuid` VARCHAR(45) NOT NULL,
+  `receiver_contact_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `payment_uuid_idx` (`payment_uuid` ASC),
+    FOREIGN KEY (`payment_uuid`)
+    REFERENCES `fin_payment` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `fin_stamp` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `type` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '销项发票还是进项发票',
+  `service_type` BIGINT NOT NULL COMMENT '服务类型，也就是发票类型',
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '销项票 签收，未签收\n进项票 验收，未验收',
+  `money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '发票金额，含税',
+  `tax_point` DECIMAL(10,5) UNSIGNED NOT NULL DEFAULT 0 COMMENT '税点',
+  `tax_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '税费',
+  `before_tax_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `checked_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '已经被匹配的金额',
+  `series_number` VARCHAR(45) NOT NULL,
+  `made_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '开票时间',
+  `remarks` TEXT NOT NULL DEFAULT '',
+  `attachment` TEXT NOT NULL DEFAULT '' COMMENT '发票附件',
+  `created_uuid` VARCHAR(45) NOT NULL COMMENT '创建人',
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '录入时间',
+  `provider` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '开票方',
+  `receiver` VARCHAR(200) NOT NULL COMMENT '收票方',
+  `provider_tax_code` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '开票税号',
+  `receiver_tax_code` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '收票方税号',
+  `provider_address` VARCHAR(200) NOT NULL DEFAULT '',
+  `receiver_address` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '收票方地址',
+  `provider_phone` VARCHAR(45) NOT NULL DEFAULT '',
+  `receiver_phone` VARCHAR(45) NOT NULL DEFAULT '',
+  `provider_fin_account` VARCHAR(45) NOT NULL DEFAULT '',
+  `receiver_fin_account` VARCHAR(45) NOT NULL DEFAULT '',
+  `provider_bank_of_deposit` VARCHAR(200) NOT NULL DEFAULT '',
+  `receiver_bank_of_deposit` VARCHAR(200) NOT NULL DEFAULT '',
+  `payment_accept_person` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '收款人',
+  `submit_uuid` VARCHAR(45) NOT NULL default '',
+  `enable` tinyint unsigned not null default 0,
+  `express_series_number` VARCHAR(45) NOT NULL default '',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `fin_payment_stamp_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `stamp_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `payment_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `checked_uuid` VARCHAR(45) NOT NULL COMMENT '验收人',
+  `checked_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '验票时间',
+  PRIMARY KEY (`id`),
+  INDEX `payment_uuid_idx` (`payment_uuid` ASC),
+  INDEX `stamp_uuid_idx` (`stamp_uuid` ASC),
+  CONSTRAINT `payment_uuid`
+    FOREIGN KEY (`payment_uuid`)
+    REFERENCES `fin_payment` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `stamp_uuid`
+    FOREIGN KEY (`stamp_uuid`)
+    REFERENCES `fin_stamp` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `fin_account_receivable` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `path` TEXT NOT NULL DEFAULT '',
+  `time` INT unsigned NOT NULL DEFAULT 0,
+  `payment` VARCHAR(100) NOT NULL DEFAULT '',
+  `remarks` TEXT NOT NULL DEFAULT '',
+  `created_uuid` VARCHAR(45) NOT NULL,
+  `bank_series_number` VARCHAR(45) NOT NULL default '',
+  `money` decimal(10,2) unsigned not null default 0,
+  `distributed_money` decimal(10,2) unsigned not null default 0,
+  `enable` tinyint unsigned not null default 0,
+  `receive_time` int unsigned not null default 0,
+  PRIMARY KEY (`uuid`), key(id))
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `crm_project_account_receivable_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `account_receivable_uuid` VARCHAR(45) NOT NULL,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `money` decimal(10,2) unsigned not null default 0,
+  PRIMARY KEY (`id`),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+  INDEX `account_receivable_uuid_idx` (`account_receivable_uuid` ASC),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`account_receivable_uuid`)
+    REFERENCES `fin_account_receivable` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+================================================================================
+alter table crm_project modify actual_money_amount decimal(10,2) unsigned not null default 0;
+alter table crm_project modify return_money_amount decimal(10,2) unsigned not null default 0;
+alter table crm_project add paied_money decimal(10,2) unsigned not null default 0;
+alter table crm_project add checked_stamp_money decimal(10,2) unsigned not null default 0;
+================================================================================
+CREATE TABLE IF NOT EXISTS `crm_project_apply_stamp` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0,
+  `checked_stamp_money` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '已开票金额',
+  `created_uuid` VARCHAR(45) NOT NULL,
+  `created_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '未开票\n部分开票\n已开票',
+  `enable` tinyint unsigned not null default 0,
+  `stamp_message_uuid` varchar(45) not null default '',
+  PRIMARY KEY (`uuid`),key(id),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+================================================================================
+CREATE TABLE IF NOT EXISTS `crm_project_apply_stamp_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `stamp_uuid` VARCHAR(45) NOT NULL,
+  `project_apply_stamp_uuid` VARCHAR(45) NOT NULL,
+  `money` DECIMAL(10,2) NOT NULL,
+  `checked_uuid` varchar(45) not null default '',
+  `checked_time` int unsigned not null default 0,
+  PRIMARY KEY (`id`),
+  INDEX `stamp_uuid_idx` (`stamp_uuid` ASC),
+  INDEX `project_apply_stamp_uuid_idx` (`project_apply_stamp_uuid` ASC),
+    FOREIGN KEY (`stamp_uuid`)
+    REFERENCES `fin_stamp` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`project_apply_stamp_uuid`)
+    REFERENCES `crm_project_apply_stamp` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+==========================================11.1===========================
+alter table crm_customer_basic add is_new_record tinyint unsigned not null default 1;
+alter table crm_contact add is_new_record tinyint unsigned not null default 1;
+alter table crm_contact add remarks text not null default '';
+alter table crm_customer_contact_map add is_new_record tinyint unsigned not null default 1;
+alter table crm_project add is_new_record tinyint unsigned not null default 1;
+alter table crm_contact add code int unsigned not null default 0;
+alter table crm_customer_project_map add is_new_record tinyint not null default 1;
+alter table crm_project_contact_map add is_new_record tinyint not null default 1;
+===========================================================================================
+alter table daily_regulation drop public;
+alter table daily_regulation add tags varchar(100) not null default '';
+============================================================================
+CREATE TABLE IF NOT EXISTS `daily_regulation_editor_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '指定谁可以编辑文档',
+  `regulation_uuid` VARCHAR(45) NOT NULL,
+  `editor_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `regulation_uuid_idx` (`regulation_uuid` ASC),
+  CONSTRAINT `regulation_uuid`
+    FOREIGN KEY (`regulation_uuid`)
+    REFERENCES `daily_regulation` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+============================================================================
+alter table hr_employee_basic_attachment_information add entry_list text;
+alter table hr_employee_basic_attachment_information add dismiss_list text;
+===============================================================================
+CREATE TABLE IF NOT EXISTS `fin_receive_money_company` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `bank_of_deposit` VARCHAR(155) NOT NULL COMMENT '收款银行开户行',
+  `account` VARCHAR(45) NOT NULL COMMENT '收款账号',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+alter table fin_account_receivable add receive_company_uuid varchar(45) not null default '' references fin_receive_money_company(uuid) on delete cascade;

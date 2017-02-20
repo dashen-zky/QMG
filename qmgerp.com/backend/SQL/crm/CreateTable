@@ -1,0 +1,418 @@
+/**********************************crm_contact****************************/
+CREATE TABLE IF NOT EXISTS `crm_contact` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `name` VARCHAR(45) NOT NULL default '',
+  `gender` TINYINT UNSIGNED NOT NULL default 1 COMMENT '1 男性\n2 女性',
+  `position` VARCHAR(45) NOT NULL default '',
+  `phone` BIGINT unsigned NOT NULL default 0,
+  `weichat` VARCHAR(45) NOT NULL default '',
+  `qq` BIGINT NOT NULL default 0,
+  `office_phone` VARCHAR(20) NOT NULL default '',
+  `address` VARCHAR(200) NOT NULL default '',
+  `email` VARCHAR(100) NOT NULL default '',
+  `type` tinyint unsigned not null default 1 COMMENT '对应客户状态 1表示联系人\n2表示负责人',
+  PRIMARY KEY (`uuid`),
+  key(id))
+ENGINE = InnoDB charset utf8;
+/**************************************crm_customer_basic********************/
+CREATE TABLE IF NOT EXISTS `crm_customer_basic` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `full_name` varchar(155) not null,
+  `type` bigint UNSIGNED NOT NULL DEFAULT 1 COMMENT '客户类别',
+  `from` bigint UNSIGNED NOT NULL DEFAULT 1 COMMENT '客户来源\n',
+  `industry` bigint unsigned NOT NULL DEFAULT 1,
+  `city` bigint unsigned NOT NULL DEFAULT 0,
+  `require_analyse` TEXT NOT NULL DEFAULT '' COMMENT '潜在需求分析\n',
+  `website` VARCHAR(45) NOT NULL DEFAULT '',
+  `intent_level` bigint UNSIGNED NOT NULL DEFAULT 1 COMMENT '推介级别,客户的意向度级别',
+  `em_uuid` VARCHAR(45) NOT NULL default '' COMMENT '推介人',
+  `address` VARCHAR(200) NOT NULL DEFAULT '',
+  `time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '添加时间',
+  `reason` TEXT NOT NULL DEFAULT '',
+  `description` TEXT NOT NULL DEFAULT '',
+  `remarks` TEXT NOT NULL DEFAULT '',
+  `code` varchar(45) not null default '',
+  `public_tag` tinyint unsigned not null default 1 comment '是不是公共客户',
+  `status` bigint UNSIGNED NOT NULL DEFAULT 1 COMMENT '客户的状态 \n1. 表示潜在客户\n2. 跟进中 跟进中的客户就会有分配销售\n3. 合作中 分配项目经理\n4. 已结案\n',
+  `last_touch_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '保持与跟进记录里面的最后一次的时间相同',
+  `predict_contract_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '与最后一次联系的写入的预计签约金额一致',
+  `predict_contract_value` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '与最近一次的联系记录里的预计签约金额一致',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+/**************************************crm_touch_record**************************/
+CREATE TABLE IF NOT EXISTS `crm_touch_record` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '跟进时间 默认当前时间',
+  `type` bigint UNSIGNED NOT NULL DEFAULT 1 COMMENT '跟进方式\n1. 电话\n2. 面谈',
+  `contact_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `next_touch_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '下次跟进时间',
+  `result` bigint UNSIGNED NOT NULL DEFAULT 1 COMMENT '跟进结果的列表\n1.',
+  `description` TEXT NOT NULL DEFAULT '' COMMENT '跟进情况说明',
+  `predict_contract_time` INT UNSIGNED NOT NULL DEFAULT 0,
+  `predict_contract_value` VARCHAR(45) NOT NULL DEFAULT '',
+  `follow_uuid` varchar(45) not null default '',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+/********************************crm_customer_touch_record_map**********************/
+CREATE TABLE IF NOT EXISTS `crm_customer_touch_record_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `customer_uuid` VARCHAR(45) NOT NULL,
+  `touch_record_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+    FOREIGN KEY (`customer_uuid`)
+    REFERENCES `crm_customer_basic` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`touch_record_uuid`)
+    REFERENCES `crm_touch_record` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/*******************************************crm_customer_contact_map**********************/
+CREATE TABLE IF NOT EXISTS `crm_customer_contact_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `contact_uuid` VARCHAR(45) NOT NULL,
+  `customer_uuid` VARCHAR(45) NOT NULL,
+  `type` TINYINT UNSIGNED NOT NULL default 1 COMMENT '1 联系人\n2 负责人',
+  PRIMARY KEY (`id`),
+  INDEX `contact_uuid_idx` (`contact_uuid` ASC),
+  INDEX `customer_uuid_idx` (`customer_uuid` ASC),
+  CONSTRAINT `contact_uuid`
+    FOREIGN KEY (`contact_uuid`)
+    REFERENCES `crm_contact` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `customer_uuid`
+    FOREIGN KEY (`customer_uuid`)
+    REFERENCES `crm_customer_basic` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/**********************************************************crm_customer_advance**********/
+CREATE TABLE IF NOT EXISTS `crm_customer_advance` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `level` bigint UNSIGNED NOT NULL DEFAULT 1 COMMENT '1. 潜在客户\n2. 普通客户\n3. 重点客户\n4. KA客户',
+  `sales_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `next_touch_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '与crm costumer里面最后一次跟进时间保持一致',
+  `customer_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `obtain_time` int unsigned not null default 0 comment '获取时间',
+  PRIMARY KEY (`id`),
+  CONSTRAINT `customer_uuid_idx`
+    FOREIGN KEY (`customer_uuid`)
+    REFERENCES `crm_customer_basic` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/**************************************crm_customer_business_map*************************/
+CREATE TABLE IF NOT EXISTS `crm_customer_business_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `customer_uuid` VARCHAR(45) NOT NULL,
+  `business_id` BIGINT UNSIGNED NOT NULL COMMENT '对应的配置信息里面的业务板块的id',
+  PRIMARY KEY (`id`),
+    FOREIGN KEY (`customer_uuid`)
+    REFERENCES `crm_customer_basic` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/***********************************crm_project*********************/
+CREATE TABLE IF NOT EXISTS `crm_project` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `code` INT UNSIGNED NOT NULL COMMENT '项目编号',
+  `status` BIGINT UNSIGNED NOT NULL,
+  `last_touch_time` INT UNSIGNED NOT NULL,
+  `next_touch_time` INT UNSIGNED NOT NULL,
+  `start_time` INT UNSIGNED NOT NULL,
+  `end_time` INT UNSIGNED NOT NULL default 0,
+  `create_time` INT UNSIGNED NOT NULL,
+  `money_amount` VARCHAR(45) NOT NULL COMMENT '项目金额',
+  `actual_money_amount` varchar(45) not null default '' comment '项目实际金额',
+  `receive_money_status` BIGINT UNSIGNED NOT NULL,
+  `return_money_amount` VARCHAR(45) NOT NULL COMMENT '返点金额',
+  `stamp_status` BIGINT UNSIGNED NOT NULL,
+  `contract_status` BIGINT UNSIGNED NOT NULL,
+  `description` TEXT NOT NULL DEFAULT '',
+  `project_manager_uuid` VARCHAR(45) NOT NULL COMMENT '项目经理',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+/*********************crm_project_contact_map************/
+CREATE TABLE IF NOT EXISTS `crm_project_contact_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `contact_uuid` VARCHAR(45) NOT NULL,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `duty` TINYINT UNSIGNED NOT NULL COMMENT '2 负责人\n1 联系人',
+  PRIMARY KEY (`id`),
+  INDEX `contact_uuid_idx` (`contact_uuid` ASC),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+    FOREIGN KEY (`contact_uuid`)
+    REFERENCES `crm_contact` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/****************************************crm_project_employee_map************************/
+CREATE TABLE IF NOT EXISTS `crm_project_employee_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `employee_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+  INDEX `employee_uuid_idx` (`employee_uuid` ASC),
+  CONSTRAINT `project_uuid`
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `employee_uuid`
+    FOREIGN KEY (`employee_uuid`)
+    REFERENCES `hr_employee_basic_information` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/***********************************************crm_project_touch_record_map************/
+CREATE TABLE IF NOT EXISTS `crm_project_touch_record_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `touch_record_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+  INDEX `touch_record_uuid_idx` (`touch_record_uuid` ASC),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`touch_record_uuid`)
+    REFERENCES `crm_touch_record` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/*******************************************************crm_project_contact_map****************/
+CREATE TABLE IF NOT EXISTS `crm_project_contact_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `contact_uuid` VARCHAR(45) NOT NULL,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `duty` TINYINT UNSIGNED NOT NULL COMMENT '2 负责人\n1 联系人',
+  PRIMARY KEY (`id`),
+  INDEX `contact_uuid_idx` (`contact_uuid` ASC),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+  CONSTRAINT `contact_uuid`
+    FOREIGN KEY (`contact_uuid`)
+    REFERENCES `crm_contact` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `project_uuid`
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/*******************************************crm_project_business_map**************/
+CREATE TABLE IF NOT EXISTS `crm_project_business_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `project_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `business_id` BIGINT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  INDEX `Project_uuid_idx` (`project_uuid` ASC),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/********************************************crm_customer_project_map*************************/
+CREATE TABLE IF NOT EXISTS `crm_customer_project_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `customer_uuid` VARCHAR(45) NOT NULL,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `customer_uuid_idx` (`customer_uuid` ASC),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+    FOREIGN KEY (`customer_uuid`)
+    REFERENCES `crm_customer_basic` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/***********************************crm_project_contract_map*************************/
+CREATE TABLE IF NOT EXISTS `crm_project_contract_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `contract_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+  INDEX `contract_uuid_idx` (`contract_uuid` ASC),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`contract_uuid`)
+    REFERENCES `fin_contract` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/**********************************************crm_customer_contract_map*******************/
+CREATE TABLE IF NOT EXISTS `crm_customer_contract_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `customer_uuid` VARCHAR(45) NOT NULL,
+  `contract_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `customer_uuid_idx` (`customer_uuid` ASC),
+  INDEX `contract_uuid_idx` (`contract_uuid` ASC),
+    FOREIGN KEY (`customer_uuid`)
+    REFERENCES `crm_customer_basic` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`contract_uuid`)
+    REFERENCES `fin_contract` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/*****************************************crm_project_member_map***********************/
+CREATE TABLE IF NOT EXISTS `crm_project_member_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `project_uuid` VARCHAR(45) NOT NULL,
+  `member_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `project_uuid_idx` (`project_uuid` ASC),
+  INDEX `employee_uuid_idx` (`member_uuid` ASC),
+    FOREIGN KEY (`project_uuid`)
+    REFERENCES `crm_project` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`member_uuid`)
+    REFERENCES `hr_employee_basic_information` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+
+*************************************************************************************************************
+/*********************************************************crm_supplier***********************/
+CREATE TABLE IF NOT EXISTS `crm_supplier` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `code` varchar(45) not null default '',
+  `level` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `type` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '供应商类型',
+  `feature` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '供应商类型',
+  `status` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `term` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '供应商账期',
+  `from` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '来源',
+  `value_term` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '价格有效期',
+  `bottom_value` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0 COMMENT '保底金额',
+  `manager_uuid` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '管理者',
+  `description` TEXT NOT NULL DEFAULT '',
+  `remarks` TEXT NOT NULL DEFAULT '' COMMENT '备注',
+  `refuse_reason` TEXT NOT NULL DEFAULT '' COMMENT '审核拒绝的原因',
+  `path` varchar(155) not null default '' comment '附件路径',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+/****************************************************crm_supplier_contract_map********************/
+CREATE TABLE IF NOT EXISTS `crm_supplier_contract_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `supplier_uuid` VARCHAR(45) NOT NULL,
+  `contract_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `supplier_uuid_idx` (`supplier_uuid` ASC),
+  INDEX `contract_uuid_idx` (`contract_uuid` ASC),
+  CONSTRAINT `supplier_uuid`
+    FOREIGN KEY (`supplier_uuid`)
+    REFERENCES `crm_supplier` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `contract_uuid`
+    FOREIGN KEY (`contract_uuid`)
+    REFERENCES `fin_contract` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/************************************************crm_supplier_contact_map********************/
+CREATE TABLE IF NOT EXISTS `crm_supplier_contact_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `contact_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `supplier_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `type` tinyint unsigned not null default 1,
+  PRIMARY KEY (`id`),
+  INDEX `contact_uuid_idx` (`contact_uuid` ASC),
+  INDEX `supplier_uuid_idx` (`supplier_uuid` ASC),
+    FOREIGN KEY (`contact_uuid`)
+    REFERENCES `crm_contact` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`supplier_uuid`)
+    REFERENCES `crm_supplier` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/**********************************crm_supplier_receive_account_map**************/
+CREATE TABLE IF NOT EXISTS `crm_supplier_receive_account_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `account_uuid` VARCHAR(45) NOT NULL,
+  `supplier_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `supplier_uuid_idx` (`supplier_uuid` ASC),
+  INDEX `account_uuid_idx` (`account_uuid` ASC),
+    FOREIGN KEY (`supplier_uuid`)
+    REFERENCES `crm_supplier` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (`account_uuid`)
+    REFERENCES `fin_account` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+
+/***********************************************
+/***********************************************************crm_part_time*************************/
+CREATE TABLE IF NOT EXISTS `crm_part_time` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL DEFAULT '',
+  `status` bigint unsigned not null default 0,
+  `gender` TINYINT UNSIGNED NOT NULL DEFAULT 1,
+  `position` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `check_status` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `english_name` VARCHAR(45) NOT NULL DEFAULT '',
+  `phone` VARCHAR(20) NOT NULL DEFAULT '',
+  `qq` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `wechat` VARCHAR(45) NOT NULL DEFAULT '',
+  `email` VARCHAR(45) NOT NULL DEFAULT '',
+  `description` TEXT NOT NULL DEFAULT '',
+  `remarks` TEXT NOT NULL DEFAULT '',
+  `refuse_reason` TEXT NOT NULL DEFAULT '',
+  `path` TEXT NOT NULL DEFAULT '',
+  `code` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '编码',
+  `manager_uuid` varchar(45) not null default '',
+  `created_uuid` varchar(45) not null default '',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+/*************************************crm_part_time_receive_account_map******************/
+CREATE TABLE IF NOT EXISTS `crm_part_time_receive_account_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `account_uuid` VARCHAR(45) NOT NULL,
+  `part_time_uuid` VARCHAR(45) NOT NULL,
+  `created_uuid` varchar(45) not null default '',
+  PRIMARY KEY (`id`),
+  INDEX `account_uuid_idx` (`account_uuid` ASC),
+  INDEX `part_time_uuid_idx` (`part_time_uuid` ASC),
+  CONSTRAINT `account_uuid`
+    FOREIGN KEY (`account_uuid`)
+    REFERENCES `fin_account` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `part_time_uuid`
+    FOREIGN KEY (`part_time_uuid`)
+    REFERENCES `crm_part_time` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;

@@ -1,0 +1,1442 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f6aa0e4f7ba, pid=7293, tid=0x00007f6a7c1b5700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_112-b03) (build 1.8.0_112-release-287-b3)
+# Java VM: OpenJDK 64-Bit Server VM (25.112-b3 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# v  ~BufferBlob::jni_fast_GetLongField
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f6ab08c2000):  JavaThread "AWT-XAWT" daemon [_thread_in_native, id=7319, stack(0x00007f6a7c0b5000,0x00007f6a7c1b6000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000000
+
+Registers:
+RAX=0x00007f6ab61e9980, RBX=0x00007f6ab08c21e0, RCX=0x00007f6ab6c3f2c0, RDX=0x0000000000000042
+RSP=0x00007f6a7c1b4578, RBP=0x00007f6a7c1b45a0, RSI=0x0000000000000000, RDI=0x00007f6ab08c21e0
+R8 =0x00000000e12eb8a0, R9 =0x0000000000000000, R10=0x0000000000000c04, R11=0x00007f6aa22cd958
+R12=0x0000000002c049f0, R13=0x0000000000000000, R14=0x00007f6a7e8e48a0, R15=0x00007f6ab08c2000
+RIP=0x00007f6aa0e4f7ba, EFLAGS=0x0000000000010246, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f6a7c1b4578)
+0x00007f6a7c1b4578:   00007f6a7e6c2001 00007f6a912cec60
+0x00007f6a7c1b4588:   0000000002c049f0 00007f6a7c1b4650
+0x00007f6a7c1b4598:   00007f6a7c1b4620 0000000000000000
+0x00007f6a7c1b45a8:   00007f6a7e1823c0 00007f6a912cec60
+0x00007f6a7c1b45b8:   00007f6a7c1b45e0 0000000000000000
+0x00007f6a7c1b45c8:   00007f6a7e179f93 00007f6a7c1b4650
+0x00007f6a7c1b45d8:   00007f6a7e6bb34f 00007f6a7c1b4630
+0x00007f6a7c1b45e8:   00007f6aa22cd9f6 0000000000000000
+0x00007f6a7c1b45f8:   00007f6aa0f79476 00007f6a7c1b4650
+0x00007f6a7c1b4608:   00007f6aa0f6e92c 00007f6a7c1b46b0
+0x00007f6a7c1b4618:   00000000e10048f8 00000000e10e6030
+0x00007f6a7c1b4628:   0000000000000001 00007f6a7c1b46b0
+0x00007f6a7c1b4638:   00007f6aa0ded7d0 00007f6a7c1b46b0
+0x00007f6a7c1b4648:   00007f6aa0ded7d0 0000000000000000
+0x00007f6a7c1b4658:   00007f6aa0dedb10 00007f6a58001020
+0x00007f6a7c1b4668:   00000000e1617868 00007f6a7c1b4670
+0x00007f6a7c1b4678:   00007f6a912ae97c 00007f6a7c1b46f8
+0x00007f6a7c1b4688:   00007f6a912b7908 0000000000000000
+0x00007f6a7c1b4698:   00007f6a912aeab8 00007f6a7c1b4650
+0x00007f6a7c1b46a8:   00007f6a7c1b46f0 00007f6a7c1b4740
+0x00007f6a7c1b46b8:   00007f6aa0dedffd 0000000000000000
+0x00007f6a7c1b46c8:   00000000e393cc98 0000000000000000
+0x00007f6a7c1b46d8:   0000000000000000 0000000000000000
+0x00007f6a7c1b46e8:   00000000e1617868 0000000000000000
+0x00007f6a7c1b46f8:   00000000e0c49c78 00007f6a7c1b4700
+0x00007f6a7c1b4708:   00007f6a912ae7bd 00007f6a7c1b4750
+0x00007f6a7c1b4718:   00007f6a912b7908 0000000000000000
+0x00007f6a7c1b4728:   00007f6a912ae7c8 00007f6a7c1b46f0
+0x00007f6a7c1b4738:   00007f6a7c1b4750 00007f6a7c1b4798
+0x00007f6a7c1b4748:   00007f6aa0dee042 00000000e0c49c78
+0x00007f6a7c1b4758:   00007f6a7c1b4758 00007f6a90b578e3
+0x00007f6a7c1b4768:   00007f6a7c1b47a8 00007f6a90bdefa8 
+
+Instructions: (pc=0x00007f6aa0e4f7ba)
+0x00007f6aa0e4f79a:   00 00 00 00 00 00 44 8b 15 81 6d 3c 15 4c 8b ce
+0x00007f6aa0e4f7aa:   41 f6 c2 01 0f 85 2e 00 00 00 4d 33 ca 4d 33 ca
+0x00007f6aa0e4f7ba:   4d 8b 09 4c 8b da 49 c1 eb 02 4b 8b 04 19 49 bb
+0x00007f6aa0e4f7ca:   28 65 21 b6 6a 7f 00 00 4c 33 d8 4c 33 d8 45 3b 
+
+Register to memory mapping:
+
+RAX=0x00007f6ab61e9980: <offset 0xeeb980> in /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/server/libjvm.so at 0x00007f6ab52fe000
+RBX=0x00007f6ab08c21e0 is an unknown value
+RCX=0x00007f6ab6c3f2c0: <offset 0x2182c0> in /lib/x86_64-linux-gnu/libpthread.so.0 at 0x00007f6ab6a27000
+RDX=0x0000000000000042 is an unknown value
+RSP=0x00007f6a7c1b4578 is pointing into the stack for thread: 0x00007f6ab08c2000
+RBP=0x00007f6a7c1b45a0 is pointing into the stack for thread: 0x00007f6ab08c2000
+RSI=0x0000000000000000 is an unknown value
+RDI=0x00007f6ab08c21e0 is an unknown value
+R8 =0x00000000e12eb8a0 is an oop
+sun.util.logging.PlatformLogger$Level 
+ - klass: 'sun/util/logging/PlatformLogger$Level'
+R9 =0x0000000000000000 is an unknown value
+R10=0x0000000000000c04 is an unknown value
+R11=0x00007f6aa22cd958 is at entry_point+24 in (nmethod*)0x00007f6aa22cd7d0
+R12=0x0000000002c049f0 is an unknown value
+R13=0x0000000000000000 is an unknown value
+R14=0x00007f6a7e8e48a0: <offset 0x2598a0> in /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libawt_xawt.so at 0x00007f6a7e68b000
+R15=0x00007f6ab08c2000 is a thread
+
+
+Stack: [0x00007f6a7c0b5000,0x00007f6a7c1b6000],  sp=0x00007f6a7c1b4578,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+v  ~BufferBlob::jni_fast_GetLongField
+C  [libX11.so.6+0x643c0]  _XimServerDestroy+0x70
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 7986  sun.awt.X11.XlibWrapper.XFilterEvent(JJ)Z (0 bytes) @ 0x00007f6aa22cd984 [0x00007f6aa22cd940+0x44]
+j  sun.awt.X11.XToolkit.run(Z)V+300
+j  sun.awt.X11.XToolkit.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f6a140cf000 JavaThread "BaseDataReader: error stream of fsnotifier64" [_thread_in_native, id=14017, stack(0x00007f6a4c27d000,0x00007f6a4c37e000)]
+  0x00007f6a1c002800 JavaThread "ApplicationImpl pooled thread 13" [_thread_blocked, id=10580, stack(0x00007f6a120b1000,0x00007f6a121b2000)]
+  0x0000000002b07000 JavaThread "TimerQueue" daemon [_thread_blocked, id=7441, stack(0x00007f6a45d32000,0x00007f6a45e33000)]
+  0x00007f6a140cd000 JavaThread "Netty Builtin Server 2" [_thread_in_native, id=7360, stack(0x00007f6a123b2000,0x00007f6a124b3000)]
+  0x00000000026ea800 JavaThread "ProcessWaitFor: fsnotifier64" [_thread_blocked, id=7354, stack(0x00007f6a12b59000,0x00007f6a12c5a000)]
+  0x00000000026e9000 JavaThread "BaseDataReader: output stream of fsnotifier64" [_thread_in_native, id=7353, stack(0x00007f6a12c5a000,0x00007f6a12d5b000)]
+  0x00000000026e6800 JavaThread "Process I/O pool 1" [_thread_blocked, id=7352, stack(0x00007f6a13a05000,0x00007f6a13b06000)]
+  0x00007f6a382b9000 JavaThread "AWT-EventQueue-0 2016.2.2#PS-162.2380.11 PhpStorm, eap:false, os:Linux 4.4.0-59-generic, java-version:JetBrains s.r.o 1.8.0_112-release-287-b3" [_thread_blocked, id=7339, stack(0x00007f6a4c17c000,0x00007f6a4c27d000)]
+  0x00007f6a3821c800 JavaThread "AWT-Shutdown" [_thread_blocked, id=7335, stack(0x00007f6a44ed3000,0x00007f6a44fd4000)]
+  0x00007f6a3821b800 JavaThread "Periodic tasks thread" [_thread_blocked, id=7334, stack(0x00007f6a44fd4000,0x00007f6a450d5000)]
+  0x00007f6a38206800 JavaThread "Timer-0" daemon [_thread_blocked, id=7333, stack(0x00007f6a450d5000,0x00007f6a451d6000)]
+  0x00007f6a38179800 JavaThread "Netty Builtin Server 1" [_thread_in_native, id=7330, stack(0x00007f6a457f8000,0x00007f6a458f9000)]
+  0x00007f6a380be000 JavaThread "process reaper" daemon [_thread_in_native, id=7328, stack(0x00007f6a45af9000,0x00007f6a45b32000)]
+  0x00007f6ab000b000 JavaThread "DestroyJavaVM" [_thread_blocked, id=7296, stack(0x00007f6ab6d41000,0x00007f6ab6e42000)]
+=>0x00007f6ab08c2000 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=7319, stack(0x00007f6a7c0b5000,0x00007f6a7c1b6000)]
+  0x00007f6ab08a1000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=7318, stack(0x00007f6a7c5c6000,0x00007f6a7c6c7000)]
+  0x00007f6ab0188800 JavaThread "Service Thread" daemon [_thread_blocked, id=7311, stack(0x00007f6a7fafb000,0x00007f6a7fbfc000)]
+  0x00007f6ab017d800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=7310, stack(0x00007f6a7fbfc000,0x00007f6a7fcfd000)]
+  0x00007f6ab017b800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=7309, stack(0x00007f6a7fcfd000,0x00007f6a7fdfe000)]
+  0x00007f6ab0179000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=7308, stack(0x00007f6a7fdfe000,0x00007f6a7feff000)]
+  0x00007f6ab0177000 JavaThread "Signal Dispatcher" daemon [_thread_in_native, id=7307, stack(0x00007f6a7feff000,0x00007f6a80000000)]
+  0x00007f6ab0173000 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=7306, stack(0x00007f6a900cc000,0x00007f6a901cd000)]
+  0x00007f6ab0142000 JavaThread "Finalizer" daemon [_thread_blocked, id=7305, stack(0x00007f6a90658000,0x00007f6a90759000)]
+  0x00007f6ab013d800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7304, stack(0x00007f6a90759000,0x00007f6a9085a000)]
+
+Other Threads:
+  0x00007f6ab0136000 VMThread [stack: 0x00007f6a9085a000,0x00007f6a9095b000] [id=7303]
+  0x00007f6ab018b800 WatcherThread [stack: 0x00007f6a7f9fa000,0x00007f6a7fafb000] [id=7312]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ par new generation   total 39296K, used 34513K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K,  86% used [0x00000000d1200000, 0x00000000d2f74558, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3860000, 0x00000000d3ca0000, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 87424K, used 54923K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 102395K, capacity 107694K, committed 107888K, reserved 1142784K
+  class space    used 14183K, capacity 15522K, committed 15592K, reserved 1048576K
+
+Card table byte_map: [0x00007f6aa05ab000,0x00007f6aa0723000] byte_map_base: 0x00007f6a9ff22000
+
+Marking Bits: (CMSBitMap*) 0x00007f6ab0062e88
+ Bits: [0x00007f6a9382f000, 0x00007f6a93fff000)
+
+Mod Union Table: (CMSBitMap*) 0x00007f6ab0062f48
+ Bits: [0x00007f6ab6d21000, 0x00007f6ab6d40400)
+
+Polling page: 0x00007f6ab6e66000
+
+CodeCache: size=245760Kb used=38598Kb max_used=38609Kb free=207161Kb
+ bounds [0x00007f6aa0de6000, 0x00007f6aa33d6000, 0x00007f6aafde6000]
+ total_blobs=10575 nmethods=9672 adapters=814
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 2790.240 Thread 0x00007f6ab017b800 12242       4       com.intellij.ide.IdeEventQueue$WindowsAltSuppressor::dispatch (186 bytes)
+Event: 2790.242 Thread 0x00007f6ab017b800 nmethod 12242 0x00007f6aa33b6fd0 code [0x00007f6aa33b7120, 0x00007f6aa33b71d8]
+Event: 2790.258 Thread 0x00007f6ab0179000 12243       4       java.util.concurrent.locks.AbstractQueuedSynchronizer::unparkSuccessor (84 bytes)
+Event: 2790.262 Thread 0x00007f6ab0179000 nmethod 12243 0x00007f6aa33b0b10 code [0x00007f6aa33b0c80, 0x00007f6aa33b0da8]
+Event: 2816.525 Thread 0x00007f6ab017b800 12244       4       java.lang.StringBuffer::<init> (7 bytes)
+Event: 2816.527 Thread 0x00007f6ab017b800 nmethod 12244 0x00007f6aa33bb490 code [0x00007f6aa33bb5e0, 0x00007f6aa33bb6d8]
+Event: 2825.134 Thread 0x00007f6ab0179000 12245       4       io.netty.util.concurrent.SingleThreadEventExecutor::isShuttingDown (17 bytes)
+Event: 2825.136 Thread 0x00007f6ab0179000 nmethod 12245 0x00007f6aa33bb1d0 code [0x00007f6aa33bb320, 0x00007f6aa33bb3b8]
+Event: 2835.733 Thread 0x00007f6ab017b800 12246       4       com.intellij.util.containers.UnsafeWeakList$MyIterator::findNext (115 bytes)
+Event: 2835.738 Thread 0x00007f6ab017b800 nmethod 12246 0x00007f6aa33c4a90 code [0x00007f6aa33c4c00, 0x00007f6aa33c4dd8]
+
+GC Heap History (10 events):
+Event: 25.838 GC heap before
+{Heap before GC invocations=14 (full 2):
+ par new generation   total 39296K, used 38356K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K,  78% used [0x00000000d3420000, 0x00000000d3775008, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 87424K, used 44545K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 88506K, capacity 92991K, committed 93128K, reserved 1128448K
+  class space    used 12307K, capacity 13476K, committed 13572K, reserved 1048576K
+Event: 25.844 GC heap after
+Heap after GC invocations=15 (full 2):
+ par new generation   total 39296K, used 3345K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K,  76% used [0x00000000d3860000, 0x00000000d3ba4658, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 87424K, used 44545K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 88506K, capacity 92991K, committed 93128K, reserved 1128448K
+  class space    used 12307K, capacity 13476K, committed 13572K, reserved 1048576K
+}
+Event: 28.437 GC heap before
+{Heap before GC invocations=15 (full 2):
+ par new generation   total 39296K, used 38289K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K,  76% used [0x00000000d3860000, 0x00000000d3ba4658, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 87424K, used 44545K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 94095K, capacity 99143K, committed 99272K, reserved 1134592K
+  class space    used 13034K, capacity 14285K, committed 14340K, reserved 1048576K
+Event: 28.453 GC heap after
+Heap after GC invocations=16 (full 2):
+ par new generation   total 39296K, used 4352K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3420000, 0x00000000d3860000, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 87424K, used 46871K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 94095K, capacity 99143K, committed 99272K, reserved 1134592K
+  class space    used 13034K, capacity 14285K, committed 14340K, reserved 1048576K
+}
+Event: 29.359 GC heap before
+{Heap before GC invocations=16 (full 2):
+ par new generation   total 39296K, used 39296K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3420000, 0x00000000d3860000, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 87424K, used 46871K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 97133K, capacity 102166K, committed 102408K, reserved 1136640K
+  class space    used 13532K, capacity 14751K, committed 14824K, reserved 1048576K
+Event: 29.379 GC heap after
+Heap after GC invocations=17 (full 2):
+ par new generation   total 39296K, used 4352K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3860000, 0x00000000d3ca0000, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 87424K, used 53625K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 97133K, capacity 102166K, committed 102408K, reserved 1136640K
+  class space    used 13532K, capacity 14751K, committed 14824K, reserved 1048576K
+}
+Event: 31.288 GC heap before
+{Heap before GC invocations=17 (full 3):
+ par new generation   total 39296K, used 39296K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3860000, 0x00000000d3ca0000, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 87424K, used 47814K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 100905K, capacity 106102K, committed 106224K, reserved 1140736K
+  class space    used 14074K, capacity 15394K, committed 15464K, reserved 1048576K
+Event: 31.298 GC heap after
+Heap after GC invocations=18 (full 3):
+ par new generation   total 39296K, used 4352K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3420000, 0x00000000d3860000, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 87424K, used 51849K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 100905K, capacity 106102K, committed 106224K, reserved 1140736K
+  class space    used 14074K, capacity 15394K, committed 15464K, reserved 1048576K
+}
+Event: 659.992 GC heap before
+{Heap before GC invocations=18 (full 3):
+ par new generation   total 39296K, used 39296K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3420000, 0x00000000d3860000, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 87424K, used 51849K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 102210K, capacity 107490K, committed 107632K, reserved 1140736K
+  class space    used 14182K, capacity 15522K, committed 15592K, reserved 1048576K
+Event: 660.002 GC heap after
+Heap after GC invocations=19 (full 3):
+ par new generation   total 39296K, used 4352K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000e0c00000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3860000, 0x00000000d3ca0000, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 87424K, used 54923K [0x00000000e0c00000, 0x00000000e6160000, 0x0000000100000000)
+ Metaspace       used 102210K, capacity 107490K, committed 107632K, reserved 1140736K
+  class space    used 14182K, capacity 15522K, committed 15592K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 40.394 Thread 0x00007f6a140cf000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6aa28b44dc method=com.intellij.util.io.IOUtil.readUTFFast([BLjava/io/DataInput;)Ljava/lang/String; @ 109
+Event: 40.397 Thread 0x00007f6a140cf000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6aa227d444 method=com.intellij.util.io.PagedFileStorage.putInt(JI)V @ 4
+Event: 40.397 Thread 0x00007f6a140cf000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6aa2bf9058 method=com.intellij.util.io.PagedFileStorage.putInt(JI)V @ 4
+Event: 40.397 Thread 0x00007f6a140cf000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6aa1a9d4d8 method=com.intellij.util.io.DataInputOutputUtil.readINT(Ljava/io/DataInput;)I @ 41
+Event: 40.418 Thread 0x00007f6a140cf000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6aa1a9d4d8 method=com.intellij.util.io.DataInputOutputUtil.readINT(Ljava/io/DataInput;)I @ 41
+Event: 40.418 Thread 0x00007f6a140cf000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6aa1a9d4d8 method=com.intellij.util.io.DataInputOutputUtil.readINT(Ljava/io/DataInput;)I @ 41
+Event: 40.418 Thread 0x00007f6a140cf000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6aa1a9d4d8 method=com.intellij.util.io.DataInputOutputUtil.readINT(Ljava/io/DataInput;)I @ 41
+Event: 40.515 Thread 0x00007f6a140af800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6aa2167c6c method=java.util.concurrent.locks.AbstractQueuedSynchronizer.doReleaseShared()V @ 69
+Event: 45.119 Thread 0x00007f6a382b9000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6aa23fe61c method=com.intellij.util.containers.LockFreeCopyOnWriteArrayList.contains(Ljava/lang/Object;)Z @ 13
+Event: 86.370 Thread 0x00007f6a382b9000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6aa307451c method=java.lang.StringBuffer.toString()Ljava/lang/String; @ 4
+
+Internal exceptions (10 events):
+Event: 30.493 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 108> (0x00000000d2698158) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 30.515 Thread 0x00007f6a382b9000 Implicit null exception at 0x00007f6aa22539f8 to 0x00007f6aa2253c75
+Event: 30.520 Thread 0x00007f6a382b9000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d27b2d38) thrown at [/jonnyzzz/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 30.520 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 38> (0x00000000d27b6518) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 30.521 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 76> (0x00000000d27bac68) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 30.521 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 76> (0x00000000d27c2f18) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 30.611 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 109> (0x00000000d299eed0) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 30.618 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 55> (0x00000000d29cd870) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 30.957 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 112> (0x00000000d313adc8) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 30.958 Thread 0x00007f6a382b9000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 96> (0x00000000d313fbe0) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+
+Events (10 events):
+Event: 2555.749 Thread 0x00007f6ab017d800 flushing nmethod 0x00007f6aa2570790
+Event: 2573.951 Executing VM operation: RevokeBias
+Event: 2573.951 Executing VM operation: RevokeBias done
+Event: 2573.951 Thread 0x00007f6a26864000 Thread exited: 0x00007f6a26864000
+Event: 2745.728 Thread 0x00007f6a382b9000 DEOPT PACKING pc=0x00007f6aa3236e84 sp=0x00007f6a4c2797f0
+Event: 2745.728 Thread 0x00007f6a382b9000 DEOPT UNPACKING pc=0x00007f6aa0e2d373 sp=0x00007f6a4c279630 mode 0
+Event: 2790.951 Thread 0x00007f6a26864000 Thread added: 0x00007f6a26864000
+Event: 2851.952 Executing VM operation: RevokeBias
+Event: 2851.952 Executing VM operation: RevokeBias done
+Event: 2851.952 Thread 0x00007f6a26864000 Thread exited: 0x00007f6a26864000
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:07 3813242                            /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/bin/java
+00600000-00601000 rw-p 00000000 08:07 3813242                            /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/bin/java
+0213b000-03535000 rw-p 00000000 00:00 0                                  [heap]
+d1200000-d3ca0000 rw-p 00000000 00:00 0 
+d3ca0000-e0c00000 ---p 00000000 00:00 0 
+e0c00000-e6160000 rw-p 00000000 00:00 0 
+e6160000-100000000 ---p 00000000 00:00 0 
+100000000-100f3a000 rw-p 00000000 00:00 0 
+100f3a000-140000000 ---p 00000000 00:00 0 
+7f6a0e38a000-7f6a0e3ca000 rw-p 00000000 00:00 0 
+7f6a0e3ca000-7f6a0e58a000 ---p 00000000 00:00 0 
+7f6a0e58a000-7f6a0e78a000 rw-p 00000000 00:00 0 
+7f6a0e78a000-7f6a0e98a000 rw-p 00000000 00:00 0 
+7f6a0e98a000-7f6a0eb8a000 rw-p 00000000 00:00 0 
+7f6a0eb8a000-7f6a0ed7b000 rw-p 00000000 00:00 0 
+7f6a0ed7b000-7f6a0ed8d000 ---p 00000000 00:00 0 
+7f6a0ed8d000-7f6a0f08b000 rw-p 00000000 00:00 0 
+7f6a0f08b000-7f6a0f28b000 rw-p 00000000 00:00 0 
+7f6a0f28b000-7f6a0f48b000 rw-p 00000000 00:00 0 
+7f6a0f48b000-7f6a0f48e000 ---p 00000000 00:00 0 
+7f6a0f48e000-7f6a0f58c000 rw-p 00000000 00:00 0 
+7f6a0f58c000-7f6a0f58f000 ---p 00000000 00:00 0 
+7f6a0f58f000-7f6a0f68d000 rw-p 00000000 00:00 0 
+7f6a0f68d000-7f6a0f690000 ---p 00000000 00:00 0 
+7f6a0f690000-7f6a0f98e000 rw-p 00000000 00:00 0 
+7f6a0f98e000-7f6a0fb8e000 rw-p 00000000 00:00 0 
+7f6a0fb8e000-7f6a0fd8e000 rw-p 00000000 00:00 0 
+7f6a0fd8e000-7f6a0ff8e000 rw-p 00000000 00:00 0 
+7f6a10001000-7f6a10004000 ---p 00000000 00:00 0 
+7f6a10004000-7f6a10102000 rw-p 00000000 00:00 0 
+7f6a10102000-7f6a10105000 ---p 00000000 00:00 0 
+7f6a10105000-7f6a10403000 rw-p 00000000 00:00 0 
+7f6a10403000-7f6a10603000 rw-p 00000000 00:00 0 
+7f6a10603000-7f6a10803000 rw-p 00000000 00:00 0 
+7f6a10803000-7f6a10a03000 rw-p 00000000 00:00 0 
+7f6a10a6e000-7f6a10c6e000 rw-p 00000000 00:00 0 
+7f6a10c6e000-7f6a10e6e000 rw-p 00000000 00:00 0 
+7f6a10e6e000-7f6a1106e000 rw-p 00000000 00:00 0 
+7f6a1106e000-7f6a1126e000 rw-p 00000000 00:00 0 
+7f6a1126e000-7f6a11271000 ---p 00000000 00:00 0 
+7f6a11271000-7f6a1156f000 rw-p 00000000 00:00 0 
+7f6a1156f000-7f6a1176f000 rw-p 00000000 00:00 0 
+7f6a1176f000-7f6a11772000 ---p 00000000 00:00 0 
+7f6a11772000-7f6a117a8000 rw-p 00000000 00:00 0 
+7f6a117a8000-7f6a117ac000 r--s 0003f000 08:07 3812894                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/htmltools/lib/htmltools.jar
+7f6a117ac000-7f6a117ad000 r--s 00000000 08:07 3812895                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/htmltools/lib/resources_en.jar
+7f6a117ad000-7f6a119ad000 rw-p 00000000 00:00 0 
+7f6a119ad000-7f6a119b0000 ---p 00000000 00:00 0 
+7f6a119b0000-7f6a11cad000 rw-p 00000000 00:00 0 
+7f6a11cad000-7f6a11cae000 ---p 00000000 00:00 0 
+7f6a11cae000-7f6a11ea0000 rw-p 00000000 00:00 0 
+7f6a11ea0000-7f6a11eae000 ---p 00000000 00:00 0 
+7f6a11eae000-7f6a120ae000 rw-p 00000000 00:00 0 
+7f6a120ae000-7f6a120b0000 r--s 00028000 08:07 3812902                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/joomla/lib/joomla.jar
+7f6a120b0000-7f6a120b1000 r--s 00000000 08:07 3812903                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/joomla/lib/resources_en.jar
+7f6a120b1000-7f6a120b4000 ---p 00000000 00:00 0 
+7f6a120b4000-7f6a123b2000 rw-p 00000000 00:00 0 
+7f6a123b2000-7f6a123b5000 ---p 00000000 00:00 0 
+7f6a123b5000-7f6a124b3000 rw-p 00000000 00:00 0 
+7f6a124b3000-7f6a124b7000 r--s 00047000 08:07 3813055                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/wordPress/lib/wordPress.jar
+7f6a124b7000-7f6a124b8000 r--s 00001000 08:07 3813054                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/wordPress/lib/resources_en.jar
+7f6a124b8000-7f6a124ba000 r--s 00028000 08:07 3812828                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/appEngineForPhp/lib/appEngineForPhp.jar
+7f6a124ba000-7f6a124bb000 r--s 00000000 08:07 3812829                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/appEngineForPhp/lib/resources_en.jar
+7f6a124bb000-7f6a124be000 r--s 00043000 08:07 3812867                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/drupal/lib/drupal.jar
+7f6a124be000-7f6a124c0000 r--s 00000000 08:07 3812868                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/drupal/lib/resources_en.jar
+7f6a124c0000-7f6a124c8000 r--s 000cd000 08:07 3812923                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/phing/lib/phing.jar
+7f6a124c8000-7f6a124c9000 r--s 00001000 08:07 3812924                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/phing/lib/resources_en.jar
+7f6a124c9000-7f6a124cc000 r--s 0003b000 08:07 3812941                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/restClient/lib/restClient.jar
+7f6a124cc000-7f6a124cd000 r--s 00000000 08:07 3812940                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/restClient/lib/resources_en.jar
+7f6a124cd000-7f6a124cf000 r--s 00028000 08:07 3812919                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/performanceTesting/lib/performanceTesting.jar
+7f6a124cf000-7f6a124d0000 r--s 00000000 08:07 3812920                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/performanceTesting/lib/resources_en.jar
+7f6a124d0000-7f6a124d5000 r--s 0005d000 08:07 3812821                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/RefactorX/lib/RefactorX.jar
+7f6a124d5000-7f6a124d7000 r--s 00001000 08:07 3812822                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/RefactorX/lib/resources_en.jar
+7f6a124d7000-7f6a124e5000 r--s 001c8000 08:07 3812812                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/PerforceIntegration/lib/PerforceIntegration.jar
+7f6a124e5000-7f6a124e6000 r--s 0000d000 08:07 3812813                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/PerforceIntegration/lib/perforce_util.jar
+7f6a124e6000-7f6a124e7000 r--s 00002000 08:07 3812814                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/PerforceIntegration/lib/resources_en.jar
+7f6a124e7000-7f6a126e7000 rw-p 00000000 00:00 0 
+7f6a126e7000-7f6a128e7000 rw-p 00000000 00:00 0 
+7f6a128e7000-7f6a128ea000 r--s 00036000 08:07 3813076                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/yaml/lib/yaml.jar
+7f6a128ea000-7f6a128eb000 r--s 00000000 08:07 3813075                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/yaml/lib/resources_en.jar
+7f6a128eb000-7f6a128f6000 r--s 002ab000 08:07 3812950                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/sass/lib/sass.jar
+7f6a128f6000-7f6a12916000 r--s 00168000 08:07 3812948                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/sass/lib/jrubyparser-0.5.4.jar
+7f6a12916000-7f6a12917000 r--s 00001000 08:07 3812949                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/sass/lib/resources_en.jar
+7f6a12917000-7f6a1291a000 r--s 00089000 08:07 3812945                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/rest/lib/rest.jar
+7f6a1291a000-7f6a1291b000 r--s 00000000 08:07 3812944                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/rest/lib/resources_en.jar
+7f6a1291b000-7f6a1291d000 r--s 00015000 08:07 3812910                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/localization/lib/localization.jar
+7f6a1291d000-7f6a12923000 r--s 0007c000 08:07 3812906                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/less/lib/less.jar
+7f6a12923000-7f6a12925000 r--s 00000000 08:07 3812907                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/less/lib/resources_en.jar
+7f6a12925000-7f6a12926000 r--s 00000000 08:07 3812887                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/haml/lib/resources_en.jar
+7f6a12926000-7f6a12929000 r--s 0002c000 08:07 3812886                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/haml/lib/haml.jar
+7f6a12929000-7f6a1292f000 r--s 00070000 08:07 3812840                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/blade/lib/blade.jar
+7f6a1292f000-7f6a12930000 r--s 00000000 08:07 3812841                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/blade/lib/resources_en.jar
+7f6a12930000-7f6a12938000 r--s 001b0000 08:07 3812844                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/coffeescript-core/lib/coffeescript-core.jar
+7f6a12938000-7f6a1293a000 r--s 00001000 08:07 3812845                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/coffeescript-core/lib/resources_en.jar
+7f6a1293a000-7f6a12941000 r--s 0008a000 08:07 3812855                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cucumber/lib/cucumber.jar
+7f6a12941000-7f6a12942000 r--s 00001000 08:07 3812856                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cucumber/lib/resources_en.jar
+7f6a12942000-7f6a12945000 r--s 00036000 08:07 3813030                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/twig/lib/twig.jar
+7f6a12945000-7f6a12946000 r--s 00000000 08:07 3813029                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/twig/lib/resources_en.jar
+7f6a12946000-7f6a12949000 r--s 00029000 08:07 3812898                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/ini4idea/lib/ini4idea.jar
+7f6a12949000-7f6a1294a000 r--s 00000000 08:07 3812899                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/ini4idea/lib/resources_en.jar
+7f6a1294a000-7f6a1294c000 r--s 00009000 08:07 3812832                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/asp/lib/asp.jar
+7f6a1294c000-7f6a1294d000 r--s 00000000 08:07 3812833                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/asp/lib/resources_en.jar
+7f6a1294d000-7f6a12b4d000 rw-p 00000000 00:00 0 
+7f6a12b4d000-7f6a12b51000 r--s 00053000 08:07 3812933                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/phpstorm-remote-interpreter/lib/phpstorm-remote-interpreter.jar
+7f6a12b51000-7f6a12b52000 r--s 00001000 08:07 3812934                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/phpstorm-remote-interpreter/lib/resources_en.jar
+7f6a12b52000-7f6a12b56000 r--s 00061000 08:07 3812836                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/behat/lib/behat.jar
+7f6a12b56000-7f6a12b58000 r--s 00000000 08:07 3812837                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/behat/lib/resources_en.jar
+7f6a12b58000-7f6a12b59000 rwxp 00000000 00:00 0 
+7f6a12b59000-7f6a12b5c000 ---p 00000000 00:00 0 
+7f6a12b5c000-7f6a12c5a000 rw-p 00000000 00:00 0 
+7f6a12c5a000-7f6a12c5d000 ---p 00000000 00:00 0 
+7f6a12c5d000-7f6a1321c000 rw-p 00000000 00:00 0 
+7f6a1321c000-7f6a13221000 r--s 00087000 08:07 3812958                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/settings-repository/lib/settings-repository.jar
+7f6a13221000-7f6a13232000 r--s 00114000 08:07 3812955                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/settings-repository/lib/jackson-databind-2.7.1-1.jar
+7f6a13232000-7f6a13235000 r--s 0003b000 08:07 3812954                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/settings-repository/lib/jackson-core-2.7.1.jar
+7f6a13235000-7f6a13257000 r--s 001f2000 08:07 3812956                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/settings-repository/lib/jgit.jar
+7f6a13257000-7f6a1325a000 r--s 0000a000 08:07 3812953                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/settings-repository/lib/jackson-annotations-2.7.1.jar
+7f6a1325a000-7f6a1325b000 r--s 00000000 08:07 3812957                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/settings-repository/lib/resources_en.jar
+7f6a1325b000-7f6a1325e000 r--s 00044000 08:07 3813039                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/vagrant/lib/vagrant.jar
+7f6a1325e000-7f6a1327e000 r--s 00167000 08:07 3813037                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/vagrant/lib/jrubyparser-0.5.3.jar
+7f6a1327e000-7f6a1327f000 r--s 00000000 08:07 3813038                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/vagrant/lib/resources_en.jar
+7f6a1327f000-7f6a13285000 r--s 00039000 08:07 3813007                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/terminal/lib/jediterm-pty-2.2.jar
+7f6a13285000-7f6a13288000 r--s 00035000 08:07 3813010                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/terminal/lib/terminal.jar
+7f6a13288000-7f6a13289000 r--s 00000000 08:07 3813009                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/terminal/lib/resources_en.jar
+7f6a13289000-7f6a1328f000 r--s 000a2000 08:07 3812883                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/github/lib/github.jar
+7f6a1328f000-7f6a132b7000 r--s 0028d000 08:07 3812913                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/markdown/lib/Loboevolution.jar
+7f6a132b7000-7f6a132be000 r--s 00059000 08:07 3812914                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/markdown/lib/intellij-markdown.jar
+7f6a132be000-7f6a132c4000 r--s 00074000 08:07 3812915                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/markdown/lib/markdown.jar
+7f6a132c4000-7f6a132c5000 r--s 00000000 08:07 3812916                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/markdown/lib/resources_en.jar
+7f6a132c5000-7f6a132cb000 r--s 000b2000 08:07 3812848                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/commandLineTool/lib/commandLineTool.jar
+7f6a132cb000-7f6a132cc000 r--s 00002000 08:07 3812849                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/commandLineTool/lib/resources_en.jar
+7f6a132cc000-7f6a132d8000 r--s 0007b000 08:07 3812737                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/DatabaseTools/lib/database-openapi.jar
+7f6a132d8000-7f6a13355000 r--s 016d4000 08:07 3812736                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/DatabaseTools/lib/database-impl.jar
+7f6a13355000-7f6a1335d000 r--s 00040000 08:07 3812738                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/DatabaseTools/lib/dekaf-single-2.0.0.264.jar
+7f6a1335d000-7f6a13362000 r--s 00227000 08:07 3812740                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/DatabaseTools/lib/resources_en.jar
+7f6a13362000-7f6a13365000 r--s 0003b000 08:07 3812739                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/DatabaseTools/lib/jdbc-console.jar
+7f6a13365000-7f6a1337f000 r--s 00348000 08:07 3812808                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/NodeJS/lib/NodeJS.jar
+7f6a1337f000-7f6a13380000 r--s 00001000 08:07 3812809                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/NodeJS/lib/resources_en.jar
+7f6a13380000-7f6a13381000 r--s 00002000 08:07 3812755                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptDebugger/lib/JavaEEJavaScriptDebug.jar
+7f6a13381000-7f6a1338d000 r--s 0015f000 08:07 3812756                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptDebugger/lib/JavaScriptDebugger.jar
+7f6a1338d000-7f6a13392000 r--s 00069000 08:07 3812754                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptDebugger/lib/FirefoxConnector.jar
+7f6a13392000-7f6a133b2000 r--s 0033d000 08:07 3812753                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptDebugger/lib/ChromeConnector.jar
+7f6a133b2000-7f6a133b3000 r--s 00001000 08:07 3812757                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptDebugger/lib/resources_en.jar
+7f6a133b3000-7f6a133ba000 r--s 000c8000 08:07 3812727                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/AngularJS/lib/AngularJS.jar
+7f6a133ba000-7f6a133bb000 r--s 00000000 08:07 3812728                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/AngularJS/lib/resources_en.jar
+7f6a133bb000-7f6a133c0000 r--s 000ab000 08:07 3812743                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/IntelliLang/lib/IntelliLang.jar
+7f6a133c0000-7f6a133c2000 r--s 0000d000 08:07 3812744                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/IntelliLang/lib/intellilang-jps-plugin.jar
+7f6a133c2000-7f6a133cc000 r--s 0014f000 08:07 3812890                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/hg4idea/lib/hg4idea.jar
+7f6a133cc000-7f6a133cd000 r--s 00002000 08:07 3812891                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/hg4idea/lib/resources_en.jar
+7f6a133cd000-7f6a133e5000 r--s 0053a000 08:07 3812732                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/CSS/lib/css.jar
+7f6a133e5000-7f6a133ea000 r--s 00041000 08:07 3812731                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/CSS/lib/css-openapi.jar
+7f6a133ea000-7f6a133ed000 r--s 00008000 08:07 3812733                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/CSS/lib/resources_en.jar
+7f6a133ed000-7f6a133f1000 r--s 00067000 08:07 3812871                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/fileWatcher/lib/fileWatcher.jar
+7f6a133f1000-7f6a133f2000 r--s 00000000 08:07 3812872                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/fileWatcher/lib/resources_en.jar
+7f6a133f2000-7f6a133fc000 r--s 00066000 08:07 3813049                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/webDeployment/lib/commons-vfs2-2.1-SNAPSHOT.jar
+7f6a133fc000-7f6a13410000 r--s 002a5000 08:07 3813051                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/webDeployment/lib/webDeployment.jar
+7f6a13410000-7f6a13411000 r--s 00008000 08:07 3813050                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/webDeployment/lib/resources_en.jar
+7f6a13411000-7f6a13413000 r--s 00006000 08:07 3812996                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/axis-jaxrpc-1.4.jar
+7f6a13413000-7f6a13415000 r--s 0000c000 08:07 3813000                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/json-path-0.8.0.jar
+7f6a13415000-7f6a13418000 r--s 00010000 08:07 3812998                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/commons-discovery-0.4.jar
+7f6a13418000-7f6a1341a000 r--s 0000b000 08:07 3813001                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/json-smart-1.1.1.jar
+7f6a1341a000-7f6a1341e000 r--s 00049000 08:07 3812999                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/jira.jar
+7f6a1341e000-7f6a13429000 r--s 00172000 08:07 3813003                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/tasks-core.jar
+7f6a13429000-7f6a1342b000 r--s 00016000 08:07 3813002                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/tasks-api.jar
+7f6a1342b000-7f6a1342f000 r--s 00018000 08:07 3813004                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/wsdl4j-1.4.jar
+7f6a1342f000-7f6a13430000 r--s 00004000 08:07 3812997                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/axis-saaj-1.3.jar
+7f6a13430000-7f6a13444000 r--s 00173000 08:07 3812995                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks/lib/axis-1.4.jar
+7f6a13444000-7f6a13448000 r--s 0005b000 08:07 3813033                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/uml/lib/diagram-api.jar
+7f6a13448000-7f6a1344d000 r--s 00089000 08:07 3813034                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/uml/lib/uml-support.jar
+7f6a1344d000-7f6a13450000 r--s 00054000 08:07 3812852                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/copyright/lib/copyright.jar
+7f6a13450000-7f6a13453000 r--s 00059000 08:07 3812825                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/apacheConfig/lib/apacheConfig.jar
+7f6a13453000-7f6a13457000 r--s 00026000 08:07 3812986                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/svnkit-javahl16.zip
+7f6a13457000-7f6a1345c000 r--s 00034000 08:07 3812989                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/trileadsrc.zip
+7f6a1345c000-7f6a13485000 r--s 004ea000 08:07 3812984                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/svn4idea.jar
+7f6a13485000-7f6a1348e000 r--s 0008d000 08:07 3812983                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/sqljetsrc.zip
+7f6a1348e000-7f6a13492000 r--s 00025000 08:07 3812961                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/antlr.jar
+7f6a13492000-7f6a13493000 r--s 00000000 08:07 3812962                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/jsch.agentproxy.svnkit-trilead-ssh2.jar
+7f6a13493000-7f6a13496000 r--s 0000f000 08:07 3812981                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/sequence-library.jar
+7f6a13496000-7f6a1349b000 r--s 00039000 08:07 3812988                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/trilead.jar
+7f6a1349b000-7f6a134a2000 r--s 00051000 08:07 3812985                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/svnkit-javahl.jar
+7f6a134a2000-7f6a134d7000 r--s 003d0000 08:07 3812987                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/svnkit.jar
+7f6a134d7000-7f6a134d8000 r--s 0000a000 08:07 3812980                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/resources_en.jar
+7f6a134d8000-7f6a134e8000 r--s 000ab000 08:07 3812982                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/svn4idea/lib/sqljet.jar
+7f6a134e8000-7f6a134fd000 r--s 00301000 08:07 3812876                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/git4idea/lib/git4idea.jar
+7f6a134fd000-7f6a134fe000 r--s 0000f000 08:07 3812875                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/git4idea/lib/git4idea-rt.jar
+7f6a134fe000-7f6a13500000 r--s 0000f000 08:07 3812878                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/git4idea/lib/remote-servers-git.jar
+7f6a13500000-7f6a13504000 r--s 00039000 08:07 3812880                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/git4idea/lib/trilead-ssh2.jar
+7f6a13504000-7f6a13507000 r--s 00017000 08:07 3812877                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/git4idea/lib/ini4j-0.5.2-patched.jar
+7f6a13507000-7f6a13519000 r--s 001db000 08:07 3812859                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cvsIntegration/lib/cvsIntegration.jar
+7f6a13519000-7f6a1351c000 r--s 00028000 08:07 3812860                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cvsIntegration/lib/cvs_util.jar
+7f6a1351c000-7f6a13586000 r--s 010e3000 08:07 3812929                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/php/lib/php.jar
+7f6a13586000-7f6a13604000 r--s 01382000 08:07 3812766                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
+7f6a13604000-7f6a13605000 r-xp 00000000 08:07 3813115                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libjawt.so
+7f6a13605000-7f6a13804000 ---p 00001000 08:07 3813115                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libjawt.so
+7f6a13804000-7f6a13805000 rw-p 00000000 08:07 3813115                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libjawt.so
+7f6a13805000-7f6a13a05000 rw-p 00000000 00:00 0 
+7f6a13a05000-7f6a13a08000 ---p 00000000 00:00 0 
+7f6a13a08000-7f6a13d06000 rw-p 00000000 00:00 0 
+7f6a13d67000-7f6a13d75000 rw-s 00000000 00:05 2031628                    /SYSV00000000 (deleted)
+7f6a13dae000-7f6a13db0000 r--s 0001b000 08:07 3813071                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/xslt-debugger/lib/xslt-debugger-engine.jar
+7f6a13db0000-7f6a13db2000 r--s 00006000 08:07 3813064                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/xslt-debugger/lib/rmi-stubs.jar
+7f6a13db2000-7f6a13db4000 r--s 0002e000 08:07 3813072                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/xslt-debugger/lib/xslt-debugger.jar
+7f6a13db4000-7f6a13dca000 r--s 0027c000 08:07 3813042                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/w3validators/lib/jigsaw-2.2.6.jar
+7f6a13dca000-7f6a13dcb000 r--s 00015000 08:07 3813044                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/w3validators/lib/tagsoup-1.2.jar
+7f6a13dcb000-7f6a13dea000 r--s 00212000 08:07 3813045                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/w3validators/lib/w3-css-validator.jar
+7f6a13dea000-7f6a13dec000 r--s 0000b000 08:07 3813046                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/w3validators/lib/w3validators.jar
+7f6a13dec000-7f6a13ded000 r--s 00000000 08:07 3813043                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/w3validators/lib/resources_en.jar
+7f6a13ded000-7f6a13def000 r--s 00025000 08:07 3812817                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/QuirksMode/lib/quirksmode.jar
+7f6a13def000-7f6a13df0000 r--s 00000000 08:07 3812818                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/QuirksMode/lib/resources_en.jar
+7f6a13df0000-7f6a13df7000 r--s 00074000 08:07 3812747                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JSIntentionPowerPack/lib/JSIntentionPowerPack.jar
+7f6a13df7000-7f6a13dfe000 r--s 0000c000 08:07 3812748                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JSIntentionPowerPack/lib/resources_en.jar
+7f6a13dfe000-7f6a13e00000 r--s 00011000 08:07 3812992                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/tasks-time-tracking/lib/tasks-time-tracking.jar
+7f6a13e00000-7f6a14000000 rw-p 00000000 00:00 0 
+7f6a14000000-7f6a1422a000 rw-p 00000000 00:00 0 
+7f6a1422a000-7f6a18000000 ---p 00000000 00:00 0 
+7f6a18000000-7f6a197c4000 rw-p 00000000 00:00 0 
+7f6a197c4000-7f6a1c000000 ---p 00000000 00:00 0 
+7f6a1c000000-7f6a1c021000 rw-p 00000000 00:00 0 
+7f6a1c021000-7f6a20000000 ---p 00000000 00:00 0 
+7f6a20000000-7f6a20021000 rw-p 00000000 00:00 0 
+7f6a20021000-7f6a24000000 ---p 00000000 00:00 0 
+7f6a24000000-7f6a26b24000 rw-p 00000000 00:00 0 
+7f6a26b24000-7f6a28000000 ---p 00000000 00:00 0 
+7f6a28000000-7f6a28021000 rw-p 00000000 00:00 0 
+7f6a28021000-7f6a2c000000 ---p 00000000 00:00 0 
+7f6a2c000000-7f6a2c021000 rw-p 00000000 00:00 0 
+7f6a2c021000-7f6a30000000 ---p 00000000 00:00 0 
+7f6a30000000-7f6a30021000 rw-p 00000000 00:00 0 
+7f6a30021000-7f6a34000000 ---p 00000000 00:00 0 
+7f6a34000000-7f6a34022000 rw-p 00000000 00:00 0 
+7f6a34022000-7f6a38000000 ---p 00000000 00:00 0 
+7f6a38000000-7f6a3835e000 rw-p 00000000 00:00 0 
+7f6a3835e000-7f6a3c000000 ---p 00000000 00:00 0 
+7f6a3c000000-7f6a3c022000 rw-p 00000000 00:00 0 
+7f6a3c022000-7f6a40000000 ---p 00000000 00:00 0 
+7f6a40000000-7f6a40022000 rw-p 00000000 00:00 0 
+7f6a40022000-7f6a44000000 ---p 00000000 00:00 0 
+7f6a44000000-7f6a44004000 r--s 00039000 08:07 3812864                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cvsIntegration/lib/trilead-ssh2-build213.jar
+7f6a44004000-7f6a4400b000 r--s 00080000 08:07 3812861                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cvsIntegration/lib/javacvs-src.jar
+7f6a4400b000-7f6a44014000 r--s 0012b000 08:07 3813013                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/textmate/lib/jcodings.jar
+7f6a44014000-7f6a4401a000 r--s 000a5000 08:07 3812937                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/remote-run/lib/remote-run.jar
+7f6a4401a000-7f6a4407b000 r-xp 00000000 08:07 3813134                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libsplashscreen.so
+7f6a4407b000-7f6a4427b000 ---p 00061000 08:07 3813134                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libsplashscreen.so
+7f6a4427b000-7f6a4427c000 rw-p 00061000 08:07 3813134                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libsplashscreen.so
+7f6a4427c000-7f6a4447f000 rw-p 00000000 00:00 0 
+7f6a4447f000-7f6a44484000 r-xp 00000000 08:07 2369307                    /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f6a44484000-7f6a44684000 ---p 00005000 08:07 2369307                    /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f6a44684000-7f6a44685000 r--p 00005000 08:07 2369307                    /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f6a44685000-7f6a44686000 rw-p 00006000 08:07 2369307                    /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f6a44686000-7f6a44688000 r-xp 00000000 08:07 2363940                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f6a44688000-7f6a44887000 ---p 00002000 08:07 2363940                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f6a44887000-7f6a44888000 r--p 00001000 08:07 2363940                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f6a44888000-7f6a44889000 rw-p 00002000 08:07 2363940                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f6a44889000-7f6a44a89000 rw-p 00000000 00:00 0 
+7f6a44a89000-7f6a44abc000 r-xp 00000000 08:07 3813135                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libsunec.so
+7f6a44abc000-7f6a44cbc000 ---p 00033000 08:07 3813135                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libsunec.so
+7f6a44cbc000-7f6a44cc2000 rw-p 00033000 08:07 3813135                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libsunec.so
+7f6a44cc2000-7f6a44ed3000 rw-p 00000000 00:00 0 
+7f6a44ed3000-7f6a44ed6000 ---p 00000000 00:00 0 
+7f6a44ed6000-7f6a44fd4000 rw-p 00000000 00:00 0 
+7f6a44fd4000-7f6a44fd7000 ---p 00000000 00:00 0 
+7f6a44fd7000-7f6a450d5000 rw-p 00000000 00:00 0 
+7f6a450d5000-7f6a450d8000 ---p 00000000 00:00 0 
+7f6a450d8000-7f6a451d6000 rw-p 00000000 00:00 0 
+7f6a451d6000-7f6a451d9000 ---p 00000000 00:00 0 
+7f6a451d9000-7f6a452d7000 rw-p 00000000 00:00 0 
+7f6a452d7000-7f6a452ee000 r-xp 00000000 08:07 3810337                    /home/johnny/.PhpStorm2016.2/system/tmp/jna8766886143833236818.tmp (deleted)
+7f6a452ee000-7f6a453ed000 ---p 00017000 08:07 3810337                    /home/johnny/.PhpStorm2016.2/system/tmp/jna8766886143833236818.tmp (deleted)
+7f6a453ed000-7f6a453ef000 rw-p 00016000 08:07 3810337                    /home/johnny/.PhpStorm2016.2/system/tmp/jna8766886143833236818.tmp (deleted)
+7f6a453ef000-7f6a453f8000 r-xp 00000000 08:07 3813125                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libmanagement.so
+7f6a453f8000-7f6a455f7000 ---p 00009000 08:07 3813125                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libmanagement.so
+7f6a455f7000-7f6a455f8000 rw-p 00008000 08:07 3813125                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libmanagement.so
+7f6a455f8000-7f6a457f8000 rw-p 00000000 00:00 0 
+7f6a457f8000-7f6a457fb000 ---p 00000000 00:00 0 
+7f6a457fb000-7f6a45af9000 rw-p 00000000 00:00 0 
+7f6a45af9000-7f6a45afc000 ---p 00000000 00:00 0 
+7f6a45afc000-7f6a45d32000 rw-p 00000000 00:00 0 
+7f6a45d32000-7f6a45d35000 ---p 00000000 00:00 0 
+7f6a45d35000-7f6a45e33000 rw-p 00000000 00:00 0 
+7f6a45e33000-7f6a45e34000 ---p 00000000 00:00 0 
+7f6a45e34000-7f6a46634000 rw-p 00000000 00:00 0 
+7f6a46634000-7f6a46646000 r-xp 00000000 08:07 2363879                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f6a46646000-7f6a46846000 ---p 00012000 08:07 2363879                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f6a46846000-7f6a46847000 r--p 00012000 08:07 2363879                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f6a46847000-7f6a46848000 rw-p 00013000 08:07 2363879                    /lib/x86_64-linux-gnu/libgpg-error.so.0.17.0
+7f6a46848000-7f6a46920000 r-xp 00000000 08:07 2363751                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f6a46920000-7f6a46b1f000 ---p 000d8000 08:07 2363751                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f6a46b1f000-7f6a46b20000 r--p 000d7000 08:07 2363751                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f6a46b20000-7f6a46b28000 rw-p 000d8000 08:07 2363751                    /lib/x86_64-linux-gnu/libgcrypt.so.20.0.5
+7f6a46b28000-7f6a46b29000 rw-p 00000000 00:00 0 
+7f6a46b29000-7f6a46b4a000 r-xp 00000000 08:07 2363902                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f6a46b4a000-7f6a46d49000 ---p 00021000 08:07 2363902                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f6a46d49000-7f6a46d4a000 r--p 00020000 08:07 2363902                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f6a46d4a000-7f6a46d4b000 rw-p 00021000 08:07 2363902                    /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f6a46d4b000-7f6a46d95000 r-xp 00000000 08:07 2363748                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f6a46d95000-7f6a46f95000 ---p 0004a000 08:07 2363748                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f6a46f95000-7f6a46f96000 r--p 0004a000 08:07 2363748                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f6a46f96000-7f6a46f97000 rw-p 0004b000 08:07 2363748                    /lib/x86_64-linux-gnu/libdbus-1.so.3.14.6
+7f6a46f97000-7f6a46faa000 r-xp 00000000 08:07 6160606                    /usr/lib/x86_64-linux-gnu/libfcitx-utils.so.0.1
+7f6a46faa000-7f6a471a9000 ---p 00013000 08:07 6160606                    /usr/lib/x86_64-linux-gnu/libfcitx-utils.so.0.1
+7f6a471a9000-7f6a471aa000 r--p 00012000 08:07 6160606                    /usr/lib/x86_64-linux-gnu/libfcitx-utils.so.0.1
+7f6a471aa000-7f6a471ab000 rw-p 00013000 08:07 6160606                    /usr/lib/x86_64-linux-gnu/libfcitx-utils.so.0.1
+7f6a471ab000-7f6a471b6000 r-xp 00000000 08:07 6160678                    /usr/lib/x86_64-linux-gnu/libfcitx-gclient.so.0.1
+7f6a471b6000-7f6a473b6000 ---p 0000b000 08:07 6160678                    /usr/lib/x86_64-linux-gnu/libfcitx-gclient.so.0.1
+7f6a473b6000-7f6a473b7000 r--p 0000b000 08:07 6160678                    /usr/lib/x86_64-linux-gnu/libfcitx-gclient.so.0.1
+7f6a473b7000-7f6a473b8000 rw-p 0000c000 08:07 6160678                    /usr/lib/x86_64-linux-gnu/libfcitx-gclient.so.0.1
+7f6a473b8000-7f6a473f5000 r-xp 00000000 08:07 6169839                    /usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.0.0
+7f6a473f5000-7f6a475f4000 ---p 0003d000 08:07 6169839                    /usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.0.0
+7f6a475f4000-7f6a475f6000 r--p 0003c000 08:07 6169839                    /usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.0.0
+7f6a475f6000-7f6a475f7000 rw-p 0003e000 08:07 6169839                    /usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.0.0
+7f6a475f7000-7f6a475fe000 r-xp 00000000 08:07 6424429                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-fcitx.so
+7f6a475fe000-7f6a477fd000 ---p 00007000 08:07 6424429                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-fcitx.so
+7f6a477fd000-7f6a477fe000 r--p 00006000 08:07 6424429                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-fcitx.so
+7f6a477fe000-7f6a477ff000 rw-p 00007000 08:07 6424429                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-fcitx.so
+7f6a477ff000-7f6a47800000 ---p 00000000 00:00 0 
+7f6a47800000-7f6a48000000 rw-p 00000000 00:00 0 
+7f6a48000000-7f6a48021000 rw-p 00000000 00:00 0 
+7f6a48021000-7f6a4c000000 ---p 00000000 00:00 0 
+7f6a4c000000-7f6a4c001000 r--s 00007000 08:07 3812879                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/git4idea/lib/resources_en.jar
+7f6a4c001000-7f6a4c004000 r--s 0002b000 08:07 3813014                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/textmate/lib/joni.jar
+7f6a4c004000-7f6a4c084000 r-xp 00000000 08:07 2363740                    /lib/x86_64-linux-gnu/libsystemd.so.0.14.0
+7f6a4c084000-7f6a4c087000 r--p 0007f000 08:07 2363740                    /lib/x86_64-linux-gnu/libsystemd.so.0.14.0
+7f6a4c087000-7f6a4c088000 rw-p 00082000 08:07 2363740                    /lib/x86_64-linux-gnu/libsystemd.so.0.14.0
+7f6a4c088000-7f6a4c089000 rw-p 00000000 00:00 0 
+7f6a4c089000-7f6a4c08b000 r--s 00017000 08:07 3812863                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cvsIntegration/lib/smartcvs-src.jar
+7f6a4c08b000-7f6a4c092000 r--s 0005d000 08:07 3812927                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/php/lib/commons-compress-1.10.jar
+7f6a4c092000-7f6a4c099000 r--s 0002f000 08:07 3812930                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/php/lib/resources_en.jar
+7f6a4c099000-7f6a4c0a0000 r--s 0004a000 08:07 3812928                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/php/lib/php-openapi.jar
+7f6a4c0a0000-7f6a4c0aa000 r--s 00046000 08:07 3812769                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptLanguage/lib/javascript-openapi.jar
+7f6a4c0aa000-7f6a4c0fe000 r--p 00000000 08:07 7210941                    /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+7f6a4c0fe000-7f6a4c155000 r--p 00000000 08:07 7211073                    /usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-R.ttf
+7f6a4c155000-7f6a4c156000 r--s 00007000 08:07 3812862                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/cvsIntegration/lib/resources_en.jar
+7f6a4c156000-7f6a4c15a000 r--s 00077000 08:07 3813015                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/textmate/lib/textmate.jar
+7f6a4c15a000-7f6a4c15e000 r--s 0005c000 08:07 3812770                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptLanguage/lib/js-test-common.jar
+7f6a4c15e000-7f6a4c162000 r--s 0002a000 08:07 3812767                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptLanguage/lib/commons-io-2.4.jar
+7f6a4c162000-7f6a4c169000 r--s 00032000 08:07 3812771                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptLanguage/lib/resources_en.jar
+7f6a4c169000-7f6a4c17c000 r--s 0023f000 08:07 3813061                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/xpath/lib/xpath.jar
+7f6a4c17c000-7f6a4c17f000 ---p 00000000 00:00 0 
+7f6a4c17f000-7f6a4c27d000 rw-p 00000000 00:00 0 
+7f6a4c27d000-7f6a4c280000 ---p 00000000 00:00 0 
+7f6a4c280000-7f6a4c37e000 rw-p 00000000 00:00 0 
+7f6a4c37e000-7f6a4c381000 ---p 00000000 00:00 0 
+7f6a4c381000-7f6a4c47f000 rw-p 00000000 00:00 0 
+7f6a4c47f000-7f6a4c48a000 r--s 00000000 08:07 4591042                    /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-6
+7f6a4c48a000-7f6a4c493000 r--s 00000000 08:07 4600609                    /var/cache/fontconfig/a6d8cf8e4ec09cdbc8633c31745a07dd-le64.cache-6
+7f6a4c493000-7f6a4c4a8000 r--s 00000000 08:07 4590715                    /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le64.cache-6
+7f6a4c4a8000-7f6a4c4e3000 r--s 00000000 08:07 4587836                    /var/cache/fontconfig/365b55f210c0a22e9a19e35191240f32-le64.cache-6
+7f6a4c4e3000-7f6a4c513000 r-xp 00000000 08:07 6425769                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f6a4c513000-7f6a4c712000 ---p 00030000 08:07 6425769                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f6a4c712000-7f6a4c713000 r--p 0002f000 08:07 6425769                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f6a4c713000-7f6a4c714000 rw-p 00030000 08:07 6425769                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f6a4c714000-7f6a4c715000 rw-p 00000000 00:00 0 
+7f6a4c715000-7f6a4c716000 ---p 00000000 00:00 0 
+7f6a4c716000-7f6a4cf16000 rw-p 00000000 00:00 0 
+7f6a4cf16000-7f6a4cf17000 ---p 00000000 00:00 0 
+7f6a4cf17000-7f6a4d717000 rw-p 00000000 00:00 0 
+7f6a4d717000-7f6a4d74d000 r-xp 00000000 08:07 6426245                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f6a4d74d000-7f6a4d94d000 ---p 00036000 08:07 6426245                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f6a4d94d000-7f6a4d952000 r--p 00036000 08:07 6426245                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f6a4d952000-7f6a4d953000 rw-p 0003b000 08:07 6426245                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f6a4d953000-7f6a4dac5000 r-xp 00000000 08:07 6160457                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f6a4dac5000-7f6a4dcc5000 ---p 00172000 08:07 6160457                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f6a4dcc5000-7f6a4dccf000 r--p 00172000 08:07 6160457                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f6a4dccf000-7f6a4dcd1000 rw-p 0017c000 08:07 6160457                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f6a4dcd1000-7f6a4dcd5000 rw-p 00000000 00:00 0 
+7f6a4dcd5000-7f6a4dcd6000 r--s 0003d000 08:07 3812768                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/JavaScriptLanguage/lib/ecmascript6-compiler.jar
+7f6a4dcd6000-7f6a4dcd8000 r--s 00002000 08:07 3813058                    /home/johnny/program_files/PhpStorm-162.2380.11/plugins/xpath/lib/resources_en.jar
+7f6a4dcd8000-7f6a4dcdd000 r--s 00098000 08:07 3813182                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/jsse.jar
+7f6a4dcdd000-7f6a4dedd000 rw-p 00000000 00:00 0 
+7f6a4dedd000-7f6a4def6000 r-xp 00000000 08:07 6425768                    /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+7f6a4def6000-7f6a4e0f6000 ---p 00019000 08:07 6425768                    /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+7f6a4e0f6000-7f6a4e0f9000 r--p 00019000 08:07 6425768                    /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+7f6a4e0f9000-7f6a4e0fa000 rw-p 0001c000 08:07 6425768                    /usr/lib/x86_64-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+7f6a4e0fa000-7f6a4e105000 r-xp 00000000 08:07 6425764                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f6a4e105000-7f6a4e305000 ---p 0000b000 08:07 6425764                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f6a4e305000-7f6a4e306000 r--p 0000b000 08:07 6425764                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f6a4e306000-7f6a4e307000 rw-p 0000c000 08:07 6425764                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f6a4e307000-7f6a4e30e000 r-xp 00000000 08:07 6169364                    /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f6a4e30e000-7f6a4e50e000 ---p 00007000 08:07 6169364                    /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f6a4e50e000-7f6a4e50f000 r--p 00007000 08:07 6169364                    /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f6a4e50f000-7f6a4e510000 rw-p 00008000 08:07 6169364                    /usr/lib/x86_64-linux-gnu/libogg.so.0.8.2
+7f6a4e510000-7f6a4e53a000 r-xp 00000000 08:07 6169712                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f6a4e53a000-7f6a4e73a000 ---p 0002a000 08:07 6169712                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f6a4e73a000-7f6a4e73b000 r--p 0002a000 08:07 6169712                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f6a4e73b000-7f6a4e73c000 rw-p 0002b000 08:07 6169712                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+7f6a4e73c000-7f6a4e745000 r-xp 00000000 08:07 6169231                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.1
+7f6a4e745000-7f6a4e944000 ---p 00009000 08:07 6169231                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.1
+7f6a4e944000-7f6a4e945000 r--p 00008000 08:07 6169231                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.1
+7f6a4e945000-7f6a4e946000 rw-p 00009000 08:07 6169231                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.1
+7f6a4e946000-7f6a4e95a000 r-xp 00000000 08:07 6169605                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.3.8
+7f6a4e95a000-7f6a4eb59000 ---p 00014000 08:07 6169605                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.3.8
+7f6a4eb59000-7f6a4eb5a000 r--p 00013000 08:07 6169605                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.3.8
+7f6a4eb5a000-7f6a4eb5b000 rw-p 00014000 08:07 6169605                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.3.8
+7f6a4eb5b000-7f6a4eb62000 r-xp 00000000 08:07 6169716                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.7
+7f6a4eb62000-7f6a4ed62000 ---p 00007000 08:07 6169716                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.7
+7f6a4ed62000-7f6a4ed63000 r--p 00007000 08:07 6169716                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.7
+7f6a4ed63000-7f6a4ed64000 rw-p 00008000 08:07 6169716                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.7
+7f6a4ed64000-7f6a4ed74000 r-xp 00000000 08:07 6168628                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7f6a4ed74000-7f6a4ef73000 ---p 00010000 08:07 6168628                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7f6a4ef73000-7f6a4ef74000 r--p 0000f000 08:07 6168628                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7f6a4ef74000-7f6a4ef75000 rw-p 00010000 08:07 6168628                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7f6a4ef75000-7f6a4ef79000 r-xp 00000000 08:07 6168624                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.9
+7f6a4ef79000-7f6a4f178000 ---p 00004000 08:07 6168624                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.9
+7f6a4f178000-7f6a4f179000 r--p 00003000 08:07 6168624                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.9
+7f6a4f179000-7f6a4f17a000 rw-p 00004000 08:07 6168624                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.9
+7f6a4f17a000-7f6a4f17f000 r-xp 00000000 08:07 6425979                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7f6a4f17f000-7f6a4f37e000 ---p 00005000 08:07 6425979                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7f6a4f37e000-7f6a4f37f000 r--p 00004000 08:07 6425979                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7f6a4f37f000-7f6a4f380000 rw-p 00005000 08:07 6425979                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7f6a4f380000-7f6a4f3b0000 r-xp 00000000 08:07 6423705                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f6a4f3b0000-7f6a4f5b0000 ---p 00030000 08:07 6423705                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f6a4f5b0000-7f6a4f5b1000 r--p 00030000 08:07 6423705                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f6a4f5b1000-7f6a4f5b2000 rw-p 00031000 08:07 6423705                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f6a4f5b2000-7f6a4f5c3000 r-xp 00000000 08:07 6425982                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so
+7f6a4f5c3000-7f6a4f7c3000 ---p 00011000 08:07 6425982                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so
+7f6a4f7c3000-7f6a4f7c4000 r--p 00011000 08:07 6425982                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so
+7f6a4f7c4000-7f6a4f7c5000 rw-p 00012000 08:07 6425982                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so
+7f6a4f7c5000-7f6a4f7c6000 r-xp 00000000 08:07 6169068                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.1
+7f6a4f7c6000-7f6a4f9c5000 ---p 00001000 08:07 6169068                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.1
+7f6a4f9c5000-7f6a4f9c6000 r--p 00000000 08:07 6169068                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.1
+7f6a4f9c6000-7f6a4f9c7000 rw-p 00001000 08:07 6169068                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.1
+7f6a4f9c7000-7f6a4f9cd000 r-xp 00000000 08:07 6168711                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f6a4f9cd000-7f6a4fbcd000 ---p 00006000 08:07 6168711                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f6a4fbcd000-7f6a4fbce000 r--p 00006000 08:07 6168711                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f6a4fbce000-7f6a4fbcf000 rw-p 00007000 08:07 6168711                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f6a4fbcf000-7f6a4fbf2000 r-xp 00000000 08:07 6169015                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f6a4fbf2000-7f6a4fdf1000 ---p 00023000 08:07 6169015                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f6a4fdf1000-7f6a4fdf3000 r--p 00022000 08:07 6169015                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f6a4fdf3000-7f6a4fdf4000 rw-p 00024000 08:07 6169015                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f6a4fdf4000-7f6a4fe1a000 r-xp 00000000 08:07 2363866                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f6a4fe1a000-7f6a5001a000 ---p 00026000 08:07 2363866                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f6a5001a000-7f6a5001c000 r--p 00026000 08:07 2363866                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f6a5001c000-7f6a5001d000 rw-p 00028000 08:07 2363866                    /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f6a5001d000-7f6a5008b000 r-xp 00000000 08:07 2363964                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f6a5008b000-7f6a5028b000 ---p 0006e000 08:07 2363964                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f6a5028b000-7f6a5028c000 r--p 0006e000 08:07 2363964                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f6a5028c000-7f6a5028d000 rw-p 0006f000 08:07 2363964                    /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f6a5028d000-7f6a50294000 r-xp 00000000 08:07 6168840                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f6a50294000-7f6a50493000 ---p 00007000 08:07 6168840                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f6a50493000-7f6a50494000 r--p 00006000 08:07 6168840                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f6a50494000-7f6a50495000 rw-p 00007000 08:07 6168840                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f6a50495000-7f6a5049d000 r-xp 00000000 08:07 6169613                    /usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f6a5049d000-7f6a5069c000 ---p 00008000 08:07 6169613                    /usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f6a5069c000-7f6a5069d000 r--p 00007000 08:07 6169613                    /usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f6a5069d000-7f6a5069e000 rw-p 00008000 08:07 6169613                    /usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f6a5069e000-7f6a506fa000 r-xp 00000000 08:07 6165327                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f6a506fa000-7f6a508fa000 ---p 0005c000 08:07 6165327                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f6a508fa000-7f6a508fb000 r--p 0005c000 08:07 6165327                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f6a508fb000-7f6a508fc000 rw-p 0005d000 08:07 6165327                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f6a508fc000-7f6a50913000 r-xp 00000000 08:07 2369309                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f6a50913000-7f6a50b13000 ---p 00017000 08:07 2369309                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f6a50b13000-7f6a50b14000 r--p 00017000 08:07 2369309                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f6a50b14000-7f6a50b15000 rw-p 00018000 08:07 2369309                    /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f6a50b15000-7f6a50b17000 rw-p 00000000 00:00 0 
+7f6a50b17000-7f6a50b36000 r-xp 00000000 08:07 2363993                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f6a50b36000-7f6a50d35000 ---p 0001f000 08:07 2363993                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f6a50d35000-7f6a50d36000 r--p 0001e000 08:07 2363993                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f6a50d36000-7f6a50d37000 rw-p 0001f000 08:07 2363993                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f6a50d37000-7f6a50d39000 rw-p 00000000 00:00 0 
+7f6a50d39000-7f6a50d41000 r-xp 00000000 08:07 6169821                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f6a50d41000-7f6a50f41000 ---p 00008000 08:07 6169821                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f6a50f41000-7f6a50f42000 r--p 00008000 08:07 6169821                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f6a50f42000-7f6a50f43000 rw-p 00009000 08:07 6169821                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f6a50f43000-7f6a50f45000 r-xp 00000000 08:07 6169825                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f6a50f45000-7f6a51145000 ---p 00002000 08:07 6169825                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f6a51145000-7f6a51146000 r--p 00002000 08:07 6169825                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f6a51146000-7f6a51147000 rw-p 00003000 08:07 6169825                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f6a51147000-7f6a511e6000 r-xp 00000000 08:07 6169418                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f6a511e6000-7f6a513e6000 ---p 0009f000 08:07 6169418                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f6a513e6000-7f6a513ee000 r--p 0009f000 08:07 6169418                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f6a513ee000-7f6a513ef000 rw-p 000a7000 08:07 6169418                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f6a513ef000-7f6a513f1000 r-xp 00000000 08:07 6168466                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f6a513f1000-7f6a515f0000 ---p 00002000 08:07 6168466                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f6a515f0000-7f6a515f1000 r--p 00001000 08:07 6168466                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f6a515f1000-7f6a515f2000 rw-p 00002000 08:07 6168466                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f6a515f2000-7f6a515f4000 r-xp 00000000 08:07 6168462                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f6a515f4000-7f6a517f3000 ---p 00002000 08:07 6168462                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f6a517f3000-7f6a517f4000 r--p 00001000 08:07 6168462                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f6a517f4000-7f6a517f5000 rw-p 00002000 08:07 6168462                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f6a517f5000-7f6a517ff000 r-xp 00000000 08:07 6168488                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f6a517ff000-7f6a519fe000 ---p 0000a000 08:07 6168488                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f6a519fe000-7f6a519ff000 r--p 00009000 08:07 6168488                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f6a519ff000-7f6a51a00000 rw-p 0000a000 08:07 6168488                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f6a51a00000-7f6a51a02000 r-xp 00000000 08:07 6168480                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f6a51a02000-7f6a51c01000 ---p 00002000 08:07 6168480                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f6a51c01000-7f6a51c02000 r--p 00001000 08:07 6168480                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f6a51c02000-7f6a51c03000 rw-p 00002000 08:07 6168480                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f6a51c03000-7f6a51c40000 r-xp 00000000 08:07 6160536                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f6a51c40000-7f6a51e3f000 ---p 0003d000 08:07 6160536                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f6a51e3f000-7f6a51e41000 r--p 0003c000 08:07 6160536                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f6a51e41000-7f6a51e46000 rw-p 0003e000 08:07 6160536                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f6a51e46000-7f6a51f55000 r-xp 00000000 08:07 2363877                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.1
+7f6a51f55000-7f6a52154000 ---p 0010f000 08:07 2363877                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.1
+7f6a52154000-7f6a52155000 r--p 0010e000 08:07 2363877                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.1
+7f6a52155000-7f6a52156000 rw-p 0010f000 08:07 2363877                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.1
+7f6a52156000-7f6a52157000 rw-p 00000000 00:00 0 
+7f6a52157000-7f6a521a9000 r-xp 00000000 08:07 6168995                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.1
+7f6a521a9000-7f6a523a8000 ---p 00052000 08:07 6168995                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.1
+7f6a523a8000-7f6a523a9000 r--p 00051000 08:07 6168995                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.1
+7f6a523a9000-7f6a523aa000 rw-p 00052000 08:07 6168995                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.1
+7f6a523aa000-7f6a523f3000 r-xp 00000000 08:07 6169390                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f6a523f3000-7f6a525f3000 ---p 00049000 08:07 6169390                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f6a525f3000-7f6a525f5000 r--p 00049000 08:07 6169390                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f6a525f5000-7f6a525f6000 rw-p 0004b000 08:07 6169390                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f6a525f6000-7f6a5260a000 r-xp 00000000 08:07 6169394                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f6a5260a000-7f6a5280a000 ---p 00014000 08:07 6169394                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f6a5280a000-7f6a5280b000 r--p 00014000 08:07 6169394                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f6a5280b000-7f6a5280c000 rw-p 00015000 08:07 6169394                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f6a5280c000-7f6a5298c000 r-xp 00000000 08:07 6168957                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.1
+7f6a5298c000-7f6a52b8c000 ---p 00180000 08:07 6168957                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.1
+7f6a52b8c000-7f6a52b90000 r--p 00180000 08:07 6168957                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.1
+7f6a52b90000-7f6a52b92000 rw-p 00184000 08:07 6168957                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.1
+7f6a52b92000-7f6a52b94000 rw-p 00000000 00:00 0 
+7f6a52b94000-7f6a52bb5000 r-xp 00000000 08:07 6161890                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f6a52bb5000-7f6a52db4000 ---p 00021000 08:07 6161890                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f6a52db4000-7f6a52db5000 r--p 00020000 08:07 6161890                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f6a52db5000-7f6a52db6000 rw-p 00021000 08:07 6161890                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f6a52db6000-7f6a52ec4000 r-xp 00000000 08:07 6168618                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f6a52ec4000-7f6a530c4000 ---p 0010e000 08:07 6168618                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f6a530c4000-7f6a530c7000 r--p 0010e000 08:07 6168618                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f6a530c7000-7f6a530c8000 rw-p 00111000 08:07 6168618                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f6a530c8000-7f6a530ca000 rw-p 00000000 00:00 0 
+7f6a530ca000-7f6a530ec000 r-xp 00000000 08:07 6168561                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f6a530ec000-7f6a532eb000 ---p 00022000 08:07 6168561                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f6a532eb000-7f6a532ee000 r--p 00021000 08:07 6168561                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f6a532ee000-7f6a532ef000 rw-p 00024000 08:07 6168561                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f6a532ef000-7f6a532fb000 r-xp 00000000 08:07 6169392                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f6a532fb000-7f6a534fa000 ---p 0000c000 08:07 6169392                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f6a534fa000-7f6a534fb000 r--p 0000b000 08:07 6169392                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f6a534fb000-7f6a534fc000 rw-p 0000c000 08:07 6169392                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f6a534fc000-7f6a534ff000 r-xp 00000000 08:07 6168971                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.1
+7f6a534ff000-7f6a536fe000 ---p 00003000 08:07 6168971                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.1
+7f6a536fe000-7f6a536ff000 r--p 00002000 08:07 6168971                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.1
+7f6a536ff000-7f6a53700000 rw-p 00003000 08:07 6168971                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.1
+7f6a53700000-7f6a537b0000 r-xp 00000000 08:07 6168927                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f6a537b0000-7f6a539af000 ---p 000b0000 08:07 6168927                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f6a539af000-7f6a539b3000 r--p 000af000 08:07 6168927                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f6a539b3000-7f6a539b5000 rw-p 000b3000 08:07 6168927                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f6a539b5000-7f6a53df3000 r-xp 00000000 08:07 6169072                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f6a53df3000-7f6a53ff2000 ---p 0043e000 08:07 6169072                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f6a53ff2000-7f6a53ff9000 r--p 0043d000 08:07 6169072                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f6a53ff9000-7f6a53ffd000 rw-p 00444000 08:07 6169072                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f6a53ffd000-7f6a54000000 rw-p 00000000 00:00 0 
+7f6a54000000-7f6a54021000 rw-p 00000000 00:00 0 
+7f6a54021000-7f6a58000000 ---p 00000000 00:00 0 
+7f6a58000000-7f6a58027000 rw-p 00000000 00:00 0 
+7f6a58027000-7f6a5c000000 ---p 00000000 00:00 0 
+7f6a5c000000-7f6a5c021000 rw-p 00000000 00:00 0 
+7f6a5c021000-7f6a60000000 ---p 00000000 00:00 0 
+7f6a60000000-7f6a60021000 rw-p 00000000 00:00 0 
+7f6a60021000-7f6a64000000 ---p 00000000 00:00 0 
+7f6a64000000-7f6a65d6f000 rw-p 00000000 00:00 0 
+7f6a65d6f000-7f6a68000000 ---p 00000000 00:00 0 
+7f6a68000000-7f6a68ce6000 rw-p 00000000 00:00 0 
+7f6a68ce6000-7f6a6c000000 ---p 00000000 00:00 0 
+7f6a6c000000-7f6a6c021000 rw-p 00000000 00:00 0 
+7f6a6c021000-7f6a70000000 ---p 00000000 00:00 0 
+7f6a70000000-7f6a716c4000 rw-p 00000000 00:00 0 
+7f6a716c4000-7f6a74000000 ---p 00000000 00:00 0 
+7f6a74000000-7f6a74021000 rw-p 00000000 00:00 0 
+7f6a74021000-7f6a78000000 ---p 00000000 00:00 0 
+7f6a78000000-7f6a78021000 rw-p 00000000 00:00 0 
+7f6a78021000-7f6a7c000000 ---p 00000000 00:00 0 
+7f6a7c000000-7f6a7c003000 r--s 00015000 08:07 3813179                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/jce.jar
+7f6a7c003000-7f6a7c004000 r--p 00000000 00:00 0 
+7f6a7c004000-7f6a7c006000 r--s 00000000 08:07 4597730                    /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le64.cache-6
+7f6a7c006000-7f6a7c00c000 r--s 00000000 08:07 4590760                    /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le64.cache-6
+7f6a7c00c000-7f6a7c00d000 r--s 00000000 08:07 4590737                    /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le64.cache-6
+7f6a7c00d000-7f6a7c011000 r--s 00000000 08:07 4599421                    /var/cache/fontconfig/de156ccd2eddbdc19d37a45b8b2aac9c-le64.cache-6
+7f6a7c011000-7f6a7c012000 r--s 00000000 08:07 4590688                    /var/cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le64.cache-6
+7f6a7c012000-7f6a7c016000 r--s 00000000 08:07 4590687                    /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le64.cache-6
+7f6a7c016000-7f6a7c017000 r--s 00000000 08:07 4590683                    /var/cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le64.cache-6
+7f6a7c017000-7f6a7c01a000 r--s 00000000 08:07 4590619                    /var/cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le64.cache-6
+7f6a7c01a000-7f6a7c01b000 r--s 00000000 08:07 4590590                    /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le64.cache-6
+7f6a7c01b000-7f6a7c020000 r--s 00000000 08:07 4590587                    /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le64.cache-6
+7f6a7c020000-7f6a7c021000 r--s 00000000 08:07 4590586                    /var/cache/fontconfig/bab58bb527bb656aaa9f116d68a48d89-le64.cache-6
+7f6a7c021000-7f6a7c028000 r--s 00000000 08:07 4590382                    /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le64.cache-6
+7f6a7c028000-7f6a7c029000 r--s 00000000 08:07 4590330                    /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le64.cache-6
+7f6a7c029000-7f6a7c02a000 r--s 00000000 08:07 4589842                    /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le64.cache-6
+7f6a7c02a000-7f6a7c030000 r--s 00000000 08:07 4589835                    /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le64.cache-6
+7f6a7c030000-7f6a7c038000 r--s 00000000 08:07 4600607                    /var/cache/fontconfig/52f7bdb7ce746bfd7eaa1985bd9cfa93-le64.cache-6
+7f6a7c038000-7f6a7c04b000 r--s 00000000 08:07 4589724                    /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le64.cache-6
+7f6a7c04b000-7f6a7c051000 r--s 00000000 08:07 4600606                    /var/cache/fontconfig/3f7329c5293ffd510edef78f73874cfd-le64.cache-6
+7f6a7c051000-7f6a7c055000 r--s 00000000 08:07 4589558                    /var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le64.cache-6
+7f6a7c055000-7f6a7c062000 r--s 00000000 08:07 4589553                    /var/cache/fontconfig/089dead882dea3570ffc31a9898cfb69-le64.cache-6
+7f6a7c062000-7f6a7c06d000 r--s 00000000 08:07 4589398                    /var/cache/fontconfig/83bf95040141907cd45bb53cf7c1c148-le64.cache-6
+7f6a7c06d000-7f6a7c0b5000 r--p 00000000 08:07 7211848                    /usr/share/glib-2.0/schemas/gschemas.compiled
+7f6a7c0b5000-7f6a7c0b8000 ---p 00000000 00:00 0 
+7f6a7c0b8000-7f6a7c1b6000 rw-p 00000000 00:00 0 
+7f6a7c1b6000-7f6a7c1bb000 r-xp 00000000 08:07 6168472                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f6a7c1bb000-7f6a7c3ba000 ---p 00005000 08:07 6168472                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f6a7c3ba000-7f6a7c3bb000 r--p 00004000 08:07 6168472                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f6a7c3bb000-7f6a7c3bc000 rw-p 00005000 08:07 6168472                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f6a7c3bc000-7f6a7c3c5000 r-xp 00000000 08:07 6168464                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f6a7c3c5000-7f6a7c5c4000 ---p 00009000 08:07 6168464                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f6a7c5c4000-7f6a7c5c5000 r--p 00008000 08:07 6168464                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f6a7c5c5000-7f6a7c5c6000 rw-p 00009000 08:07 6168464                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f6a7c5c6000-7f6a7c5c9000 ---p 00000000 00:00 0 
+7f6a7c5c9000-7f6a7c6c7000 rw-p 00000000 00:00 0 
+7f6a7c6c7000-7f6a7c6eb000 r-xp 00000000 08:07 2363976                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f6a7c6eb000-7f6a7c8ea000 ---p 00024000 08:07 2363976                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f6a7c8ea000-7f6a7c8eb000 r--p 00023000 08:07 2363976                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f6a7c8eb000-7f6a7c8ec000 rw-p 00024000 08:07 2363976                    /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f6a7c8ec000-7f6a7c905000 r-xp 00000000 08:07 2364026                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f6a7c905000-7f6a7cb04000 ---p 00019000 08:07 2364026                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f6a7cb04000-7f6a7cb05000 r--p 00018000 08:07 2364026                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f6a7cb05000-7f6a7cb06000 rw-p 00019000 08:07 2364026                    /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f6a7cb06000-7f6a7cb1c000 r-xp 00000000 08:07 2363873                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6a7cb1c000-7f6a7cd1b000 ---p 00016000 08:07 2363873                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6a7cd1b000-7f6a7cd1c000 rw-p 00015000 08:07 2363873                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6a7cd1c000-7f6a7cdc0000 r-xp 00000000 08:07 6168888                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f6a7cdc0000-7f6a7cfbf000 ---p 000a4000 08:07 6168888                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f6a7cfbf000-7f6a7cfc5000 r--p 000a3000 08:07 6168888                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f6a7cfc5000-7f6a7cfc6000 rw-p 000a9000 08:07 6168888                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f6a7cfc6000-7f6a7cfc7000 r--s 00000000 08:07 4589583                    /var/cache/fontconfig/551ecf3b0e8b0bca0f25c0944f561853-le64.cache-6
+7f6a7cfc7000-7f6a7cfc8000 r--s 00000000 08:07 4589549                    /var/cache/fontconfig/30829fa25452a46451e813d634d7f916-le64.cache-6
+7f6a7cfc8000-7f6a7cfda000 r--s 00000000 08:07 4587611                    /var/cache/fontconfig/9b89f8e3dae116d678bbf48e5f21f69b-le64.cache-6
+7f6a7cfda000-7f6a7cfe7000 r--s 00000000 08:07 4588158                    /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le64.cache-6
+7f6a7cfe7000-7f6a7d0bb000 r-xp 00000000 08:07 3813099                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libfontmanager.so
+7f6a7d0bb000-7f6a7d2ba000 ---p 000d4000 08:07 3813099                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libfontmanager.so
+7f6a7d2ba000-7f6a7d2bf000 rw-p 000d3000 08:07 3813099                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libfontmanager.so
+7f6a7d2bf000-7f6a7d4d2000 rw-p 00000000 00:00 0 
+7f6a7d4d2000-7f6a7d4d7000 r-xp 00000000 08:07 6168468                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f6a7d4d7000-7f6a7d6d6000 ---p 00005000 08:07 6168468                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f6a7d6d6000-7f6a7d6d7000 r--p 00004000 08:07 6168468                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f6a7d6d7000-7f6a7d6d8000 rw-p 00005000 08:07 6168468                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f6a7d6d8000-7f6a7d6da000 r-xp 00000000 08:07 6168457                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f6a7d6da000-7f6a7d8da000 ---p 00002000 08:07 6168457                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f6a7d8da000-7f6a7d8db000 r--p 00002000 08:07 6168457                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f6a7d8db000-7f6a7d8dc000 rw-p 00003000 08:07 6168457                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f6a7d8dc000-7f6a7d8fd000 r-xp 00000000 08:07 6169835                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f6a7d8fd000-7f6a7dafc000 ---p 00021000 08:07 6169835                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f6a7dafc000-7f6a7dafd000 r--p 00020000 08:07 6169835                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f6a7dafd000-7f6a7dafe000 rw-p 00021000 08:07 6169835                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f6a7dafe000-7f6a7db0d000 r-xp 00000000 08:07 6168478                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f6a7db0d000-7f6a7dd0c000 ---p 0000f000 08:07 6168478                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f6a7dd0c000-7f6a7dd0d000 r--p 0000e000 08:07 6168478                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f6a7dd0d000-7f6a7dd0e000 rw-p 0000f000 08:07 6168478                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f6a7dd0e000-7f6a7dd13000 r-xp 00000000 08:07 6168496                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f6a7dd13000-7f6a7df12000 ---p 00005000 08:07 6168496                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f6a7df12000-7f6a7df13000 r--p 00004000 08:07 6168496                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f6a7df13000-7f6a7df14000 rw-p 00005000 08:07 6168496                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f6a7df14000-7f6a7df1d000 r-xp 00000000 08:07 6168490                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f6a7df1d000-7f6a7e11c000 ---p 00009000 08:07 6168490                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f6a7e11c000-7f6a7e11d000 r--p 00008000 08:07 6168490                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f6a7e11d000-7f6a7e11e000 rw-p 00009000 08:07 6168490                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f6a7e11e000-7f6a7e253000 r-xp 00000000 08:07 6168453                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f6a7e253000-7f6a7e453000 ---p 00135000 08:07 6168453                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f6a7e453000-7f6a7e454000 r--p 00135000 08:07 6168453                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f6a7e454000-7f6a7e458000 rw-p 00136000 08:07 6168453                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f6a7e458000-7f6a7e469000 r-xp 00000000 08:07 6168470                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f6a7e469000-7f6a7e668000 ---p 00011000 08:07 6168470                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f6a7e668000-7f6a7e669000 r--p 00010000 08:07 6168470                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f6a7e669000-7f6a7e66a000 rw-p 00011000 08:07 6168470                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f6a7e66a000-7f6a7e66b000 r--s 00000000 08:07 4589548                    /var/cache/fontconfig/0c9eb80ebd1c36541ebe2852d3bb0c49-le64.cache-6
+7f6a7e66b000-7f6a7e66e000 r--s 00000000 08:07 4589460                    /var/cache/fontconfig/75114ca45c98e8a441da0ff356701271-le64.cache-6
+7f6a7e66e000-7f6a7e672000 r--s 00000000 08:07 4594058                    /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-6
+7f6a7e672000-7f6a7e677000 r--p 00000000 08:07 3802123                    /home/johnny/.config/dconf/user (deleted)
+7f6a7e677000-7f6a7e678000 r--s 00000000 00:29 27                         /run/user/1000/dconf/user (deleted)
+7f6a7e678000-7f6a7e68b000 r--s 00344000 08:07 3813195                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/resources.jar
+7f6a7e68b000-7f6a7e6e1000 r-xp 00000000 08:07 3813096                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libawt_xawt.so
+7f6a7e6e1000-7f6a7e8e0000 ---p 00056000 08:07 3813096                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libawt_xawt.so
+7f6a7e8e0000-7f6a7e8e4000 rw-p 00055000 08:07 3813096                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libawt_xawt.so
+7f6a7e8e4000-7f6a7e8e5000 rw-p 00000000 00:00 0 
+7f6a7e8e5000-7f6a7e988000 r-xp 00000000 08:07 3813094                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libawt.so
+7f6a7e988000-7f6a7eb88000 ---p 000a3000 08:07 3813094                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libawt.so
+7f6a7eb88000-7f6a7eb94000 rw-p 000a3000 08:07 3813094                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libawt.so
+7f6a7eb94000-7f6a7ebb8000 rw-p 00000000 00:00 0 
+7f6a7ebb8000-7f6a7ebd4000 r--s 00393000 08:07 3813155                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/cldrdata.jar
+7f6a7ebd4000-7f6a7ebd9000 r--s 0003b000 08:07 3813163                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/sunjce_provider.jar
+7f6a7ebd9000-7f6a7ebda000 r--s 00008000 08:07 3813162                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/sunec.jar
+7f6a7ebda000-7f6a7ebdc000 r--s 00001000 08:07 3813156                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/dnsns.jar
+7f6a7ebdc000-7f6a7ebf7000 r--s 001d6000 08:07 3813161                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/nashorn.jar
+7f6a7ebf7000-7f6a7ebf8000 r--s 0000a000 08:07 3813157                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/jaccess.jar
+7f6a7ebf8000-7f6a7ebf9000 r--s 00010000 08:07 3813165                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/zipfs.jar
+7f6a7ebf9000-7f6a7ec03000 r--s 00116000 08:07 3813159                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/localedata.jar
+7f6a7ec03000-7f6a7ec07000 r--s 00037000 08:07 3813164                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/sunpkcs11.jar
+7f6a7ec07000-7f6a7ec0e000 r--s 00040000 08:07 3812622                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/ext/cglib-2.2.2.jar
+7f6a7ec0e000-7f6a7ec10000 r--s 0001b000 08:07 3812639                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jayatana-1.2.4.jar
+7f6a7ec10000-7f6a7ec12000 r--s 00014000 08:07 3812635                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/imageio-tiff-3.2.1.jar
+7f6a7ec12000-7f6a7ec1f000 r--s 000a4000 08:07 3812629                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/httpclient-4.4.1.jar
+7f6a7ec1f000-7f6a7ecea000 r--s 01091000 08:07 3812689                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/openapi.jar
+7f6a7ecea000-7f6a7ecf1000 r--s 0005e000 08:07 3812601                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/asm-all.jar
+7f6a7ecf1000-7f6a7ecf3000 r--s 00009000 08:07 3812686                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/nanoxml-2.2.3.jar
+7f6a7ecf3000-7f6a7ecf5000 r--s 00005000 08:07 3812600                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/annotations.jar
+7f6a7ecf5000-7f6a7ecfb000 r--s 0003f000 08:07 3812617                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/commons-net-3.3.jar
+7f6a7ecfb000-7f6a7ecff000 r--s 00348000 08:07 3812707                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/sqlite-jdbc-3.6.20.1.jar
+7f6a7ecff000-7f6a7ed06000 r--s 00048000 08:07 3812630                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/httpcore-4.4.1.jar
+7f6a7ed06000-7f6a7ed08000 r--s 00010000 08:07 3812634                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/imageio-metadata-3.2.1.jar
+7f6a7ed08000-7f6a7ed0a000 r--s 0000e000 08:07 3812616                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/commons-logging-1.2.jar
+7f6a7ed0a000-7f6a7ed0c000 r--s 0000c000 08:07 3812706                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/snappy-in-java-0.5.1.jar
+7f6a7ed0c000-7f6a7ed0f000 r--s 00014000 08:07 3812611                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/common-io-3.2.1.jar
+7f6a7ed0f000-7f6a7ed11000 r--s 0000e000 08:07 3812633                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/imageio-core-3.2.1.jar
+7f6a7ed11000-7f6a7ed1e000 r--s 00109000 08:07 3812700                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/rhino-js-1_7R4.jar
+7f6a7ed1e000-7f6a7ed1f000 r--s 00001000 08:07 3812653                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsch.agentproxy.usocket-nc.jar
+7f6a7ed1f000-7f6a7ed26000 r--s 00043000 08:07 3812701                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/rngom-20051226-patched.jar
+7f6a7ed26000-7f6a7ed32000 r--s 000ac000 08:07 3812658                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/kotlin-runtime.jar
+7f6a7ed32000-7f6a7ed3b000 r--s 0002d000 08:07 3812718                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xml-apis.jar
+7f6a7ed3b000-7f6a7ed3c000 r--s 00006000 08:07 3812714                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/winp-1.23.jar
+7f6a7ed3c000-7f6a7ed42000 r--s 00047000 08:07 3812615                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/commons-httpclient-3.1-patched.jar
+7f6a7ed42000-7f6a7ed44000 r--s 00013000 08:07 3812610                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/common-image-3.2.1.jar
+7f6a7ed44000-7f6a7ed46000 r--s 00010000 08:07 3812619                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/coverage-instrumenter.jar
+7f6a7ed46000-7f6a7ed48000 r--s 0000e000 08:07 3812695                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/pty4j-0.7.1.jar
+7f6a7ed48000-7f6a7ed4f000 r--s 0003a000 08:07 3812613                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/commons-codec-1.9.jar
+7f6a7ed4f000-7f6a7ed53000 r--s 0001d000 08:07 3812684                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/microba.jar
+7f6a7ed53000-7f6a7ed5a000 r--s 0005d000 08:07 3812614                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/commons-compress-1.10.jar
+7f6a7ed5a000-7f6a7ed60000 r--s 00031000 08:07 3812638                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jaxen-1.1.3.jar
+7f6a7ed60000-7f6a7ed67000 r--s 00040000 08:07 3812608                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/cglib-2.2.2.jar
+7f6a7ed67000-7f6a7ed69000 r--s 0000b000 08:07 3812654                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsp-api.jar
+7f6a7ed69000-7f6a7ed6c000 r--s 0023a000 08:07 3812698                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/resources.jar
+7f6a7ed6c000-7f6a7ed79000 r--s 000ab000 08:07 3812713                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/velocity.jar
+7f6a7ed79000-7f6a7ed7a000 r--s 00002000 08:07 3812609                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/cli-parser-1.1.jar
+7f6a7ed7a000-7f6a7eda5000 r--s 001f9000 08:07 3812627                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/guava-17.0.jar
+7f6a7eda5000-7f6a7edb4000 r--s 0006b000 08:07 3812709                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/trang-core.jar
+7f6a7edb4000-7f6a7edb7000 r--s 0001c000 08:07 3812687                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/nekohtml-1.9.14.jar
+7f6a7edb7000-7f6a7edba000 r--s 0001a000 08:07 3812720                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xmlrpc-2.0.jar
+7f6a7edba000-7f6a7edbc000 r--s 00011000 08:07 3812641                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jettison-1.3.2.jar
+7f6a7edbc000-7f6a7edc4000 r--s 00049000 08:07 3812599                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/alloy.jar
+7f6a7edc4000-7f6a7edc6000 r--s 0000a000 08:07 3812703                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/serviceMessages.jar
+7f6a7edc6000-7f6a7edc7000 r--s 00009000 08:07 3812631                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/httpmime-4.4.1.jar
+7f6a7edc7000-7f6a7edc9000 r--s 00013000 08:07 3812697                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/resolver.jar
+7f6a7edc9000-7f6a7ee03000 r--s 00300000 08:07 3812688                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/netty-all-4.1.1.Final.jar
+7f6a7ee03000-7f6a7ee05000 r--s 00000000 08:07 3812651                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsch.agentproxy.sshagent.jar
+7f6a7ee05000-7f6a7ee06000 r--s 0000e000 08:07 3812625                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/forms_rt.jar
+7f6a7ee06000-7f6a7ee40000 r--s 002b0000 08:07 3812632                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/icons.jar
+7f6a7ee40000-7f6a7ee45000 r--s 00034000 08:07 3812626                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/gson-2.5.jar
+7f6a7ee45000-7f6a7ee74000 r--s 0021b000 08:07 3812657                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/kotlin-reflect.jar
+7f6a7ee74000-7f6a7ee75000 r--s 00007000 08:07 3812704                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/slf4j-api-1.7.10.jar
+7f6a7ee75000-7f6a7ee77000 r--s 00004000 08:07 3812620                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/coverage-util.jar
+7f6a7ee77000-7f6a7ee90000 r--s 00135000 08:07 3812716                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xercesImpl.jar
+7f6a7ee90000-7f6a7ee94000 r--s 00040000 08:07 3812647                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsch-0.1.53.jar
+7f6a7ee94000-7f6a7ee96000 r--s 00001000 08:07 3812705                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/slf4j-log4j12-1.7.10.jar
+7f6a7ee96000-7f6a7ee98000 r--s 0000d000 08:07 3812682                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/markdown4j-2.2.jar
+7f6a7ee98000-7f6a7eea2000 r--s 00086000 08:07 10749182                   /home/johnny/program_files/PhpStorm-162.2380.11/lib/JetbrainsCrack-2.6.0.jar
+7f6a7eea2000-7f6a7eea4000 r--s 00007000 08:07 3812683                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/markdownj-core-0.4.2-SNAPSHOT.jar
+7f6a7eea4000-7f6a7eea5000 r--s 00010000 08:07 3812656                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jzlib-1.1.1.jar
+7f6a7eea5000-7f6a7eee2000 r--s 00251000 08:07 3812715                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xbean.jar
+7f6a7eee2000-7f6a7eee4000 r--s 00009000 08:07 3812628                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/hamcrest-core-1.3.jar
+7f6a7eee4000-7f6a7eeef000 r--s 0008d000 08:07 3812702                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/sanselan-0.98-snapshot.jar
+7f6a7eeef000-7f6a7eef9000 r--s 00080000 08:07 3812643                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jh.jar
+7f6a7eef9000-7f6a7ef14000 r--s 00147000 08:07 3812708                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/swingx-core-1.6.2.jar
+7f6a7ef14000-7f6a7ef1b000 r--s 0007b000 08:07 3812693                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/protobuf-2.5.0.jar
+7f6a7ef1b000-7f6a7ef1e000 r--s 00020000 08:07 3812696                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/purejavacomm.jar
+7f6a7ef1e000-7f6a7ef21000 r--s 00013000 08:07 3812642                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jgoodies-forms.jar
+7f6a7ef21000-7f6a7ef2e000 r--s 00077000 08:07 3812722                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xstream-1.4.8.jar
+7f6a7ef2e000-7f6a7ef2f000 r--s 0000b000 08:07 3812721                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xpp3-1.1.4-min.jar
+7f6a7ef2f000-7f6a7ef31000 r--s 00011000 08:07 3812685                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/miglayout-swing.jar
+7f6a7ef31000-7f6a7ef3b000 r--s 00089000 08:07 3812719                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xmlgraphics-commons-1.5.jar
+7f6a7ef3b000-7f6a7ef3c000 r--s 0000a000 08:07 3812603                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/asm.jar
+7f6a7ef3c000-7f6a7ef87000 r--s 002fb000 08:07 3812605                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/batik-all.jar
+7f6a7ef87000-7f6a7f257000 r--s 054a0000 08:07 3812691                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/phpstorm.jar
+7f6a7f257000-7f6a7f2d0000 r--s 010ed000 08:07 3813235                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/lib/tools.jar
+7f6a7f2d0000-7f6a7f5d1000 rw-p 00000000 00:00 0 
+7f6a7f5d1000-7f6a7f5e8000 r-xp 00000000 08:07 3813127                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libnet.so
+7f6a7f5e8000-7f6a7f7e7000 ---p 00017000 08:07 3813127                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libnet.so
+7f6a7f7e7000-7f6a7f7e8000 rw-p 00016000 08:07 3813127                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libnet.so
+7f6a7f7e8000-7f6a7f7f9000 r-xp 00000000 08:07 3813128                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libnio.so
+7f6a7f7f9000-7f6a7f9f9000 ---p 00011000 08:07 3813128                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libnio.so
+7f6a7f9f9000-7f6a7f9fa000 rw-p 00011000 08:07 3813128                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libnio.so
+7f6a7f9fa000-7f6a7f9fb000 ---p 00000000 00:00 0 
+7f6a7f9fb000-7f6a7fafb000 rw-p 00000000 00:00 0 
+7f6a7fafb000-7f6a7fafe000 ---p 00000000 00:00 0 
+7f6a7fafe000-7f6a7fbfc000 rw-p 00000000 00:00 0 
+7f6a7fbfc000-7f6a7fbff000 ---p 00000000 00:00 0 
+7f6a7fbff000-7f6a7fcfd000 rw-p 00000000 00:00 0 
+7f6a7fcfd000-7f6a7fd00000 ---p 00000000 00:00 0 
+7f6a7fd00000-7f6a7fdfe000 rw-p 00000000 00:00 0 
+7f6a7fdfe000-7f6a7fe01000 ---p 00000000 00:00 0 
+7f6a7fe01000-7f6a7feff000 rw-p 00000000 00:00 0 
+7f6a7feff000-7f6a7ff02000 ---p 00000000 00:00 0 
+7f6a7ff02000-7f6a80000000 rw-p 00000000 00:00 0 
+7f6a80000000-7f6a8007a000 rw-p 00000000 00:00 0 
+7f6a8007a000-7f6a84000000 ---p 00000000 00:00 0 
+7f6a84000000-7f6a84021000 rw-p 00000000 00:00 0 
+7f6a84021000-7f6a88000000 ---p 00000000 00:00 0 
+7f6a88000000-7f6a88021000 rw-p 00000000 00:00 0 
+7f6a88021000-7f6a8c000000 ---p 00000000 00:00 0 
+7f6a8c000000-7f6a8c05e000 rw-p 00000000 00:00 0 
+7f6a8c05e000-7f6a90000000 ---p 00000000 00:00 0 
+7f6a90000000-7f6a90001000 r--s 00002000 08:07 3812648                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsch.agentproxy.connector-factory.jar
+7f6a90001000-7f6a90006000 r--s 00010000 08:07 3812717                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/xml-apis-ext.jar
+7f6a90006000-7f6a90008000 r--s 00004000 08:07 3812655                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsr173_1.0_api.jar
+7f6a90008000-7f6a90017000 r--s 00068000 08:07 3812644                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jing.jar
+7f6a90017000-7f6a9001b000 r--s 00018000 08:07 3812692                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/picocontainer.jar
+7f6a9001b000-7f6a9002a000 r--s 01290000 08:07 3812699                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/resources_en.jar
+7f6a9002a000-7f6a9003b000 r--s 00155000 08:07 3812645                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jna-platform.jar
+7f6a9003b000-7f6a900cc000 r--s 013b3000 08:07 3813158                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/ext/jfxrt.jar
+7f6a900cc000-7f6a900cf000 ---p 00000000 00:00 0 
+7f6a900cf000-7f6a901cd000 rw-p 00000000 00:00 0 
+7f6a901cd000-7f6a90658000 r--p 00000000 08:07 6163234                    /usr/lib/locale/locale-archive
+7f6a90658000-7f6a9065b000 ---p 00000000 00:00 0 
+7f6a9065b000-7f6a90759000 rw-p 00000000 00:00 0 
+7f6a90759000-7f6a9075c000 ---p 00000000 00:00 0 
+7f6a9075c000-7f6a9085a000 rw-p 00000000 00:00 0 
+7f6a9085a000-7f6a9085b000 ---p 00000000 00:00 0 
+7f6a9085b000-7f6a9095b000 rw-p 00000000 00:00 0 
+7f6a9095b000-7f6a90b2a000 r--s 03c1a000 08:07 3813196                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/rt.jar
+7f6a90b2a000-7f6a9132a000 rw-p 00000000 00:00 0 
+7f6a9132a000-7f6a9132b000 ---p 00000000 00:00 0 
+7f6a9132b000-7f6a94000000 rw-p 00000000 00:00 0 
+7f6a94000000-7f6a94029000 rw-p 00000000 00:00 0 
+7f6a94029000-7f6a98000000 ---p 00000000 00:00 0 
+7f6a98000000-7f6a98021000 rw-p 00000000 00:00 0 
+7f6a98021000-7f6a9c000000 ---p 00000000 00:00 0 
+7f6a9c000000-7f6a9c030000 rw-p 00000000 00:00 0 
+7f6a9c030000-7f6aa0000000 ---p 00000000 00:00 0 
+7f6aa0000000-7f6aa0001000 r--s 00001000 08:07 3812650                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsch.agentproxy.pageant.jar
+7f6aa0001000-7f6aa0003000 r--s 0000e000 08:07 3812690                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/oromatcher.jar
+7f6aa0003000-7f6aa0005000 r--s 00006000 08:07 3812624                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/fluent-hc-4.4.1.jar
+7f6aa0005000-7f6aa0008000 r--s 0002d000 08:07 3812637                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/isorelax.jar
+7f6aa0008000-7f6aa0036000 r--s 00554000 08:07 3812712                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/util.jar
+7f6aa0036000-7f6aa00d7000 rw-p 00000000 00:00 0 
+7f6aa00d7000-7f6aa01a7000 ---p 00000000 00:00 0 
+7f6aa01a7000-7f6aa05c1000 rw-p 00000000 00:00 0 
+7f6aa05c1000-7f6aa0628000 ---p 00000000 00:00 0 
+7f6aa0628000-7f6aa0653000 rw-p 00000000 00:00 0 
+7f6aa0653000-7f6aa0722000 ---p 00000000 00:00 0 
+7f6aa0722000-7f6aa0723000 rw-p 00000000 00:00 0 
+7f6aa0723000-7f6aa0724000 ---p 00000000 00:00 0 
+7f6aa0724000-7f6aa0824000 rw-p 00000000 00:00 0 
+7f6aa0824000-7f6aa0825000 ---p 00000000 00:00 0 
+7f6aa0825000-7f6aa0925000 rw-p 00000000 00:00 0 
+7f6aa0925000-7f6aa0926000 ---p 00000000 00:00 0 
+7f6aa0926000-7f6aa0abe000 rw-p 00000000 00:00 0 
+7f6aa0abe000-7f6aa0de6000 ---p 00000000 00:00 0 
+7f6aa0de6000-7f6aa33d6000 rwxp 00000000 00:00 0 
+7f6aa33d6000-7f6aafde6000 ---p 00000000 00:00 0 
+7f6aafde6000-7f6aafe00000 r-xp 00000000 08:07 3813138                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libzip.so
+7f6aafe00000-7f6aaffff000 ---p 0001a000 08:07 3813138                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libzip.so
+7f6aaffff000-7f6ab0000000 rw-p 00019000 08:07 3813138                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libzip.so
+7f6ab0000000-7f6ab0aae000 rw-p 00000000 00:00 0 
+7f6ab0aae000-7f6ab4000000 ---p 00000000 00:00 0 
+7f6ab4000000-7f6ab4004000 r--s 0001a000 08:07 3812612                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/common-lang-3.2.1.jar
+7f6ab4004000-7f6ab4007000 r--s 0002d000 08:07 3812694                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/proxy-vole_20131209.jar
+7f6ab4007000-7f6ab4009000 r--s 00008000 08:07 3812602                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/asm-commons.jar
+7f6ab4009000-7f6ab400b000 r--s 00019000 08:07 3812723                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/yjp-controller-api-redist.jar
+7f6ab400b000-7f6ab400f000 r--s 0002d000 08:07 3812604                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/automaton.jar
+7f6ab400f000-7f6ab4017000 r--s 00083000 08:07 3812711                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/trove4j_src.jar
+7f6ab4017000-7f6ab4022000 r--s 00083000 08:07 3812710                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/trove4j.jar
+7f6ab4022000-7f6ab4070000 rw-p 00000000 00:00 0 
+7f6ab4070000-7f6ab4071000 ---p 00000000 00:00 0 
+7f6ab4071000-7f6ab4171000 rw-p 00000000 00:00 0 
+7f6ab4171000-7f6ab417c000 r-xp 00000000 08:07 2369308                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f6ab417c000-7f6ab437b000 ---p 0000b000 08:07 2369308                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f6ab437b000-7f6ab437c000 r--p 0000a000 08:07 2369308                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f6ab437c000-7f6ab437d000 rw-p 0000b000 08:07 2369308                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f6ab437d000-7f6ab4383000 rw-p 00000000 00:00 0 
+7f6ab4383000-7f6ab438e000 r-xp 00000000 08:07 2369293                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f6ab438e000-7f6ab458d000 ---p 0000b000 08:07 2369293                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f6ab458d000-7f6ab458e000 r--p 0000a000 08:07 2369293                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f6ab458e000-7f6ab458f000 rw-p 0000b000 08:07 2369293                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f6ab458f000-7f6ab45a5000 r-xp 00000000 08:07 2369304                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f6ab45a5000-7f6ab47a4000 ---p 00016000 08:07 2369304                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f6ab47a4000-7f6ab47a5000 r--p 00015000 08:07 2369304                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f6ab47a5000-7f6ab47a6000 rw-p 00016000 08:07 2369304                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f6ab47a6000-7f6ab47a8000 rw-p 00000000 00:00 0 
+7f6ab47a8000-7f6ab47b0000 r-xp 00000000 08:07 2369305                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f6ab47b0000-7f6ab49af000 ---p 00008000 08:07 2369305                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f6ab49af000-7f6ab49b0000 r--p 00007000 08:07 2369305                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f6ab49b0000-7f6ab49b1000 rw-p 00008000 08:07 2369305                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f6ab49b1000-7f6ab49db000 r-xp 00000000 08:07 3813109                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libjava.so
+7f6ab49db000-7f6ab4bdb000 ---p 0002a000 08:07 3813109                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libjava.so
+7f6ab4bdb000-7f6ab4bdd000 rw-p 0002a000 08:07 3813109                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libjava.so
+7f6ab4bdd000-7f6ab4bec000 r-xp 00000000 08:07 3813137                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libverify.so
+7f6ab4bec000-7f6ab4deb000 ---p 0000f000 08:07 3813137                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libverify.so
+7f6ab4deb000-7f6ab4ded000 rw-p 0000e000 08:07 3813137                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/libverify.so
+7f6ab4ded000-7f6ab4df4000 r-xp 00000000 08:07 2369292                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f6ab4df4000-7f6ab4ff3000 ---p 00007000 08:07 2369292                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f6ab4ff3000-7f6ab4ff4000 r--p 00006000 08:07 2369292                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f6ab4ff4000-7f6ab4ff5000 rw-p 00007000 08:07 2369292                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f6ab4ff5000-7f6ab50fd000 r-xp 00000000 08:07 2369302                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f6ab50fd000-7f6ab52fc000 ---p 00108000 08:07 2369302                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f6ab52fc000-7f6ab52fd000 r--p 00107000 08:07 2369302                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f6ab52fd000-7f6ab52fe000 rw-p 00108000 08:07 2369302                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f6ab52fe000-7f6ab5f34000 r-xp 00000000 08:07 3813142                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/server/libjvm.so
+7f6ab5f34000-7f6ab6133000 ---p 00c36000 08:07 3813142                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/server/libjvm.so
+7f6ab6133000-7f6ab6202000 rw-p 00c35000 08:07 3813142                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/server/libjvm.so
+7f6ab6202000-7f6ab6244000 rw-p 00000000 00:00 0 
+7f6ab6244000-7f6ab6403000 r-xp 00000000 08:07 2369297                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f6ab6403000-7f6ab6603000 ---p 001bf000 08:07 2369297                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f6ab6603000-7f6ab6607000 r--p 001bf000 08:07 2369297                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f6ab6607000-7f6ab6609000 rw-p 001c3000 08:07 2369297                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f6ab6609000-7f6ab660d000 rw-p 00000000 00:00 0 
+7f6ab660d000-7f6ab6610000 r-xp 00000000 08:07 2369296                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f6ab6610000-7f6ab680f000 ---p 00003000 08:07 2369296                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f6ab680f000-7f6ab6810000 r--p 00002000 08:07 2369296                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f6ab6810000-7f6ab6811000 rw-p 00003000 08:07 2369296                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f6ab6811000-7f6ab6826000 r-xp 00000000 08:07 3813091                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/jli/libjli.so
+7f6ab6826000-7f6ab6a26000 ---p 00015000 08:07 3813091                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/jli/libjli.so
+7f6ab6a26000-7f6ab6a27000 rw-p 00015000 08:07 3813091                    /home/johnny/program_files/PhpStorm-162.2380.11/jre/jre/lib/amd64/jli/libjli.so
+7f6ab6a27000-7f6ab6a3f000 r-xp 00000000 08:07 2369303                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f6ab6a3f000-7f6ab6c3e000 ---p 00018000 08:07 2369303                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f6ab6c3e000-7f6ab6c3f000 r--p 00017000 08:07 2369303                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f6ab6c3f000-7f6ab6c40000 rw-p 00018000 08:07 2369303                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f6ab6c40000-7f6ab6c44000 rw-p 00000000 00:00 0 
+7f6ab6c44000-7f6ab6c6a000 r-xp 00000000 08:07 2369285                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f6ab6c6a000-7f6ab6c6b000 r--s 00008000 08:07 3812618                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/coverage-agent.jar
+7f6ab6c6b000-7f6ab6c6c000 r--s 0000d000 08:07 3812636                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/imgscalr-lib-4.2.jar
+7f6ab6c6c000-7f6ab6d41000 rw-p 00000000 00:00 0 
+7f6ab6d41000-7f6ab6d44000 ---p 00000000 00:00 0 
+7f6ab6d44000-7f6ab6e46000 rw-p 00000000 00:00 0 
+7f6ab6e46000-7f6ab6e48000 r--s 00001000 08:07 3812649                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsch.agentproxy.core.jar
+7f6ab6e48000-7f6ab6e49000 r--s 00001000 08:07 3812652                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jsch.agentproxy.usocket-jna.jar
+7f6ab6e49000-7f6ab6e4d000 r--s 000dc000 08:07 3812646                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jna.jar
+7f6ab6e4d000-7f6ab6e56000 r--s 0006f000 08:07 3812681                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/log4j.jar
+7f6ab6e56000-7f6ab6e59000 r--s 00024000 08:07 3812640                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/jdom.jar
+7f6ab6e59000-7f6ab6e5b000 r--s 0002a000 08:07 3812623                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/extensions.jar
+7f6ab6e5b000-7f6ab6e5c000 r--s 0000a000 08:07 3812607                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/bootstrap.jar
+7f6ab6e5c000-7f6ab6e5d000 r--s 00004000 08:07 3812606                    /home/johnny/program_files/PhpStorm-162.2380.11/lib/boot.jar
+7f6ab6e5d000-7f6ab6e65000 rw-s 00000000 08:07 1052856                    /tmp/hsperfdata_johnny/7293
+7f6ab6e65000-7f6ab6e66000 rw-p 00000000 00:00 0 
+7f6ab6e66000-7f6ab6e67000 r--p 00000000 00:00 0 
+7f6ab6e67000-7f6ab6e69000 rw-p 00000000 00:00 0 
+7f6ab6e69000-7f6ab6e6a000 r--p 00025000 08:07 2369285                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f6ab6e6a000-7f6ab6e6b000 rw-p 00026000 08:07 2369285                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f6ab6e6b000-7f6ab6e6c000 rw-p 00000000 00:00 0 
+7fff2b41e000-7fff2b43f000 rw-p 00000000 00:00 0                          [stack]
+7fff2b5e1000-7fff2b5e3000 r--p 00000000 00:00 0                          [vvar]
+7fff2b5e3000-7fff2b5e5000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/boot.jar -Xms128m -Xmx750m -XX:ReservedCodeCacheSize=240m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -Dawt.useSystemAAFontSettings=lcd -Djb.vmOptionsFile=/home/johnny/program_files/PhpStorm-162.2380.11/bin/phpstorm64.vmoptions -XX:ErrorFile=/home/johnny/java_error_in_PHPSTORM_.log -XX:HeapDumpPath=/home/johnny/java_error_in_PHPSTORM.hprof -Djb.restart.code=88 -Didea.paths.selector=PhpStorm2016.2 -Didea.platform.prefix=PhpStorm 
+java_command: com.intellij.idea.Main
+java_class_path (initial): /home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/bootstrap.jar:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/extensions.jar:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/util.jar:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/jdom.jar:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/log4j.jar:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/trove4j.jar:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../lib/jna.jar:/home/johnny/program_files/PhpStorm-162.2380.11/bin/../jre/lib/tools.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-8-oracle
+PATH=/home/johnny/bin:/home/johnny/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa32fd0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa32fd0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x89ec10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000010000000000000000000, sa_flags=SA_RESTART
+SIGXFSZ: [libjvm.so+0x89ec10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x89ec10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8a02d0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
+
+uname:Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 29485, NOFILE 65536, AS infinity
+load average:0.99 0.72 0.44
+
+/proc/meminfo:
+MemTotal:        7588468 kB
+MemFree:         3406644 kB
+MemAvailable:    5373968 kB
+Buffers:          319700 kB
+Cached:          2058528 kB
+SwapCached:            0 kB
+Active:          2735136 kB
+Inactive:        1084288 kB
+Active(anon):    1445632 kB
+Inactive(anon):   350816 kB
+Active(file):    1289504 kB
+Inactive(file):   733472 kB
+Unevictable:         208 kB
+Mlocked:             208 kB
+SwapTotal:      31249404 kB
+SwapFree:       31249404 kB
+Dirty:               200 kB
+Writeback:             0 kB
+AnonPages:       1440772 kB
+Mapped:           356020 kB
+Shmem:            355580 kB
+Slab:             285592 kB
+SReclaimable:     250420 kB
+SUnreclaim:        35172 kB
+KernelStack:        7024 kB
+PageTables:        10860 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    35043636 kB
+Committed_AS:    4136728 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1116160 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      192096 kB
+DirectMap2M:     6555648 kB
+DirectMap1G:     2097152 kB
+
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 94
+model name	: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz
+stepping	: 3
+microcode	: 0x9e
+cpu MHz		: 799.968
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 4608.11
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 94
+model name	: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz
+stepping	: 3
+microcode	: 0x9e
+cpu MHz		: 2192.726
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 4608.11
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 94
+model name	: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz
+stepping	: 3
+microcode	: 0x9e
+cpu MHz		: 800.867
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 4608.11
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 94
+model name	: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz
+stepping	: 3
+microcode	: 0x9e
+cpu MHz		: 2409.699
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 4608.11
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 7588468k(3406644k free), swap 31249404k(31249404k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.112-b3) for linux-amd64 JRE (1.8.0_112-release-287-b3), built on Oct 21 2016 13:13:26 by "root" with gcc 4.4.7 20120313 (Red Hat 4.4.7-16)
+
+time: Fri Jan 13 10:52:03 2017
+elapsed time: 2863 seconds (0d 0h 47m 43s)
+

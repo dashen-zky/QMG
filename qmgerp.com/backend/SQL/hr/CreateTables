@@ -1,0 +1,140 @@
+/**************************hr_department***********************/
+CREATE TABLE IF NOT EXISTS `hr_department` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `name` VARCHAR(45) NOT NULL,
+  `description` TEXT NOT NULL DEFAULT '',
+  `level` TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '部门的级别\n1.表示事业部\n2.表示事业部下面的项目组',
+  `remarks` TEXT NOT NULL DEFAULT '' COMMENT '部门的备注',
+  `attachment` VARCHAR(200) NOT NULL DEFAULT '',
+  `code` varchar(45) not null default '',
+  PRIMARY KEY (`uuid`),
+  key(`id`))
+ENGINE = InnoDB charset utf8;
+/*************************hr_department_relation**********************/
+CREATE TABLE IF NOT EXISTS `hr_department_relation` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `parent_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `child_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  INDEX `parent_uuid_idx` (`parent_uuid` ASC),
+  INDEX `child_uuid_idx` (`child_uuid` ASC),
+  CONSTRAINT `child_uuid`
+    FOREIGN KEY (`child_uuid`)
+    REFERENCES `hr_department` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/****************************hr_position***************************/
+CREATE TABLE IF NOT EXISTS `hr_position` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL,
+  `de_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `name` VARCHAR(45) NOT NULL COMMENT '职位名称',
+  `min_salary` INT UNSIGNED NOT NULL DEFAULT 0,
+  `max_salary` INT UNSIGNED NOT NULL DEFAULT 0,
+  `duty` TEXT NOT NULL DEFAULT '' COMMENT '岗位职责',
+  `requirement` TEXT NOT NULL DEFAULT '' COMMENT '岗位要求',
+  `remarks` TEXT NOT NULL DEFAULT '' COMMENT '备注',
+  `description` TEXT NOT NULL DEFAULT '' COMMENT '职位描述',
+  `attachment` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '附件',
+  `code` varchar(45) not null default '',
+  PRIMARY KEY (`uuid`),
+  INDEX `de_uuid_idx` (`de_uuid` ASC),
+  key(`id`),
+  CONSTRAINT `de_uuid`
+    FOREIGN KEY (`de_uuid`)
+    REFERENCES `hr_department` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/****************hr_employee_basic_information****************/
+CREATE TABLE IF NOT EXISTS `hr_employee_basic_information` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `name` VARCHAR(20) NOT NULL COMMENT 'employee name',
+  `english_name` VARCHAR(45) NOT NULL DEFAULT '',
+  `gender` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '0 表示女性\n1 表示男性',
+  `phone_number` BIGINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '电话号码',
+  `email` VARCHAR(100) NOT NULL DEFAULT '',
+  `work_email` VARCHAR(100) NOT NULL DEFAULT '',
+  `qq_number` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `weichat_number` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '微信号',
+  `education_degree` TINYINT NOT NULL DEFAULT 3 COMMENT '学历\n1.博士\n2.硕士\n3.学士\n4.大专\n5.中专\n6.高中',
+  `graduated_school` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '毕业学校',
+  `profession` VARCHAR(45) NOT NULL DEFAULT '' COMMENT '专业',
+  `entry_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '入职时间\n存放时间戳的',
+  `out_time` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '离职时间',
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '1 待入职\n2实习\n3在职\n4离职',
+  `hukou_category` TINYINT UNSIGNED NOT NULL DEFAULT 2 COMMENT '1 农村户口\n2 城市户口',
+  `house_fund_number` CHAR(20) NOT NULL DEFAULT '' COMMENT '公积金账号',
+  `id_card_number` CHAR(18) NOT NULL DEFAULT '',
+  `type` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '0 实习生\n1 全职\n2 兼职\n3 顾问',
+  `residence_permit_number` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '居住证号码',
+  `code` varchar(45) not null default '',
+  PRIMARY KEY (`uuid`),
+  key(`id`))
+ENGINE = InnoDB charset utf8;
+/***********************hr_employee_position_map**************************/
+CREATE TABLE IF NOT EXISTS `hr_employee_position_map` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `em_uuid` VARCHAR(45) NOT NULL,
+  `position_uuid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `em_uuid_idx` (`em_uuid` ASC),
+  INDEX `position_uuid_idx` (`position_uuid` ASC),
+  CONSTRAINT `em_uuid_idx`
+    FOREIGN KEY (`em_uuid`)
+    REFERENCES `hr_employee_basic_information` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `position_uuid_idx`
+    FOREIGN KEY (`position_uuid`)
+    REFERENCES `hr_position` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset=utf8;
+/****************hr_employee_account****************/
+CREATE TABLE IF NOT EXISTS `hr_employee_account` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `em_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `username` VARCHAR(45) NOT NULL,
+  `password` CHAR(41) NOT NULL,
+  `role_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `status` TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '0 表示 离职\n1 表示 在职',
+  `access_token` VARCHAR(45) NOT NULL DEFAULT '',
+  `auth_key` VARCHAR(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  INDEX `em_uuid_idx` (`em_uuid` ASC),
+  CONSTRAINT `em_uuid`
+    FOREIGN KEY (`em_uuid`)
+    REFERENCES `hr_employee_basic_information` (`uuid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB charset utf8;
+/***************************hr_employee_basic_attachment_information***********/
+CREATE TABLE IF NOT EXISTS `hr_employee_basic_attachment_information` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `em_uuid` VARCHAR(45) NOT NULL,
+  `remarks` TEXT NOT NULL COMMENT '员工的备注信息',
+  `resume_attament` VARCHAR(100) NOT NULL COMMENT '员工的简历附件路径',
+  `hukou_address` VARCHAR(200) NOT NULL,
+  `address` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB charset utf8;
+/************************************hr_employee_family***********************/
+CREATE TABLE IF NOT EXISTS `hr_employee_family` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  `name` VARCHAR(45) NOT NULL DEFAULT '',
+  `relation` VARCHAR(45) NOT NULL DEFAULT '',
+  `id_card_number` VARCHAR(20) NOT NULL DEFAULT '',
+  `company` VARCHAR(155) NOT NULL DEFAULT '',
+  `position` VARCHAR(45) NOT NULL DEFAULT '',
+  `phone` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+  `em_uuid` VARCHAR(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uuid`),key(id))
+ENGINE = InnoDB charset utf8;
+/*************************************alter***************************************/
+alter table hr_employee_family add foreign key (em_uuid) references hr_employee_basic_information(uuid);
+alter table hr_employee_basic_attachment_information add foreign key (em_uuid) references hr_employee_basic_information(uuid);

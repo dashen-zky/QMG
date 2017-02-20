@@ -1,0 +1,11 @@
+alter table hr_employee_basic_information add become_full_member_time int unsigned not null default 0;
+alter table hr_employee_basic_information add photo varchar(155) not null default '';
+alter table hr_employee_basic_information add emergency_contact_phone bigint not null default 0;
+alter table hr_employee_basic_information add emergency_contact varchar(20) not null default '';
+alter table hr_employee_basic_information add generation_status tinyint not null default 1;
+alter table hr_employee_basic_information add marriage_status tinyint not null default 1;
+alter table hr_employee_basic_information add ethnic varchar(20) not null default '';
+////////////////////////////////////////////////////////////////////////////////////
+alter table hr_department add parent_departments text not null default '';
+alter table hr_position drop role;
+alter table hr_employee_basic_information add system_code varchar(20) not null default '';
