@@ -17,6 +17,8 @@ use backend\modules\rbac\model\RBACManager;
 use Yii;
 use yii\db\Exception;
 use backend\models\MyPagination;
+use backend\modules\daily\models\transaction\Transaction;
+use backend\modules\daily\models\transaction\TransactionConfig;
 
 class WeekReport extends BaseRecord implements DeleteRecordOperator
 {
@@ -56,6 +58,8 @@ class WeekReport extends BaseRecord implements DeleteRecordOperator
             if (isset($formData['transaction_uuid']) && !empty($formData['transaction_uuid'])) {
                 $uuids = explode(',', trim($formData['transaction_uuid'],' ,'));
                 $map = new WeekReportTransactionMap();
+                $daliy_transaction = new Transaction();//
+                $where = array();//
                 foreach ($uuids as $uuid) {
                     $arg = preg_split('/and/', $uuid);
                     $map->insertSingleRecord([
@@ -69,8 +73,13 @@ class WeekReport extends BaseRecord implements DeleteRecordOperator
                          * 状态为2，is_current_week_transaction字段值应该为1
                          */
                         'is_current_week_transaction'=> 3 - $arg[1],
-                    ]);
+                    ]); 
+
+                    $where[] = $arg[0];
+
                 }
+
+                $daliy_transaction->updateTransactionStatus($where, TransactionConfig::StatusSubmitWeek);//
             }
         } catch (Exception $e) {
             $transaction->rollBack();

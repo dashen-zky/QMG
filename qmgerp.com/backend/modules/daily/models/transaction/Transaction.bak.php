@@ -431,7 +431,7 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                             $selector[] = $alias ."." . $select;
                         } else {
                             $select = trim($select);
-                            $selector[] = $alias ."." . $select ;
+                            $selector[] = $alias ."." . $select . " " . $key . "_" .$select;
                         }
                     }
                 }
@@ -446,7 +446,6 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
             $query->andWhere($conditions);
         }
 
-        var_dump($query->find()->createCommand()->getRawSql());die;
 
         if ($fetchOne) {
             $record = $query->asArray()->one();

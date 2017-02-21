@@ -64,12 +64,12 @@ $this->registerJs($Js, \yii\web\View::POS_END);
 <table class="table transaction-list">
     <thead>
     <tr>
-        <th>选择</th>
-        <th class="col-md-2">标题</th>
-        <th>任务截止时间</th>
-        <th>完成时间</th>
+        <th class="col-md-1">选择</th>
+        <th class="col-md-1">标题</th>
+        <th class="col-md-2">任务截止时间</th>
+        <th class="col-md-1">完成时间</th>
         <th class="col-md-1">执行人</th>
-        <th>状态</th>
+        <th class="col-md-1">状态</th>
         <th class="col-md-5">内容</th>
     </tr>
     </thead>

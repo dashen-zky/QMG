@@ -60,9 +60,9 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                 'transaction'=>[
                     '*'
                 ],
-                'transaction_week_report_map'=>[
-                    'transaction_uuid'
-                ]
+                // 'transaction_week_report_map'=>[
+                //     'transaction_uuid'
+                // ]
             ],
             [
                 'and',
@@ -100,9 +100,6 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
             [
                 'transaction'=>[
                     '*'
-                ],
-                'transaction_week_report_map'=>[
-                    'transaction_uuid'
                 ]
             ],
             [
@@ -110,8 +107,9 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                 [
                     '=',
                     self::$aliasMap['transaction'] . '.execute_uuid',
-                    Yii::$app->user->getIdentity()->getId()
+                    Yii::$app->user->getIdentity()->getId(),
                 ],
+
                 [
                     'or',
                     [
@@ -124,8 +122,9 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                         self::$aliasMap['transaction'] . '.status',
                         TransactionConfig::StatusFinished,
                     ],
-                       
-                ]
+
+                ],
+                    
             ]
         );
     }
@@ -152,6 +151,7 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                     [
                         TransactionConfig::StatusFinished,
                         TransactionConfig::StatusDropped,
+                        TransactionConfig::StatusSubmitWeek,
                     ]
                 ]
             ]
@@ -194,40 +194,12 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                 Yii::$app->user->getIdentity()->getId()
             ],
             [
-                'or',
+                'in',
+                self::$aliasMap['transaction'] . '.status',
                 [
-                    '=',
-                    self::$aliasMap['transaction'] . '.status',
+                    TransactionConfig::StatusFinished,
                     TransactionConfig::StatusUnfinished,
-                ],
-                [
-                    'and',
-                    [
-                        '=',
-                        self::$aliasMap['transaction'] . '.status',
-                        TransactionConfig::StatusFinished,
-                    ],
-                    [
-                        'or',
-                        [
-                            'and',
-                            [
-                                '=',
-                                self::$aliasMap['transaction_week_report_map'] . '.is_current_week_transaction',
-                                WeekReportConfig::IsNextWeekReport,
-                            ],
-                            [
-                                'is not',
-                                self::$aliasMap['transaction_week_report_map'] . '.transaction_uuid',
-                                null,
-                            ],
-                        ],
-                        [
-                            'is',
-                            self::$aliasMap['transaction_week_report_map'] . '.transaction_uuid',
-                            null,
-                        ],
-                    ]
+                    // TransactionConfig::StatusSubmitWeek,
                 ]
             ]
         ];
@@ -242,14 +214,31 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
             ];
         }
 
+        // echo "<pre>";
+        // var_dump($condition);die;
+
         return $this->transactionList(
             [
-                'transaction'=>[
-                    '*'
+                [
+                    'transaction'=>['*'],
+                    
                 ],
-                'transaction_week_report_map'=>[
-                    'transaction_uuid'
-                ]
+                [
+                    'and',
+                    [
+                        '=',
+                        self::$aliasMap['transaction'] . '.execute_uuid',
+                        Yii::$app->user->getIdentity()->getId()
+                    ],
+                    [
+                        'in',
+                        self::$aliasMap['transaction'] . '.status',
+                        [
+                            TransactionConfig::StatusFinished,
+                            TransactionConfig::StatusUnfinished,
+                        ],
+                    ],
+                ],
             ],
             $condition
         );
@@ -304,9 +293,9 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                 'transaction'=>[
                     '*'
                 ],
-                'transaction_week_report_map'=>[
-                    'transaction_uuid'
-                ]
+                // 'transaction_week_report_map'=>[
+                //     'transaction_uuid'
+                // ]
             ],
             $condition
         );
@@ -352,6 +341,7 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
                 [
                     TransactionConfig::StatusFinished,
                     TransactionConfig::StatusDropped,
+                    TransactionConfig::StatusSubmitWeek,
                 ]
             ]
         ];
@@ -427,7 +417,7 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
 
         // echo "<pre>";
         // var_dump($query);die;
-        var_dump($query->createCommand()->getRawSql());die;
+        // var_dump($query->createCommand()->getRawSql());die;
 
 
         if ($fetchOne) {
@@ -542,5 +532,17 @@ class Transaction extends BaseRecord implements DeleteRecordOperator
 
         $record->update();
         return true;
+    }
+
+    /**
+     * 更改  事项的 状态为 已提交给周报
+     * @param $where 更新事项的 天剑
+     * @return line 影响的行数
+     */
+    public function updateTransactionStatus($where, $status)
+    {
+        // $where = 'uuid in '.$where;
+            # code...
+        return self::updateAll(['status'=>$status],["uuid"=>$where,"status"=>2]);
     }
 }

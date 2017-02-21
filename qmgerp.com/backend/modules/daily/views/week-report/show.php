@@ -44,11 +44,11 @@ $config = new TransactionConfig();
 ])?>
 <table class="table table-striped">
     <thead>
-        <th class="col-md-2">标题</th>
-        <th>任务截止时间</th>
-        <th>完成时间</th>
+        <th class="col-md-1">标题</th>
+        <th class="col-md-1">任务截止时间</th>
+        <th class="col-md-1">完成时间</th>
         <th class="col-md-1">执行人</th>
-        <th>状态</th>
+        <th class="col-md-2">状态</th>
         <th class="col-md-6">内容</th>
     </thead>
     <tbody>
@@ -77,11 +77,11 @@ $config = new TransactionConfig();
 ])?>
 <table class="table table-striped">
     <thead>
-    <th class="col-md-2">标题</th>
-    <th>任务截止时间</th>
+    <th class="col-md-1">标题</th>
+    <th class="clo-md-1">任务截止时间</th>
     <th class="col-md-1">执行人</th>
-    <th>状态</th>
-    <th class="col-md-5">内容</th>
+    <th class="col-md-1">状态</th>
+    <th class="col-md-7">内容</th>
     </thead>
     <tbody>
     <?php foreach ($unfinishedTransactionList as $item):?>

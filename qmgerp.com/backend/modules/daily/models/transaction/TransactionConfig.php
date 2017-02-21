@@ -12,6 +12,7 @@ class TransactionConfig extends \backend\models\Config
     const StatusUnfinished = 1;
     const StatusFinished = 2;
     const StatusDropped = 3;
+    const StatusSubmitWeek = 5;// 已提交周报
     const Top = 999999999; // 置顶
     const CurrentWeekTransaction = 1;
     const NextWeekTransaction = 2;
@@ -24,6 +25,7 @@ class TransactionConfig extends \backend\models\Config
                 self::StatusUnfinished => '未完成',
                 self::StatusFinished => '已完成',
                 self::StatusDropped => '已放弃',
+                self::StatusSubmitWeek => '已完成并提交周报',
             ],
         ];
         parent::init();

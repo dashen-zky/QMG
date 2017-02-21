@@ -28,9 +28,13 @@ class WeekReportController extends BackEndBaseController
         }
 
         $formData = Yii::$app->request->post('WeekReportForm');
+        // var_dump($formData);die;
         $weekReport = new WeekReport();
         if ($weekReport->insertRecord($formData)) {
-            return $this->redirect(['index']);
+            // 把 对应的事项 改变状态
+            // if($transaction->updateTransactionStatus($formData['transaction_uuid'])){/
+                return $this->redirect(['index']);
+            // }
         }
     }
 
